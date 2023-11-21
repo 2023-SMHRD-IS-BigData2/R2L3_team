@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.AccountList;
-import model.AccountListDAO;
+import model.MemberInfo;
+import model.MemberInfoDAO;
 
 @WebServlet("/RemoveAccount")
 public class RemoveAccount extends HttpServlet {
@@ -21,11 +21,11 @@ public class RemoveAccount extends HttpServlet {
 		System.out.println("RemoveAccount");
 		
 		HttpSession session = request.getSession();
-		AccountList vo = (AccountList) session.getAttribute("userInfo");
+		MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
 		
-		System.out.println(vo.toString());
+		System.out.println(memberInfo.toString());
 		
-		int row = new AccountListDAO().RemoveAccount(vo);
+		int row = new MemberInfoDAO().RemoveAccount(memberInfo);
 		
 		if (row == 1) {
 			System.out.println("delete success");

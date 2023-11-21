@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.AccountList;
-import model.AccountListDAO;
+import model.MemberInfo;
+import model.MemberInfoDAO;
 
 @WebServlet("/ChangeAccount")
 public class ChangeAccount extends HttpServlet {
@@ -22,19 +22,18 @@ public class ChangeAccount extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		String id = request.getParameter("id");
-		String nickname = request.getParameter("nickname");
+		String user_id = request.getParameter("user_id");
+		String nick = request.getParameter("nick");
 		String address = request.getParameter("address");
-		String tel = request.getParameter("tel");
 		
-		AccountList list = new AccountList(id, nickname, address, tel);
+		MemberInfo memberInfo = new MemberInfo(user_id, nick, address);
 		
-		int row = new AccountListDAO().changeAccount(list);
+		int row = new MemberInfoDAO().changeAccount(memberInfo);
 		
 		if (row == 1) {
 			System.out.println("update success");
 			HttpSession session = request.getSession();
-			session.setAttribute("userInfo", list);
+			session.setAttribute("memberInfo", memberInfo);
 		} else {
 			System.out.println("update error");
 		}

@@ -1,4 +1,4 @@
-<%@page import="model.AccountList"%>
+<%@page import="model.MemberInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,37 +7,32 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-#bAddress {
+#beforeNick {
 display: none;
 }
-#bTel {
+#beforeAddress {
 display: none;
 }
 </style>
 </head>
 <body>
 	<%
-		AccountList userInfo = (AccountList) session.getAttribute("userInfo");
+	MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
 	%>
 	<form action="ChangeAccount" method="post">
 		<table>
-			<tr>
-				<td>아이디(고유번호)</td>
-				<td><input type="text" name="id" value="<%= userInfo.getId() %>"
+			<tr class="hideInfo">
+				<td>아이디</td>
+				<td><input type="text" name="user_id" value="<%= memberInfo.getUser_id() %>"
 					readonly="readonly"></td>
 			</tr>
 			<tr>
 				<td>닉네임</td>
-				<td><input type="text" name="nickname"
-					value="<%= userInfo.getNickname() %>" readonly="readonly"></td>
+				<td><input type="text" id="nick" name="nick" value="<%= memberInfo.getNick() %>"></td>
 			</tr>
 			<tr>
 				<td>주소</td>
 				<td><input type="text" id="address" name="address"></td>
-			</tr>
-			<tr>
-				<td>전화번호</td>
-				<td><input type="text" id="tel" name="tel"></td>
 			</tr>
 		</table>
 	</form>
@@ -46,33 +41,36 @@ display: none;
 			<td><button onclick="duplicateCheck()">회원정보 변경</button></td>
 		</tr>
 		<tr>
-			<td id="bAddress"><%= userInfo.getAddress() %></td>
+			<td id="beforeNick"><%= memberInfo.getNick() %></td>
 		</tr>
 		<tr>
-			<td id="bTel"><%= userInfo.getTel() %></td>
+			<td id="beforeAddress"><%= memberInfo.getAddress() %></td>
 		</tr>
 	</table>
 	<script type="text/javascript">
-		let bAddress = document.querySelector("#bAddress").textContent;
-		let bTel = document.querySelector("#bTel").textContent;
+		let beforeNick = document.querySelector("#beforeNick").textContent;
+		let beforeAddress = document.querySelector("#beforeAddress").textContent;
+		let nickNullCheck = false;
+		let addressNullCheck = false;
 		
 		function duplicateCheck() {
 			
+			/* let nick = document.querySelector("#nick").value;
+			let address = document.querySelector("#address").value; */
 			
-			let address = document.querySelector("#address").value;
-			let tel = document.querySelector("#tel").value;
+			if (nick.length > 0) {
+				nickNullCheck = true;
+			}
+			if (address.length > 0) {
+				addressNullCheck = true;
+			}
 			
-			if ((address.length > 0) && address != bAddress) {
-				if ((tel.length > 0) && tel != bTel) {
-					document.querySelector("form").submit();
-				} else {
-					window.alert("전화번호가 없거나 이전과 일치합니다!");
-				}
+			if (nickNullCheck && addressNullCheck) {
+				document.querySelector("form").submit();
 			} else {
-				window.alert("주소가 없거나 이전과 일치합니다!");
+				window.alert("비어있는 칸을 입력해 주세요!")
 			}
 		}
-		
 	</script>
 </body>
 </html>

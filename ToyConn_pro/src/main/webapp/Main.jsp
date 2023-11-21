@@ -1,4 +1,4 @@
-<%@page import="model.AccountList"%>
+<%@page import="model.MemberInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -33,16 +33,17 @@ display: none;
 		</tr>
 	</table>
 	<form action="FirstLoginCheck" method="post" id="FirstLoginCheck">
-		<input type="text" id="userID" name="id" readonly="readonly">
-		<input type="text" id="userNickname" name="nickname" readonly="readonly">
+		<input type="text" id="userID" name="user_id" readonly="readonly">
+		<input type="text" id="userNick" name="nick" readonly="readonly">
 	</form>
 	<form action="LogoutAccount" id="LogoutAccount"></form>
 	
 	<%
-		AccountList userInfo = (AccountList) session.getAttribute("userInfo");
+		MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
+		
 	%>
-	<% if (userInfo != null) { %>
-	<h3><%= userInfo.getNickname() %>님 환영합니다.</h3>
+	<% if (memberInfo != null) { %>
+	<h3><%= memberInfo.getNick() %>님 환영합니다.</h3>
 	<% } %>
 	<script type="text/javascript">
 		let KakaoToken = null;
@@ -50,12 +51,12 @@ display: none;
 		let btn2 = document.querySelector("#kakaoLogoutBtn");
 		let btn3 = document.querySelector("#ChangeAccountBtn");
 		let btn4 = document.querySelector("#RemoveAccountBtn");
-		<% if (userInfo == null) { %>
+		<% if (memberInfo == null) { %>
 			btn1.style.display = "block";
 			btn2.style.display = "none";
 			btn3.style.display = "none";
 			btn4.style.display = "none";
-		<% } else if (userInfo != null) { %>
+		<% } else if (memberInfo != null) { %>
 			btn1.style.display = "none";
 			btn2.style.display = "block";
 			btn3.style.display = "block";
@@ -70,10 +71,8 @@ display: none;
 	                    success : function(response) {
 	                        console.log(response);
 	                        KakaoToken = response;
-	                        document.querySelector("#userID");
-	                        document.querySelector("#userNickname");
 	                        document.querySelector("#userID").value = KakaoToken.id;
-	                        document.querySelector("#userNickname").value = KakaoToken.properties.nickname;
+	                        document.querySelector("#userNick").value = KakaoToken.properties.nickname;
 	                        document.querySelector("#FirstLoginCheck").submit();
 	                        },
 	                    fail : function(error) {

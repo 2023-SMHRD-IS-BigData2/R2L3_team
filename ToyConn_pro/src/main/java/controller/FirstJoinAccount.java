@@ -8,36 +8,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.AccountList;
-import model.AccountListDAO;
+import model.MemberInfo;
+import model.MemberInfoDAO;
 
 @WebServlet("/FirstJoinAccount")
 public class FirstJoinAccount extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		System.out.println("FirstJoinAccount");
-		
+
 		request.setCharacterEncoding("UTF-8");
-		
-		String id = request.getParameter("id");
-		String nickname = request.getParameter("nickname");
+
+		String user_id = request.getParameter("user_id");
+		String nick = request.getParameter("nick");
 		String address = request.getParameter("address");
-		String tel = request.getParameter("tel");
-		
-		AccountList list = new AccountList(id, nickname, address, tel);
-		
-		int row = new AccountListDAO().firstJoinAccount(list);
-		
+		Integer score = Integer.parseInt(request.getParameter("score"));
+
+		MemberInfo memberInfo = new MemberInfo(user_id, nick, address, score);
+
+		int row = new MemberInfoDAO().firstJoinAccount(memberInfo);
+
 		if (row == 1) {
-			System.out.println("가입 완료");
+			System.out.println("FirstJoinAccount success");
 			HttpSession session = request.getSession();
-			session.setAttribute("userInfo", list);
+			session.setAttribute("memberInfo", memberInfo);
 		} else {
-			System.out.println("가입 실패");
+			System.out.println("FirstJoinAccount fail");
 		}
-		
+
 		response.sendRedirect("Main.jsp");
 	}
 

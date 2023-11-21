@@ -8,46 +8,48 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.AccountList;
-import model.AccountListDAO;
+import model.MemberInfo;
+import model.MemberInfoDAO;
 
 @WebServlet("/FirstLoginCheck")
 public class FirstLoginCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		System.out.println("FirstLoginCheck");
-		
+
 		request.setCharacterEncoding("UTF-8");
-		
-		String id = request.getParameter("id");
-		String nickname = request.getParameter("nickname");
-		
-		System.out.println("아이디 : " + id + "\n닉네임 : " + nickname);
-		
-		AccountList list = new AccountList(id, nickname);
-		
-		AccountList row = new AccountListDAO().firstJoinCheck(list);
-		
+
+		String user_id = request.getParameter("user_id");
+		String nick = request.getParameter("nick");
+
+		System.out.println(user_id);
+		System.out.println(nick);
+
+		MemberInfo memberInfo = new MemberInfo(user_id, nick);
+
+		MemberInfo row = new MemberInfoDAO().firstJoinCheck(memberInfo);
+
 		if (row != null) {
 			System.out.println("In");
-			
+
 			HttpSession session = request.getSession();
-			session.setAttribute("userInfo", row);
-			
+			session.setAttribute("memberInfo", memberInfo);
+
 			response.sendRedirect("Main.jsp");
-			
+
 		} else {
 			System.out.println("Not in");
-			
+
 			HttpSession session = request.getSession();
-			session.setAttribute("id", id);
-			session.setAttribute("nickname", nickname);
-			
+			session.setAttribute("user_id", user_id);
+			session.setAttribute("nick", nick);
+
 			response.sendRedirect("JoinAccount.jsp");
 		}
-		
+
 	}
 
 }
