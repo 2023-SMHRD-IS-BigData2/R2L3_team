@@ -1,3 +1,8 @@
+<%@page import="model.ToyDTO"%>
+<%@page import="model.addressToyDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="model.ToyDAO"%>
+<%@page import="model.MemberInfoDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -40,7 +45,11 @@
 </head>
 
 <body class="animsition">
+<%
+	String id = "admin";//(String)session.getAttribute("id");
+	List<ToyDTO> list = new ToyDAO().getToyInfo(id);
 
+%>
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
@@ -460,22 +469,23 @@
 			<div class="row isotope-grid">
 
 				<!-- 상품 1 -->
+				<%for(int i=0; i<list.size();i++){ %>
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<!-- 상품 사진 -->
-							<img src="images/product-01.jpg" alt="IMG-PRODUCT">
+							<img src="images/crolling/<%=list.get(i).getImage_file()%>" alt="IMG-PRODUCT">
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<!-- 상품명 -->
 								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Esprit Ruffle Shirt
+									<%=list.get(i).getP_name()%>
 								</a>
 								<!-- 가격 -->
 								<span class="stext-105 cl3">
-									$16.64
+									<%=list.get(i).getRent_price()%>
 								</span>
 							</div>
 
@@ -491,6 +501,7 @@
 						</div>
 					</div>
 				</div>
+				<%} %>
 				<!-- 상품 1 -->
 				
 
