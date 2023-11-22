@@ -348,7 +348,7 @@
 									class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									<%=list.get(i).getP_name()%> </a>
 								<!-- 3. 가격 -->
-								<span class="stext-105 cl3"> <%=list.get(i).getRent_price()%> </span>
+								<span class="stext-105 cl3"> <%=list.get(i).getRent_price()%> 원</span>
 							</div>
 
 							<!-- 하트 아이콘 -->
