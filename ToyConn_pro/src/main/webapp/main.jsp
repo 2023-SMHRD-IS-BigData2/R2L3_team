@@ -374,7 +374,7 @@
 	<section class="bg0 p-t-23 p-b-140">
 		<div class="container">
 			<div class="p-b-10">
-				<h3 class="ltext-103 cl5">상품 미리 모기</h3>
+				<h3 class="ltext-103 cl5">상품 미리 보기</h3>
 			</div>
 
 			<!-- 상품 카테고리 -->
