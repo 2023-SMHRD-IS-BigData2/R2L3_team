@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <title>메인</title>
 <meta charset="UTF-8">
@@ -47,6 +48,7 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
+
 <body class="animsition">
 
 	<!-- Header -->
@@ -815,4 +817,5 @@
 	<script src="js/main.js"></script>
 
 </body>
+
 </html>
