@@ -317,209 +317,15 @@
 
 	<!-- Title page -->
 	<section class="bg-img1 txt-center p-lr-15 p-tb-92"
-		style="background-image: url('images/bg-01.jpg');">
+		style="background-image: url('images/home2.png');">
 		<h2 class="ltext-105 cl0 txt-center">Toy Conn</h2>
 	</section>
-
-	<!-- Banner 위 3추천 상품 창-->
-	<div class="sec-banner bg0 p-t-80 p-b-50">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/banner-01.jpg" alt="IMG-BANNER"> <a
-							href="toy_list.html"
-							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8"> Women
-								</span> <span class="block1-info stext-102 trans-04"> Spring
-									2018 </span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">Shop Now</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/banner-02.jpg" alt="IMG-BANNER"> <a
-							href="toy_list.html"
-							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8"> Men </span>
-
-								<span class="block1-info stext-102 trans-04"> Spring 2018
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">Shop Now</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="images/banner-03.jpg" alt="IMG-BANNER"> <a
-							href="toy_list.html"
-							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Accessories </span> <span class="block1-info stext-102 trans-04">
-									New Trend </span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">Shop Now</div>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 	<!-- Product -->
 	<section class="bg0 p-t-23 p-b-140">
 		<div class="container">
 			<div class="p-b-10">
 				<h3 class="ltext-103 cl5">'<%=result %>' 주변 장난감</h3>
-			</div>
-
-			<!-- 상품 카테고리 -->
-			<!-- 카테고리 클릭 시 필터 기능 -->
-			<div class="flex-w flex-sb-m p-b-52">
-				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
-					<button
-						class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1"
-						data-filter="*">전체 보기</button>
-
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
-						data-filter=".car">자동차</button>
-
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
-						data-filter=".sword">칼</button>
-
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
-						data-filter=".lego">Lego</button>
-				</div>
-
-				<!-- Filter, Search js. 누르면 아래 창 뜸 -->
-				<div class="flex-w flex-c-m m-tb-10">
-					<div
-						class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
-						<i
-							class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
-						<i
-							class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-						Filter
-					</div>
-
-					<div
-						class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
-						<i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
-						<i
-							class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-						Search
-					</div>
-				</div>
-
-				<!-- Search product 검색 기능 -->
-				<div class="dis-none panel-search w-full p-t-10 p-b-15">
-					<div class="bor8 dis-flex p-l-15">
-
-						<button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
-							<i class="zmdi zmdi-search"></i>
-						</button>
-
-						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text"
-							name="search-product" placeholder="Search">
-
-					</div>
-				</div>
-
-				<!-- Filter 목록 -->
-				<div class="dis-none panel-filter w-full p-t-10">
-					<div
-						class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
-						<div class="filter-col1 p-r-15 p-b-27">
-							<div class="mtext-102 cl2 p-b-15">종류</div>
-
-							<ul>
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> 자동차 </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> 동물 </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> 칼 </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04 filter-link-active">
-										Lego </a></li>
-							</ul>
-						</div>
-
-						<div class="filter-col2 p-r-15 p-b-27">
-							<div class="mtext-102 cl2 p-b-15">가격</div>
-
-							<ul>
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04 filter-link-active">
-										All </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $0.00 - $50.00 </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $50.00 - $100.00 </a></li>
-
-							</ul>
-						</div>
-
-						<div class="filter-col3 p-r-15 p-b-27">
-							<div class="mtext-102 cl2 p-b-15">품질 상태</div>
-
-							<ul>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #4272d7;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#"
-									class="filter-link stext-106 trans-04 filter-link-active">
-										상 </a></li>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #00ad5f;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> 중 </a></li>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #fa4251;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> 하 </a></li>
-
-							</ul>
-						</div>
-						<div class="filter-col2 p-r-15 p-b-27">
-							<div class="mtext-102 cl2 p-b-15">성별</div>
-
-							<ul>
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> 남자아이 </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> 여자아이 </a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
 			</div>
 		
 			<!-- 상품 목록 -->
@@ -542,7 +348,7 @@
 									class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									<%=list.get(i).getP_name()%> </a>
 								<!-- 3. 가격 -->
-								<span class="stext-105 cl3"> <%=list.get(i).getRent_price()%> </span>
+								<span class="stext-105 cl3"> <%=list.get(i).getRent_price()%> 원</span>
 							</div>
 
 							<!-- 하트 아이콘 -->
