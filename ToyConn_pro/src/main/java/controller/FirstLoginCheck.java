@@ -28,15 +28,13 @@ public class FirstLoginCheck extends HttpServlet {
 		System.out.println(user_id);
 		System.out.println(nick);
 
-		MemberInfo memberInfo = new MemberInfo(user_id, nick);
-
-		MemberInfo row = new MemberInfoDAO().firstJoinCheck(memberInfo);
+		MemberInfo row = new MemberInfoDAO().firstJoinCheck(user_id);
 
 		if (row != null) {
 			System.out.println("In");
 
 			HttpSession session = request.getSession();
-			session.setAttribute("memberInfo", memberInfo);
+			session.setAttribute("memberInfo", row);
 
 			response.sendRedirect("Main.jsp");
 

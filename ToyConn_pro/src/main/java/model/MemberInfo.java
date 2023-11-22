@@ -1,12 +1,15 @@
 package model;
 
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+
 public class MemberInfo {
 	
 	protected String user_id;
 	protected String nick;
 	protected String address;
-	protected Integer score;
-	protected String join_date;
+	protected BigDecimal score;
+	protected Timestamp join_date;
 	
 	public MemberInfo(String user_id, String nick) {
 		this.user_id = user_id;
@@ -19,11 +22,19 @@ public class MemberInfo {
 		this.address = address;
 	}
 
-	public MemberInfo(String user_id, String nickname, String address, Integer score) {
+	public MemberInfo(String user_id, String nick, String address, BigDecimal score) {
 		this.user_id = user_id;
-		this.nick = nickname;
+		this.nick = nick;
 		this.address = address;
 		this.score = score;
+	}
+	
+	public MemberInfo(String user_id, String nick, String address, BigDecimal score, Timestamp join_date) {
+		this.user_id = user_id;
+		this.nick = nick;
+		this.address = address;
+		this.score = score;
+		this.join_date = join_date;
 	}
 
 	public String getUser_id() {
@@ -38,11 +49,11 @@ public class MemberInfo {
 		return address;
 	}
 
-	public Integer getScore() {
+	public BigDecimal getScore() {
 		return score;
 	}
 
-	public String getJoin_date() {
+	public Timestamp getJoin_date() {
 		return join_date;
 	}
 

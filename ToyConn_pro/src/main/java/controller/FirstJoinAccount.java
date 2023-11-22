@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +27,7 @@ public class FirstJoinAccount extends HttpServlet {
 		String user_id = request.getParameter("user_id");
 		String nick = request.getParameter("nick");
 		String address = request.getParameter("address");
-		Integer score = Integer.parseInt(request.getParameter("score"));
+		BigDecimal score = new BigDecimal(request.getParameter("score"));
 
 		MemberInfo memberInfo = new MemberInfo(user_id, nick, address, score);
 

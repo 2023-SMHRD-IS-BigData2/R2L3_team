@@ -13,10 +13,10 @@ public class MemberInfoDAO {
 	
 	String MemberInfoMapper = "database.MemberInfoMapper.";
 	
-	public MemberInfo firstJoinCheck(MemberInfo memberInfo) {
+	public MemberInfo firstJoinCheck(String user_id) {
 		MemberInfo row = null;
 		try {
-			row = session.selectOne(MemberInfoMapper + "firstJoinCheck", memberInfo);
+			row = session.selectOne("database.MemberInfoMapper.firstJoinCheck", user_id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
