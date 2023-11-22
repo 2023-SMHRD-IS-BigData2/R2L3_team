@@ -16,4 +16,12 @@
  	<delete id="deleteAccount" parameterType="MemberInfo">
  		DELETE FROM MEMBER_INFO WHERE user_id=#{user_id} AND nick=#{nick}
  	</delete>
+ 	<select id="getAddress" parameterType="String" resultType="String">
+		select address from member_info where user_id=#{id}
+	</select>
+		<select id="getAddressToys" resultType="model.addressToyDTO">
+		select product_info.p_num, member_info.address, product_info.user_id, product_info.category, product_info.p_name, product_info.rent_price, product_info.gender, product_info.image_file
+from member_info, product_info
+where member_info.user_id = product_info.user_id
+	</select>
  </mapper>

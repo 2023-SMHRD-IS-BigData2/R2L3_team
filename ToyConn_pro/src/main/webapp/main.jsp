@@ -1,3 +1,7 @@
+<%@page import="model.ToyDAO"%>
+<%@page import="model.addressToyDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="model.MemberInfoDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -50,7 +54,20 @@
 </head>
 
 <body class="animsition">
+<%
+	String id = "wkd123";//(String)session.getAttribute("id");
+	String address = new MemberInfoDAO().getAddress(id);
+	session.setAttribute("address", address);
+	List<addressToyDTO> list = new ToyDAO().getAddressToys();
+	
+	String result = address.substring(0, address.indexOf(" "));
+	if(result.length()>4){ //로까지
+		result = address.substring(0, 12);
+	}else{ //동까지
+		result = address.substring(0, 9);
+	}
 
+%>
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
@@ -374,7 +391,7 @@
 	<section class="bg0 p-t-23 p-b-140">
 		<div class="container">
 			<div class="p-b-10">
-				<h3 class="ltext-103 cl5">상품 미리 보기</h3>
+				<h3 class="ltext-103 cl5">'<%=result %>' 주변 장난감</h3>
 			</div>
 
 			<!-- 상품 카테고리 -->
@@ -504,17 +521,18 @@
 					</div>
 				</div>
 			</div>
-
+		
 			<!-- 상품 목록 -->
 			<div class="row isotope-grid">
 				<!-- 참고.클래스 마지막 부분. (예: car, sword, lego)-->
-
+			<%for(int i=0; i<list.size();i++){
+			if(list.get(i).getAddress().contains(result)){ %>
 				<!-- 상품 1 -->
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item sword">
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<!-- 1. 상품 사진 -->
-							<img src="images/product-01.jpg" alt="IMG-PRODUCT">
+							<img src="images/crolling/<%=list.get(i).getImage_file()%>" alt="IMG-PRODUCT">
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -522,9 +540,9 @@
 								<!-- 2. 상품명 -->
 								<a href="product-detail.html"
 									class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Esprit Ruffle Shirt </a>
+									<%=list.get(i).getP_name()%> </a>
 								<!-- 3. 가격 -->
-								<span class="stext-105 cl3"> $16.64 </span>
+								<span class="stext-105 cl3"> <%=list.get(i).getRent_price()%> </span>
 							</div>
 
 							<!-- 하트 아이콘 -->
@@ -540,7 +558,10 @@
 						</div>
 					</div>
 				</div>
+				<%}
+			}%>
 			</div>
+			
 		</div>
 	</section>
 

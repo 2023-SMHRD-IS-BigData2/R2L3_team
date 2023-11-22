@@ -62,4 +62,15 @@ public class MemberInfoDAO {
 		}
 		return row;
 	}
+	public String getAddress(String id) {
+		String address = "";
+		try {
+			address = session.selectOne("database.MemberInfoMapper.getAddress", id);
+		} catch (Exception e) {
+			e.getStackTrace();
+		}finally {
+			session.close();
+		}
+		return address;
+	}
 }
