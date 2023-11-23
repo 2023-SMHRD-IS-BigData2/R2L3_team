@@ -316,7 +316,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2">이미지 등록</label>
                     <div class="col-sm-5">
-                        <input type="file" accept="images/png" src="images/image_join.png" name="productImage" class="form-control" multiple>
+                        <input type="file" accept="images/png" src="images/image_join.png" name="image_file" class="form-control" multiple>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -338,48 +338,48 @@
                                 </div>
 
                                 <ul>
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "category">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             차/소방차/트럭
                                         </a>
                                     </li>
 
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "category">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             로봇
                                         </a>
                                     </li>
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "category">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             인형
                                         </a>
                                     </li>
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "category">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             레고/모형
                                         </a>
                                     </li>
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "category">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             드론/비행기
                                         </a>
                                     </li>
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "category">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             동물모형
                                         </a>
                                     </li>
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "category">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             요리/뷰티/병원/전화
                                         </a>
                                     </li>
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "category">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             교육장난감
                                         </a>
                                     </li>
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "category">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             기타
                                         </a>
@@ -393,26 +393,26 @@
                                 </div>
 
                                 <ul>
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name =" gender">
                                         <a href="#" class="filter-link stext-106 trans-04 filter-link-active">
                                             여아완구
                                         </a>
                                     </li>
 
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name =" gender">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             남아완구
                                         </a>
                                     </li>
 
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name =" gender">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             영유아완구
                                         </a>
                                     </li>
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name =" gender">
                                         <a href="#" class="filter-link stext-106 trans-04">
-                                            남여야완구
+                                            남여아완구
                                         </a>
                                     </li>
 
@@ -425,7 +425,7 @@
                                 </div>
 
                                 <ul>
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "p_quality">
                                         <span class="fs-15 lh-12 m-r-6" style="color: #4272d7;">
                                             <i class="zmdi zmdi-circle"></i>
                                         </span>
@@ -435,7 +435,7 @@
                                         </a>
                                     </li>
 
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "p_quality">
                                         <span class="fs-15 lh-12 m-r-6" style="color: #00ad5f;">
                                             <i class="zmdi zmdi-circle"></i>
                                         </span>
@@ -445,7 +445,7 @@
                                         </a>
                                     </li>
 
-                                    <li class="p-b-6">
+                                    <li class="p-b-6" name = "p_quality">
                                         <span class="fs-15 lh-12 m-r-6" style="color: #fa4251;">
                                             <i class="zmdi zmdi-circle"></i>
                                         </span>
@@ -465,19 +465,19 @@
                 <div class="form-group row">
                     <label class="col-sm-2">상품명</label>
                     <div class="col-sm-3">
-                        <input type="text" name="productName" class="form-control">
+                        <input type="text" name="p_name" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2">가격</label>
                     <div class="col-sm-3">
-                        <input type="text" name="unitPrice" class="form-control">
+                        <input type="text" name="rent_price" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2">상세정보</label>
                     <div class="col-sm-5">
-                        <textarea rows="1" cols="5" name="description" class="form-control"></textarea>
+                        <textarea rows="1" cols="5" name="p_content" class="form-control"></textarea>
                     </div>
                 </div>
 
