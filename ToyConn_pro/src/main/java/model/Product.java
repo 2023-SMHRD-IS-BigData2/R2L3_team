@@ -4,14 +4,14 @@ public class Product {
 	private int p_num;
 	 private String category;
 	 private String p_name;
-	 private int rent_price;
+	 private String rent_price;
 	 private String p_quality;
 	private String p_content;
 	String p_status = "대여가능";
 	String r_status = "대야가능";
 	private String gender;
 	private String image_file;
-	public Product( String p_name, int rent_price, String p_content, String image_file) {
+	public Product( String p_name, String rent_price, String p_content, String image_file) {
 		
 	
 		this.p_name = p_name;
@@ -39,10 +39,10 @@ public class Product {
 	public void setP_name(String p_name) {
 		this.p_name = p_name;
 	}
-	public int getRent_price() {
+	public String getRent_price() {
 		return rent_price;
 	}
-	public void setRent_price(int rent_price) {
+	public void setRent_price(String rent_price) {
 		this.rent_price = rent_price;
 	}
 	public String getP_quality() {
