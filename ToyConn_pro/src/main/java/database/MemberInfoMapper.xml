@@ -27,4 +27,12 @@ where member_info.user_id = product_info.user_id
 		<select id="getToyInfo" parameterType="String" resultType="model.ToyDTO">
 		select * from product_info where user_id=#{id}
 	</select>
+		<select id="getPayCheck" resultType="model.payCheckDTO">
+		select * from paycheck where user_id=#{#user_id}
+	</select>
+	<select id="getLendPayCheck" resultType="model.lenderPayCheckDTO">
+		select a.p_num, a.user_id, a.lender_id,a.p_name, a.price,a.toystate, a.lend, b.image_file
+from paycheck a, product_info b
+where a.p_num=b.p_num(+) and lender_id=#{lender_id}
+	</select>
  </mapper>

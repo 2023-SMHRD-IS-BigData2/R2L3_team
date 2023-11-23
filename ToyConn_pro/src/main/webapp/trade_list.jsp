@@ -1,3 +1,9 @@
+<%@page import="model.lenderPayCheckDTO"%>
+<%@page import="model.payCheckDAO"%>
+<%@page import="model.payCheckDTO"%>
+<%@page import="model.ToyDAO"%>
+<%@page import="model.ToyDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -50,7 +56,11 @@
 </head>
 
 <body class="animsition">
-
+<% String id = "test4";//(String)session.getAttribute("id");
+	List<ToyDTO> list = new ToyDAO().getToyInfo(id);
+	List<payCheckDTO> pclist = new payCheckDAO().getPayCheck(id);
+	List<lenderPayCheckDTO> lendPcList = new payCheckDAO().getLendPayCheck(id);
+	%>
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
@@ -351,32 +361,25 @@
 														<th class="column-4">대여해준아이디</th>
 														<th class="column-5">반납여부</th>
 													</tr>
-
+													<%for(int i=0; i<list.size(); i++){
+														for(int j=0; j<pclist.size(); j++){
+															if(list.get(i).getP_num()==pclist.get(j).getP_num()){
+																if(list.get(i).getP_status().equals("대여중")){%>
+													
 													<tr class="table_row">
 														<td class="column-1">
 															<div class="how-itemcart1">
-																<img src="images/item-cart-04.jpg" alt="IMG">
+																<img src="images/crolling/<%=list.get(i).getImage_file()%>" alt="IMG">
 															</div>
 														</td>
 														<td class="column-2">
-															<div class="how-itemcart1">로봇 (상품명)</div>
+															<div class="how-itemcart1"><%=list.get(i).getP_name()%></div>
 														</td>
-														<td class="column-3">5800</td>
-														<td class="column-4">아이디</td>
-														<td class="column-5">yes or no</td>
+														<td class="column-3"><%=pclist.get(j).getPrice()%></td>
+														<td class="column-4"><%=pclist.get(j).getLender_id()%></td>
+														<td class="column-5"><%=list.get(i).getP_status()%></td>
 													</tr>
-
-													<tr class="table_row">
-														<td class="column-1">
-															<div class="how-itemcart1">
-																<img src="images/item-cart-05.jpg" alt="IMG">
-															</div>
-														</td>
-														<td class="column-2">인형</td>
-														<td class="column-3">4000</td>
-														<td class="column-4">아이디</td>
-														<td class="column-5">yes or no</td>
-													</tr>
+													<%}}}}%>
 												</table>
 											</div>
 										</div>
@@ -412,35 +415,25 @@
 														<th class="column-1">상품</th>
 														<th class="column-2">상품명</th>
 														<th class="column-3">가격</th>
-														<th class="column-4">대여해준아이디</th>
+														
 														<th class="column-5">반납여부</th>
 													</tr>
-
+													<%for(int i=0; i<list.size(); i++){ %>
 													<tr class="table_row">
 														<td class="column-1">
 															<div class="how-itemcart1">
-																<img src="images/item-cart-04.jpg" alt="IMG">
+																<img src="images/crolling/<%=list.get(i).getImage_file()%>" alt="IMG">
 															</div>
 														</td>
 														<td class="column-2">
-															<div class="how-itemcart1">로봇 (상품명)</div>
+															<div class="how-itemcart1"><%=list.get(i).getP_name() %></div>
 														</td>
-														<td class="column-3">5800</td>
-														<td class="column-4">아이디</td>
-														<td class="column-5">yes or no</td>
+														<td class="column-3"><%=list.get(i).getRent_price()%></td>
+														
+														<td class="column-5"><%=list.get(i).getP_status()%></td>
 													</tr>
-
-													<tr class="table_row">
-														<td class="column-1">
-															<div class="how-itemcart1">
-																<img src="images/item-cart-05.jpg" alt="IMG">
-															</div>
-														</td>
-														<td class="column-2">인형</td>
-														<td class="column-3">4000</td>
-														<td class="column-4">아이디</td>
-														<td class="column-5">yes or no</td>
-													</tr>
+													<%}%>
+													
 												</table>
 											</div>
 										</div>
@@ -464,13 +457,10 @@
 								<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
 									Mypage <i class="fa fa-angle-right m-l-9 m-r-10"
 									aria-hidden="true"></i>
-								</a> <span class="stext-109 cl4"> 대여중 </span>
+								</a> <span class="stext-109 cl4"> 차용중 </span>
 
 							</div>
 						</div>
-
-
-
 
 
 						<!-- Shoping Cart -->
@@ -488,7 +478,8 @@
 														<th class="column-4">대여해준아이디</th>
 														<th class="column-5">반납여부</th>
 													</tr>
-
+													<%for(int i=0; i<lendPcList.size(); i++){
+														if(lendPcList.get(i).getLend().equals("대여중")){%>
 													<tr class="table_row">
 														<td class="column-1">
 															<div class="how-itemcart1">
@@ -502,18 +493,7 @@
 														<td class="column-4">아이디</td>
 														<td class="column-5">yes or no</td>
 													</tr>
-
-													<tr class="table_row">
-														<td class="column-1">
-															<div class="how-itemcart1">
-																<img src="images/item-cart-05.jpg" alt="IMG">
-															</div>
-														</td>
-														<td class="column-2">인형</td>
-														<td class="column-3">4000</td>
-														<td class="column-4">아이디</td>
-														<td class="column-5">yes or no</td>
-													</tr>
+													<%}}%>
 												</table>
 											</div>
 										</div>
@@ -532,7 +512,7 @@
 								<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
 									Mypage <i class="fa fa-angle-right m-l-9 m-r-10"
 									aria-hidden="true"></i>
-								</a> <span class="stext-109 cl4"> 대여중 </span>
+								</a> <span class="stext-109 cl4"> 차용중 </span>
 							</div>
 						</div>
 
@@ -552,32 +532,24 @@
 														<th class="column-4">대여해준아이디</th>
 														<th class="column-5">반납여부</th>
 													</tr>
+													<%for(int i=0; i<lendPcList.size(); i++){
+														%>
 
 													<tr class="table_row">
 														<td class="column-1">
 															<div class="how-itemcart1">
-																<img src="images/item-cart-04.jpg" alt="IMG">
+																<img src="images/crolling/<%=lendPcList.get(i).getImage_file()%>" alt="IMG">
 															</div>
 														</td>
 														<td class="column-2">
-															<div class="how-itemcart1">로봇 (상품명)</div>
+															<div class="how-itemcart1"><%=lendPcList.get(i).getP_name()%></div>
 														</td>
-														<td class="column-3">5800</td>
-														<td class="column-4">아이디</td>
-														<td class="column-5">yes or no</td>
+														<td class="column-3"><%=lendPcList.get(i).getPrice()%></td>
+														<td class="column-4"><%=lendPcList.get(i).getUser_id()%></td>
+														<td class="column-5"><%=lendPcList.get(i).getToystate()%></td>
 													</tr>
+													<%}%>
 
-													<tr class="table_row">
-														<td class="column-1">
-															<div class="how-itemcart1">
-																<img src="images/item-cart-05.jpg" alt="IMG">
-															</div>
-														</td>
-														<td class="column-2">인형</td>
-														<td class="column-3">4000</td>
-														<td class="column-4">아이디</td>
-														<td class="column-5">yes or no</td>
-													</tr>
 												</table>
 											</div>
 										</div>
