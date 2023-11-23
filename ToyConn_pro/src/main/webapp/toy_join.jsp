@@ -312,7 +312,7 @@
 
 
         <div class="container">
-            <form action="" name="newProduct" method="post" class="form-horizontal" enctype="multipart/form-data">
+            <form action="ProductService" name="newProduct" method="post" class="form-horizontal" enctype="multipart/form-data">
                 <div class="form-group row">
                     <label class="col-sm-2">이미지 등록</label>
                     <div class="col-sm-5">
