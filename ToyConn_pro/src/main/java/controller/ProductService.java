@@ -15,7 +15,7 @@ import model.ProductDAO;
 public class ProductService extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int p_num = Integer.parseInt( request.getParameter("p_num"));
+		
 		String category = request.getParameter("category");
 		String p_quality = request.getParameter("p_quality");
 		String gender = request.getParameter("gender");
@@ -28,7 +28,7 @@ public class ProductService extends HttpServlet {
 		System.out.println("Product description: " + p_content);
 		System.out.println("Rent price: " + rent_price);
 
-		Product vo = new Product(p_num, category, p_name, rent_price,p_quality,p_content,"대여가능","대여가능",gender, image_file);
+		Product vo = new Product(0, category, p_name, rent_price,p_quality,p_content,"대여가능","대여가능",gender, image_file);
 
 		int cnt = new ProductDAO().registerProduct(vo);
 		System.out.println("cnt : " + cnt);
