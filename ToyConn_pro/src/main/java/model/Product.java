@@ -11,18 +11,14 @@ public class Product {
 	String r_status = "대야가능";
 	private String gender;
 	private String image_file;
-	public Product(int p_num, String category, String p_name, int rent_price, String p_quality, String p_content,
-			String p_status, String r_status, String gender, String image_file) {
-		super();
-		this.p_num = p_num;
-		this.category = category;
+	public Product( String p_name, int rent_price, String p_content, String image_file) {
+		
+	
 		this.p_name = p_name;
 		this.rent_price = rent_price;
-		this.p_quality = p_quality;
+		
 		this.p_content = p_content;
-		this.p_status = p_status;
-		this.r_status = r_status;
-		this.gender = gender;
+	
 		this.image_file = image_file;
 	}
 	public int getP_num() {

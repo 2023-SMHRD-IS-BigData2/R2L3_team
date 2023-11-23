@@ -6,7 +6,7 @@
   <mapper namespace ="database.ProductMapper">
   <insert id="registerProduct" parameterType = "Product">
   
-  insert into PRODUCT_INFO values(num_product.nextval,#{category},#{p_name},#{rent_price},#{p_quality},#{p_content},"대여가능","대여가능",#{gender},#{image_file})
+  insert into PRODUCT_INFO (p_name, rent_price, p_content, image_file) values(#{p_name},#{rent_price},#{p_content}#{image_file})
   </insert>
  
   </mapper>

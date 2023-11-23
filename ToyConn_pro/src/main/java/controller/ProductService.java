@@ -28,7 +28,7 @@ public class ProductService extends HttpServlet {
 		System.out.println("Product description: " + p_content);
 		System.out.println("Rent price: " + rent_price);
 
-		Product vo = new Product(0, category, p_name, rent_price,p_quality,p_content,"대여가능","대여가능",gender, image_file);
+		Product vo = new Product( p_name, rent_price,p_content, image_file);
 
 		int cnt = new ProductDAO().registerProduct(vo);
 		System.out.println("cnt : " + cnt);
