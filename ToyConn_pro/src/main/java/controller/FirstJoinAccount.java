@@ -26,7 +26,12 @@ public class FirstJoinAccount extends HttpServlet {
 
 		String user_id = request.getParameter("user_id");
 		String nick = request.getParameter("nick");
+		
+		String sample6_postcode = request.getParameter("sample6_postcode");
 		String address = request.getParameter("address");
+		String sample6_detailAddress = request.getParameter("sample6_detailAddress");	
+		address = address + " " + sample6_detailAddress + " " + sample6_postcode;
+		
 		BigDecimal score = BigDecimal.ZERO; // BigDecimal타입의 0값
 
 		MemberInfo memberInfo = new MemberInfo(user_id, nick, address, score);
@@ -41,7 +46,7 @@ public class FirstJoinAccount extends HttpServlet {
 			System.out.println("FirstJoinAccount fail");
 		}
 
-		response.sendRedirect("Main.jsp");
+		response.sendRedirect("main.jsp");
 	}
 
 }
