@@ -17,23 +17,36 @@
 <link rel="stylesheet" type="text/css" href="css/util.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+<link rel="icon" type="image/png" href="images/icons/favicon.png">
+<!--===============================================================================================-->
 <!-- 필수 css -->
+<style type="text/css">
+#FirstJoinAccount {
+display: none;
+}
+.HiddenInfo {
+display: none;
+}
+</style>
 </head>
 <body>
-
-
+	<%
+	String user_id = (String) session.getAttribute("user_id");
+	String nick = (String) session.getAttribute("nick");
+	%>
 
 	<section class="container" style="margin-top: 5%;">
 		<div class="size-210 p-t-55 p-lr-15-lg" style="margin: 0 auto;">
 			<h4 class="mtext-105 cl2 txt-center p-b-30">회원가입</h4>
-			<form action="">
+			<form action="FirstJoinAccount" method="post">
 				<div class="form-group m-b-20 how-pos4-parent">
 					<label class="label" for="subject">
 					닉네임
 					</label> 
-					<input type="text"
+					<input type="text" class="HiddenInfo" name="user_id" value="<%= user_id %>" readonly="readonly">
+					<input type="text" id="basic_nickname"
 						class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-						name="nickname" placeholder="닉네임">
+						name="nick" placeholder="닉네임" value="<%= nick %>">
 				</div>
 				
 				<div class="form-group m-b-30 m-b-20 how-pos4-parent">
@@ -57,24 +70,43 @@
 							class="form-control stext-111 cl2 plh3 size-116 p-r-30"
 							id="sample6_extraAddress" placeholder="참고항목"
 							style="display: none;"> 
-						<input type="submit"
+						<input onclick=""
 							class="flex-c-m stext-101 cl0 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
 							value="지도에서 찾기">
 					</div>
 				</div>
+				<!-- <button onclick="AccountSubmit()" class="cl0 size-121 bg3 bor1">완료</button> -->
 				<input type="submit" value="완료" class="cl0 size-121 bg3 bor1">
 			</form>
 		</div>
 	</section>
 
-
+	<%-- <form action="FirstJoinAccount" method="post" id="FirstJoinAccount" class="HiddenInfo">
+		<input type="text" name="user_id" value="<%= user_id %>" readonly="readonly">
+		<input type="text" id="nick" name="nick" value="">
+		<input type="text" id="address" name="address" value="">
+	</form> --%>
 
 
 	<!-- 필수 js -->
 	<!-- --------------------------- -->
-	<script
-		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	</script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<!-- <script type="text/javascript">
+		function AccountSubmit() {
+			
+			let basic_address = document.querySelector("#sample6_address").value;
+			let detailAddress = document.querySelector("#sample6_detailAddress").value;
+			let postcode = document.querySelector("#sample6_postcode").value;
+			
+			let address = basic_address + " " + detailAddress + " " + postcode;
+			
+			document.querySelector("#nick").value = document.querySelector("#basic_nickname").value;
+			document.querySelector("#address").value = address;
+			
+			document.querySelector("#FirstJoinAccount").submit();
+		}
+	</script> -->
+	
 	<script>
 		function sample6_execDaumPostcode() {
 			new daum.Postcode(

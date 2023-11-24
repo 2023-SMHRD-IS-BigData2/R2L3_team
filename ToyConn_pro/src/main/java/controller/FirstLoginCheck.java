@@ -45,7 +45,7 @@ public class FirstLoginCheck extends HttpServlet {
 			session.setAttribute("user_id", user_id);
 			session.setAttribute("nick", nick);
 			
-			response.sendRedirect("join_member.jsp");
+			response.sendRedirect("JoinMember.jsp");
 		}
 
 	}
