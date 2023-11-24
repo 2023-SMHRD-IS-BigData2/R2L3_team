@@ -1,15 +1,10 @@
 package model;
 
 public class Product {
-	private int p_num;
-	 private String category;
+
+	 private String p_content;
 	 private String p_name;
 	 private String rent_price;
-	 private String p_quality;
-	private String p_content;
-	String p_status = "대여가능";
-	String r_status = "대야가능";
-	private String gender;
 	private String image_file;
 	public Product( String p_name, String rent_price, String p_content, String image_file) {
 		
@@ -21,17 +16,11 @@ public class Product {
 	
 		this.image_file = image_file;
 	}
-	public int getP_num() {
-		return p_num;
+	public String getP_content() {
+		return p_content;
 	}
-	public void setP_num(int p_num) {
-		this.p_num = p_num;
-	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
+	public void setP_content(String p_content) {
+		this.p_content = p_content;
 	}
 	public String getP_name() {
 		return p_name;
@@ -45,41 +34,12 @@ public class Product {
 	public void setRent_price(String rent_price) {
 		this.rent_price = rent_price;
 	}
-	public String getP_quality() {
-		return p_quality;
-	}
-	public void setP_quality(String p_quality) {
-		this.p_quality = p_quality;
-	}
-	public String getP_content() {
-		return p_content;
-	}
-	public void setP_content(String p_content) {
-		this.p_content = p_content;
-	}
-	public String getP_status() {
-		return p_status;
-	}
-	public void setP_status(String p_status) {
-		this.p_status = p_status;
-	}
-	public String getR_status() {
-		return r_status;
-	}
-	public void setR_status(String r_status) {
-		this.r_status = r_status;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
 	public String getImage_file() {
 		return image_file;
 	}
 	public void setImage_file(String image_file) {
 		this.image_file = image_file;
 	}
+	
 	
 }

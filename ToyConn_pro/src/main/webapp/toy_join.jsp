@@ -393,24 +393,24 @@
                                 </div>
 
                                 <ul>
-                                    <li class="p-b-6" name =" gender">
+                                    <li class="p-b-6" name ="gender">
                                         <a href="#" class="filter-link stext-106 trans-04 filter-link-active">
                                             여아완구
                                         </a>
                                     </li>
 
-                                    <li class="p-b-6" name =" gender">
+                                    <li class="p-b-6" name ="gender">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             남아완구
                                         </a>
                                     </li>
 
-                                    <li class="p-b-6" name =" gender">
+                                    <li class="p-b-6" name ="gender">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             영유아완구
                                         </a>
                                     </li>
-                                    <li class="p-b-6" name =" gender">
+                                    <li class="p-b-6" name ="gender">
                                         <a href="#" class="filter-link stext-106 trans-04">
                                             남여아완구
                                         </a>
