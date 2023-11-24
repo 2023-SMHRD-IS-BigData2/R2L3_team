@@ -67,8 +67,12 @@
 
 <body class="animsition">
 	<%
-	String id = "wkd123";//(String)session.getAttribute("id");
-	String address = new MemberInfoDAO().getAddress(id);
+	String user_id = (String)session.getAttribute("id");
+	String nick = null;
+	if(user_id == null){
+		user_id = "toy123";
+	}
+	String address = new MemberInfoDAO().getAddress(user_id);
 	session.setAttribute("address", address);
 	List<addressToyDTO> list = new ToyDAO().getAddressToys();
 
@@ -81,11 +85,9 @@
 
 	MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
 
-	String user_id = null;
-	String nick = null;
 	if (memberInfo != null) {
-		user_id = memberInfo.getUser_id();
 		nick = memberInfo.getNick();
+		session.setAttribute("id", memberInfo.getUser_id());
 	} else if (session.getAttribute("user_id") != null) {
 		user_id = (String) session.getAttribute("user_id");
 		nick = (String) session.getAttribute("nick");
