@@ -139,7 +139,7 @@
 							</li>
 
 							<li style="margin: 30px;"><a href="trade_list.jsp"
-								style="font-size: large; font-weight: 600;">장난감 등록</a>
+								style="font-size: large; font-weight: 600;">거래 목록</a>
 								<ul class="sub-menu">
 									<li><a href="#">내 장난감</a></li>
 									<li><a href="#">빌린 장난감</a></li>
@@ -148,7 +148,7 @@
 								style="font-size: large; font-weight: 600;">게시판</a></li>
 
 							<li><a href="toy_join.jsp"
-								style="font-size: large; font-weight: 600;">거래 목록</a></li>
+								style="font-size: large; font-weight: 600;">장난감 등록</a></li>
 						</ul>
 					</div>
 
@@ -166,9 +166,10 @@
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</div>
 
-						<a href="#"
+						<a href="message.jsp"
 							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
-							data-notify="0"> <i class="zmdi zmdi-favorite-outline"></i>
+							data-notify="1">
+							<img src="images/icons/말풍선 .png" alt="" style="height: 30px;">
 						</a>
 					</div>
 				</nav>
@@ -233,28 +234,28 @@
 				</li>
 			</ul>
 
-			<ul class="main-menu-m">
+			<ul class="main-menu-m" style = "background-color: #fff;">
 				<li style="margin: 30px;"><a href="main.jsp"
-					style="font-size: large; font-weight: 600;">메인</a></li>
+					style="font-size: large; font-weight: 600; color: black; ">메인</a></li>
 
 				<li style="margin: 30px;"><a href="toy_list.jsp"
-					style="font-size: large; font-weight: 600;">동네 장난감</a></li>
+					style="font-size: large; font-weight: 600; color: black;">동네 장난감</a></li>
 
 				<li class="label1" style="margin: 30px;" data-label1="hot"><a
-					href="premium.jsp" style="font-size: large; font-weight: 600;">프리미엄</a>
+					href="premium.jsp" style="font-size: large; font-weight: 600; color: black;">프리미엄</a>
 				</li>
 
 				<li style="margin: 30px;"><a href="trade_list.jsp"
-					style="font-size: large; font-weight: 600;">거래 목록</a>
+					style="font-size: large; font-weight: 600; color: black;">거래 목록</a>
 					<ul class="sub-menu">
 						<li><a href="#">내 장난감</a></li>
 						<li><a href="#">빌린 장난감</a></li>
 					</ul></li>
 
 				<li style="margin: 30px;"><a href="toy_join.jsp"
-					style="font-size: large; font-weight: 600;">장난감 등록</a></li>
+					style="font-size: large; font-weight: 600; color: black;">게시판</a></li>
 				<li style="margin: 30px;"><a href="toy_join.jsp"
-					style="font-size: large; font-weight: 600;">장난감 등록</a></li>
+					style="font-size: large; font-weight: 600; color: black;">장난감 등록</a></li>
 			</ul>
 		</div>
 
