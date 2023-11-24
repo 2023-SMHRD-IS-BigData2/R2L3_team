@@ -327,9 +327,9 @@
 			<div class="row">
 				<div class="col-md-6 col-lg-7 p-b-30">
 					<div class="p-l-25 p-r-30 p-lr-0-lg">
-						<div class="wrap-slick3 flex-sb flex-w">
+						<div class="wrap-slick3 flex-sb flex-w" style="float: right;">
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
-							<div class="slick3 gallery-lb">
+							<div class="gallery-lb" style="width: 400px;">
 								<div class="item-slick3">
 									<div class="wrap-pic-w pos-relative">
 										<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
