@@ -101,22 +101,17 @@
 					<div class="left-top-bar">More kids, More joy</div>
 
 					<div class="right-top-bar flex-w h-full">
-						
-						<% if (memberInfo == null) { %>
-						<!-- 로그아웃 상태 -->
-							<a href="#loginPage" onclick="kakaoLogin()"
-								class="flex-c-m trans-04 p-lr-25 js-show-modal1"
-								style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
-						<% } else { %>
+
 						<!-- 로그인 되면 출력 -->
-							<a href="#memberSet"
-								class="flex-c-m trans-04 p-lr-25 js-show-modal1"
-								style="font-size: small;"> 회원정보 수정 </a> <a href="#"
-								class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-								로그아웃 </a>					
-							<a class="flex-c-m trans-04 p-lr-25 js-show-modal1"
-								style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>	
-						<% } %>
+						<a href="CorrectionMember.jsp"
+							class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 회원정보 수정 </a> <a href="#"
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+							로그아웃 </a>
+						<!-- 로그아웃 상태 -->
+						<a href="#" onclick="kakaoLogin()"
+							class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
 					</div>
 				</div>
 			</div>
@@ -158,24 +153,23 @@
 					</div>
 
 					<!-- Icon header -->
-					<div class="wrap-icon-header flex-w flex-r-m m-r-15">
+					<div class="wrap-icon-header flex-w flex-r-m">
 						<div
-							class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
+						<!-- 상품 cart 개수 확인 -->
 						<div
 							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="7">
-							<!--<i class="zmdi zmdi-shopping-cart"></i>-->
-							<img src="images/icons/종종.png" alt="" style="height: 20px;">
-
+							<i class="zmdi zmdi-shopping-cart"></i>
 						</div>
 
 						<a href="message.jsp"
 							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
-							data-notify="1"> <img src="images/icons/말풍선 .png" alt=""
-							style="height: 20px;">
+							data-notify="1">
+							<img src="images/icons/말풍선 .png" alt="" style="height: 30px;">
 						</a>
 					</div>
 				</nav>
@@ -192,22 +186,21 @@
 
 			<!-- Icon header -->
 			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+				<div
+					class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
 					<i class="zmdi zmdi-search"></i>
 				</div>
 
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-							data-notify="7">
-						<!--<i class="zmdi zmdi-shopping-cart"></i>-->
-						<img src="images/icons/종종.png" alt="" style="height: 20px;">
+				<div
+					class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart"
+					data-notify="2">
+					<i class="zmdi zmdi-shopping-cart"></i>
+				</div>
 
-						</div>
-
-				<a href="message.jsp"
-							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
-							data-notify="1">
-							<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
-						</a>
+				<a href="#"
+					class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
+					data-notify="0"> <i class="zmdi zmdi-favorite-outline"></i>
+				</a>
 			</div>
 
 			<!-- Button show menu -->
@@ -228,30 +221,28 @@
 				<li>
 					<div class="right-top-bar flex-w h-full">
 						<!-- 로그인 되면 출력 -->
-						<a href="#memberSet"
-							class="flex-c-m trans-04 p-lr-25 js-show-modal1"
+						<a href="CorrectionMember.jsp"
+							class="flex-c-m trans-04 p-lr-25"
 							style="font-size: small;"> 회원정보 수정 </a> <a href="#"
 							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
 							로그아웃 </a>
 						<!-- 로그아웃 상태 -->
-						<a href="#loginPage"
-							class="flex-c-m trans-04 p-lr-25 js-show-modal1"
+						<a href="#" onclick="kakaoLogin()"
+							class="flex-c-m trans-04 p-lr-25"
 							style="font-size: small;"> 로그인 </a>
 					</div>
 				</li>
 			</ul>
 
-			<ul class="main-menu-m" style="background-color: #fff;">
+			<ul class="main-menu-m" style = "background-color: #fff;">
 				<li style="margin: 30px;"><a href="main.jsp"
-					style="font-size: large; font-weight: 600; color: black;">메인</a></li>
+					style="font-size: large; font-weight: 600; color: black; ">메인</a></li>
 
 				<li style="margin: 30px;"><a href="toy_list.jsp"
-					style="font-size: large; font-weight: 600; color: black;">동네
-						장난감</a></li>
+					style="font-size: large; font-weight: 600; color: black;">동네 장난감</a></li>
 
 				<li class="label1" style="margin: 30px;" data-label1="hot"><a
-					href="premium.jsp"
-					style="font-size: large; font-weight: 600; color: black;">프리미엄</a>
+					href="premium.jsp" style="font-size: large; font-weight: 600; color: black;">프리미엄</a>
 				</li>
 
 				<li style="margin: 30px;"><a href="trade_list.jsp"
@@ -261,11 +252,10 @@
 						<li><a href="#">빌린 장난감</a></li>
 					</ul></li>
 
-				<li style="margin: 30px;"><a href="board_list.jsp"
+				<li style="margin: 30px;"><a href="toy_join.jsp"
 					style="font-size: large; font-weight: 600; color: black;">게시판</a></li>
 				<li style="margin: 30px;"><a href="toy_join.jsp"
-					style="font-size: large; font-weight: 600; color: black;">장난감
-						등록</a></li>
+					style="font-size: large; font-weight: 600; color: black;">장난감 등록</a></li>
 			</ul>
 		</div>
 
@@ -480,110 +470,7 @@
 		</span>
 	</div>
 
-	<!-- Modal1 : 회원정보 수정(로그인 했을 때)-->
-	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20" id="memberSet">
-		<div class="overlay-modal1 js-hide-modal1"></div>
-
-		<div class="container">
-			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent flex-w">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
-					<img src="images/icons/icon-close.png" alt="CLOSE">
-				</button>
-				<div class="size-210 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-					<form>
-						<h4 class="mtext-105 cl2 txt-center p-b-30">회원정보 수정</h4>
-						<div class="form-group m-b-20 how-pos4-parent">
-							<label class="label" for="subject">닉네임</label> <input type="text"
-								class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-								name="nickname" placeholder="닉네임">
-						</div>
-						<div class="form-group m-b-30 m-b-20 how-pos4-parent">
-							<label class="label" for="#">주소 입력</label>
-							<div class="form-control stext-111 cl2 plh3 size-120 p-tb-25">
-								<input type="text"
-									class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-									id="sample6_postcode" placeholder="우편번호"> <input
-									type="button"
-									class="flex-c-m stext-101 cl0 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
-									onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-								<input type="text"
-									class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-									name="address" id="sample6_address" placeholder="주소"> <input
-									type="text"
-									class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-									id="sample6_detailAddress" placeholder="상세주소"> <input
-									type="text"
-									class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-									id="sample6_extraAddress" placeholder="참고항목"
-									style="display: none;"> <input type="submit"
-									class="flex-c-m stext-101 cl0 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
-									value="지도에서 찾기">
-							</div>
-						</div>
-						<button
-							class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-							완료</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Modal1 : 회원가입 -->
-	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20" id="loginPage">
-		<div class="overlay-modal1 js-hide-modal1"></div>
-
-		<div class="container">
-			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent flex-w">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
-					<img src="images/icons/icon-close.png" alt="CLOSE">
-				</button>
-				<div class="size-210 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-					<form>
-						<h4 class="mtext-105 cl2 txt-center p-b-30">회원가입</h4>
-
-						<div class="form-group m-b-20 how-pos4-parent">
-							<label class="label" for="subject">닉네임</label> <input type="text"
-								class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-								name="nickname" placeholder="닉네임">
-						</div>
-
-
-						<div class="form-group m-b-30 m-b-20 how-pos4-parent">
-							<label class="label" for="#">주소 입력</label>
-							<div class="form-control stext-111 cl2 plh3 size-120 p-tb-25">
-								<input type="text"
-									class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-									id="sample6_postcode" placeholder="우편번호"> <input
-									type="button"
-									class="flex-c-m stext-101 cl0 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
-									onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-
-								<input type="text"
-									class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-									name="address" id="sample6_address" placeholder="주소"> <input
-									type="text"
-									class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-									id="sample6_detailAddress" placeholder="상세주소"> <input
-									type="text"
-									class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-									id="sample6_extraAddress" placeholder="참고항목"
-									style="display: none;"> <input type="submit"
-									class="flex-c-m stext-101 cl0 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
-									value="지도에서 찾기">
-							</div>
-
-						</div>
-
-						<button
-							class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-							완료</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	<!-- 카카오 로그인 API -->
 	<form action="FirstLoginCheck" method="post" id="FirstLoginCheck">
 		<input type="text" id="userID" name="user_id" readonly="readonly">
 		<input type="text" id="userNick" name="nick" readonly="readonly">
