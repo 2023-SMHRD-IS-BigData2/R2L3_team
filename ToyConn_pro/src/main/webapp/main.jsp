@@ -1,3 +1,4 @@
+<%@page import="model.MemberInfo"%>
 <%@page import="model.ToyDAO"%>
 <%@page import="model.addressToyDTO"%>
 <%@page import="java.util.List"%>
@@ -51,6 +52,17 @@
 <link rel="stylesheet" type="text/css" href="css/util.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+<style type="text/css">
+#FirstLoginCheck {
+display: none;
+}
+</style>
+<!--===============================================================================================-->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+	Kakao.init('884fc5c900adbd0a43cf5178eee68d38'); // 카카오 키
+	console.log(Kakao.isInitialized()); // SDK 초기화 (boolean)
+</script>
 </head>
 
 <body class="animsition">
@@ -65,6 +77,18 @@
 		result = address.substring(0, 12);
 	}else{ //동까지
 		result = address.substring(0, 9);
+	}
+	
+	MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
+	
+	String user_id = null;
+	String nick = null;
+	if (memberInfo != null) {
+		user_id = memberInfo.getUser_id();
+		nick = memberInfo.getNick();
+	} else if (session.getAttribute("user_id") != null) {
+		user_id = (String) session.getAttribute("user_id");
+		nick = (String) session.getAttribute("nick");
 	}
 
 %>
@@ -86,9 +110,9 @@
 							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
 							로그아웃 </a>
 						<!-- 로그아웃 상태 -->
-						<a href="#loginPage"
+						<a href="#loginPage" onclick="kakaoLogin()"
 							class="flex-c-m trans-04 p-lr-25 js-show-modal1"
-							style="font-size: small;"> 로그인 </a>
+							style="font-size: small;"><%= memberInfo != null ? nick : "로그인" %></a>
 					</div>
 				</div>
 			</div>
@@ -484,7 +508,7 @@
 	<!-- Modal1 : 회원가입 -->
 	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20" id="loginPage">
 		<div class="overlay-modal1 js-hide-modal1"></div>
-
+		
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent flex-w">
 				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
@@ -535,6 +559,11 @@
 			</div>
 		</div>
 	</div>
+	
+	<form action="FirstLoginCheck" method="post" id="FirstLoginCheck">
+		<input type="text" id="userID" name="user_id" readonly="readonly">
+		<input type="text" id="userNick" name="nick" readonly="readonly">
+	</form>
 
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -641,8 +670,33 @@
 		});
 	</script>
 	<!--===============================================================================================-->
+	<script type="text/javascript">
+		function kakaoLogin() {
+	        Kakao.Auth.login({
+	            success : function(response) {
+	                Kakao.API.request({
+	                    url : '/v2/user/me',
+	                    success : function(response) {
+	                        console.log(response);
+	                        KakaoToken = response;
+	                        document.querySelector("#userID").value = KakaoToken.id;
+	                        document.querySelector("#userNick").value = KakaoToken.properties.nickname;
+	                        document.querySelector("#FirstLoginCheck").submit();
+	                        },
+	                    fail : function(error) {
+	                        console.log(error);
+	                    }
+	                })
+	            },
+	            fail : function(error) {
+	                console.log(error);
+	            }
+	        })
+	    }
+	</script>
+	
 	<script src="js/main.js"></script>
-
+	<!--===============================================================================================-->
 </body>
 
 </html>

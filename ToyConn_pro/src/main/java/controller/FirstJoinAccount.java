@@ -27,7 +27,7 @@ public class FirstJoinAccount extends HttpServlet {
 		String user_id = request.getParameter("user_id");
 		String nick = request.getParameter("nick");
 		String address = request.getParameter("address");
-		BigDecimal score = new BigDecimal(request.getParameter("score"));
+		BigDecimal score = BigDecimal.ZERO; // BigDecimal타입의 0값
 
 		MemberInfo memberInfo = new MemberInfo(user_id, nick, address, score);
 

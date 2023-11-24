@@ -36,7 +36,7 @@ public class FirstLoginCheck extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("memberInfo", row);
 
-			response.sendRedirect("Main.jsp");
+			response.sendRedirect("main.jsp");
 
 		} else {
 			System.out.println("Not in");
@@ -44,8 +44,8 @@ public class FirstLoginCheck extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("user_id", user_id);
 			session.setAttribute("nick", nick);
-
-			response.sendRedirect("JoinAccount.jsp");
+			
+			response.sendRedirect("join_member.jsp");
 		}
 
 	}
