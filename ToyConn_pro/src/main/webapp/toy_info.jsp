@@ -361,7 +361,7 @@
 
 						<br> <a href="#" class="js-show-modal1"> <img
 							src="images/kakaomap.jpg" alt="IMG-LOGO"
-							style="border-radius: 20%; width: 50px;"> 위치를 확인하려면 여기를 클릭
+							style="border-radius: 20%; width: 50px;"> 위치 확인
 						</a> <br>
 						<br>
 						<button
