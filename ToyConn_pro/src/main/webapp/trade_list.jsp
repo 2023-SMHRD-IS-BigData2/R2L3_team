@@ -56,7 +56,7 @@
 </head>
 
 <body class="animsition">
-<% String id = "test4";//(String)session.getAttribute("id");
+<% String id =(String)session.getAttribute("id");//(String)session.getAttribute("id");
 	List<ToyDTO> list = new ToyDAO().getToyInfo(id);
 	List<payCheckDTO> pclist = new payCheckDAO().getPayCheck(id);
 	List<lenderPayCheckDTO> lendPcList = new payCheckDAO().getLendPayCheck(id);

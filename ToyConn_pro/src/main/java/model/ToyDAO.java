@@ -73,6 +73,16 @@ public class ToyDAO {
 		}
 		return cnt;
 	}
-	
+	public String getToyAddress(int p_num) {
+		String address = "";
+		try {
+			address = sqlSession.selectOne("getToyAddress", p_num);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			sqlSession.close();
+		}
+		return address;
+	}
 	
 }

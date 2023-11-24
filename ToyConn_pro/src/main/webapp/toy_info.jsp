@@ -1,3 +1,6 @@
+<%@page import="model.ToyDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="model.ToyDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -51,7 +54,11 @@
 </head>
 
 <body class="animsition">
-
+<%
+	int p_num = Integer.parseInt(request.getParameter("p_num")); 
+	ToyDTO toy = new ToyDAO().getToyInfo(p_num);
+	String address = new ToyDAO().getToyAddress(p_num);
+%>
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
@@ -333,11 +340,11 @@
 							<div class="gallery-lb" style="width: 400px;">
 								<div class="item-slick3">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+										<img src="images/crolling/<%=toy.getImage_file()%>" alt="<%=toy.getP_name()%>">
 
 										<a
 											class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-											href="images/product-detail-01.jpg"> <i
+											href="images/crolling/<%=toy.getImage_file()%>"> <i
 											class="fa fa-expand"></i>
 										</a>
 									</div>
@@ -350,15 +357,12 @@
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
 						<!-- 상품명 -->
-						<h4 class="mtext-105 cl2 js-name-detail p-b-14">Lightweight
-							Jacket</h4>
+						<h4 class="mtext-105 cl2 js-name-detail p-b-14"><%=toy.getP_name()%></h4>
 						<!-- 가격 -->
-						<span class="mtext-106 cl2"> $58.79 </span>
+						<span class="mtext-106 cl2"> 1일 <%=toy.getRent_price()%>원 </span>
 
 						<!-- 상품 설명 -->
-						<p class="stext-102 cl3 p-t-23">Nulla eget sem vitae eros
-							pharetra viverra. Nam vitae luctus ligula. Mauris consequat
-							ornare feugiat.</p>
+						<p class="stext-102 cl3 p-t-23"><%=toy.getP_contenct()%></p>
 
 						<br> <a href="#" class="js-show-modal1"> <img
 							src="images/kakaomap.jpg" alt="IMG-LOGO"
@@ -609,7 +613,7 @@
 
 					<!-- Map -->
 					<div class="map">
-						<div class="size-303" id="google_map" data-map-x="40.691446"
+						<div class="size-303" id="map" data-map-x="40.691446"
 							data-map-y="-73.886787" data-pin="images/icons/pin.png"
 							data-scrollwhell="0" data-draggable="1" data-zoom="11"
 							style="height: 800px;"></div>
@@ -725,8 +729,46 @@
 		});
 	</script>
 	<!--===============================================================================================-->
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c4761ef1bd1bad042ac92bb3429a6cd9&libraries=services"></script>
+	
+	<script>
+	console.log(<%=address%>);
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	mapOption = {
+	    center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+	    level: 3 // 지도의 확대 레벨
+	};  
+
+	//지도를 생성합니다    
+	var map = new kakao.maps.Map(mapContainer, mapOption); 
+	
+	//주소-좌표 변환 객체를 생성합니다
+	var geocoder = new kakao.maps.services.Geocoder();
+
+	// 주소로 좌표를 검색합니다
+	geocoder.addressSearch('<%=address%>',
+							function(result, status) {
+
+								// 정상적으로 검색이 완료됐으면 
+								if (status === kakao.maps.services.Status.OK) {
+
+									var coords = new kakao.maps.LatLng(result[0].y,
+											result[0].x);
+
+									// 결과값으로 받은 위치를 마커로 표시합니다
+									var marker = new kakao.maps.Marker({
+										map : map,
+										position : coords
+									});
+
+								
+
+									// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+									map.setCenter(coords);
+								}
+							});
+	</script>
 	<script src="js/map-custom.js"></script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
