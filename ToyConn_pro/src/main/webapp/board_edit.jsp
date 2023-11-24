@@ -56,14 +56,14 @@
                     <div class="right-top-bar flex-w h-full">
 
                         <!-- 로그인 되면 출력 -->
-                        <a href="#memberSet" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
+                        <a href="CorrectionMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
                             회원정보 수정
                         </a>
                         <a href="#" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
                             로그아웃
                         </a>
                         <!-- 로그아웃 상태 -->
-                        <a href="#loginPage" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
+                        <a href="JoinMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
                             로그인
                         </a>
                     </div>
@@ -177,14 +177,14 @@
                 <li>
                     <div class="right-top-bar flex-w h-full">
                         <!-- 로그인 되면 출력 -->
-                        <a href="#memberSet" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
+                        <a href="CorrectionMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
                             회원정보 수정
                         </a>
                         <a href="#" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
                             로그아웃
                         </a>
                         <!-- 로그아웃 상태 -->
-                        <a href="#loginPage" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
+                        <a href="JoinMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
                             로그인
                         </a>
                     </div>
