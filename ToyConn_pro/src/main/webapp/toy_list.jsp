@@ -46,7 +46,7 @@
 
 <body class="animsition">
 <%
-	String id = "wkd123";//(String)session.getAttribute("id");
+	String id = (String)session.getAttribute("id");//(String)session.getAttribute("id");
 	String address = new MemberInfoDAO().getAddress(id);
 	session.setAttribute("address", address);
 	List<addressToyDTO> list = new ToyDAO().getAddressToys();

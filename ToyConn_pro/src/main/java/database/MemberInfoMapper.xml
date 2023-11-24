@@ -47,4 +47,10 @@ where a.p_num=b.p_num(+) and lender_id=#{lender_id}
 	<insert id="setBoard" parameterType="model.setBoardDTO">
 		insert into board values (BOARD_NUM.NEXTVAL, #{user_id}, #{title}, #{text_content}, #{anonymous}, sysdate)
 	</insert>
+	<select id="getToyAddress" parameterType="int" resultType="String">
+		select b.address from product_info a, member_info b where a.user_id=b.user_id and a.p_num=#{p_num}
+	</select>
+	<select id="getToy" resultType="model.ToyDTO" parameterType="int">
+		select * from product_info where p_num=#{p_num}
+	</select>
  </mapper>
