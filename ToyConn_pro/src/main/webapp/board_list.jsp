@@ -1,3 +1,7 @@
+<%@page import="java.util.Arrays"%>
+<%@page import="model.boardDAO"%>
+<%@page import="model.boardDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -41,7 +45,9 @@
 </head>
 
 <body class="animsition">
-
+<%
+List<boardDTO> list = new boardDAO().getBoardList();
+%>
     <!-- Header -->
     <header class="header-v4">
         <!-- Header desktop -->
@@ -324,43 +330,20 @@
                     <div class="title">제목</div>
                     <div class="writer">글쓴이</div>
                     <div class="date">작성일</div>
-                    <div class="count">조회</div>
                 </div>
+                <%for(int i=list.size()-1; i>=0; i--){ %>
                 <div>
-                    <div class="num">5</div>
-                    <div class="title"><a href="board_view.jsp">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2023.11.23</div>
-                    <div class="count">33</div>
+                    <div class="num"><%=list.get(i).getBoard_num()%></div>
+                    <div class="title"><a href="board_view.jsp?board_num=<%=list.get(i).getBoard_num()%>"><%=list.get(i).getTitle()%></a></div>
+                    <%if(list.get(i).getAnonymous().equals("N")){ %>
+                    <div class="writer"><%=list.get(i).getUser_id() %></div>
+                    <%}else{%>
+                    <div class="writer">익명</div>
+                    <%}%>
+                    <div class="date"><%=list.get(i).getWrite_date().substring(0, 11)%></div>
+                    
                 </div>
-                <div>
-                    <div class="num">4</div>
-                    <div class="title"><a href="board_view.jsp">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">박이름</div>
-                    <div class="date">2023.11.23</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">3</div>
-                    <div class="title"><a href="board_view.jsp">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">노이름</div>
-                    <div class="date">2023.11.23</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">2</div>
-                    <div class="title"><a href="board_view.jsp">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">주이름</div>
-                    <div class="date">2023.11.23</div>
-                    <div class="count">33</div>
-                </div>
-                <div>
-                    <div class="num">1</div>
-                    <div class="title"><a href="board_view.jsp">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">장이름</div>
-                    <div class="date">2023.11.23</div>
-                    <div class="count">33</div>
-                </div>
+                <%}%>
             </div>
             <div class="board_page">
                 <a href="#" class="bt first"><<</a>

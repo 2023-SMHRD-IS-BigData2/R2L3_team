@@ -312,37 +312,39 @@
             </div>
         </div>
     </div>
+    
     <div class="board_wrap">
         <div class="board_title">
             <strong>게시판</strong>
             <p>문의 사항을 적어주세요.</p>
         </div>
         <div class="board_write_wrap">
+        <form action="setBoardService">
             <div class="board_write">
                 <div class="title">
+                
                     <dl>
                         <dt>제목</dt>
-                        <dd><input type="text" placeholder="제목 입력"></dd>
+                        <dd><input type="text" name="title" placeholder="제목 입력"></dd>
                     </dl>
                 </div>
                 <div class="info">
                     <dl>
-                        <dt>글쓴이</dt>
-                        <dd><input type="text" placeholder="글쓴이 입력"></dd>
+                        <dd>익명O<input type="radio" name="anonymous" value="Y"> 익명x<input type="radio" name="anonymous" value="N"></dd>
                     </dl>
-                    <dl>
-                        <dt>비밀번호</dt>
-                        <dd><input type="password" placeholder="비밀번호 입력"></dd>
-                    </dl>
+                    
                 </div>
                 <div class="cont">
-                    <textarea placeholder="내용 입력"></textarea>
+                    <textarea placeholder="내용 입력" name="text_content"></textarea>
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="board_view.jsp" class="on">등록</a>
-                <a href="board_list.jsp">취소</a>
+            	<div style="display:inline-block; border: solid 1px black; margin-bottom: 5px;">
+                <input type="submit" class="on" style="width: 78px; height: 41px;">
+                </div>
+                <a href="board_list.jsp" >취소</a>
             </div>
+            </form>
         </div>
     </div>
     <!-- Footer -->

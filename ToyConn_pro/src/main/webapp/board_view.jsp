@@ -1,3 +1,5 @@
+<%@page import="model.boardDTO"%>
+<%@page import="model.boardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -41,7 +43,9 @@
 </head>
 
 <body class="animsition">
-
+<% int board_num = Integer.parseInt(request.getParameter("board_num"));
+	boardDTO vo = new boardDAO().getThisBoard(board_num);
+%>
     <!-- Header -->
     <header class="header-v4">
         <!-- Header desktop -->
@@ -320,40 +324,29 @@
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
-                    글 제목이 들어갑니다.
+                    <%=vo.getTitle()%>
                 </div>
                 <div class="info">
                     <dl>
                         <dt>번호</dt>
-                        <dd>1</dd>
+                        <dd> <%=vo.getBoard_num()%></dd>
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
-                        <dd>김이름</dd>
+                        <dd> <%=vo.getUser_id()%></dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dd>2023.11.23</dd>
-                    </dl>
-                    <dl>
-                        <dt>조회</dt>
-                        <dd>33</dd>
+                        <dd> <%=vo.getWrite_date().substring(0, 11)%></dd>
                     </dl>
                 </div>
                 <div class="cont">
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다
+                    <%=vo.getText_content() %>
                 </div>
             </div>
             <div class="bt_wrap">
                 <a href="board_list.jsp" class="on">목록</a>
-                <a href="board_edit.jsp">수정</a>
+                <a href="board_edit.jsp?board_num=<%=vo.getBoard_num()%>">수정</a>
             </div>
         </div>
     </div>

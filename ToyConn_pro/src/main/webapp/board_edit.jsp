@@ -1,3 +1,5 @@
+<%@page import="model.boardDAO"%>
+<%@page import="model.boardDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -41,7 +43,9 @@
 </head>
 
 <body class="animsition">
-
+<% int board_num = Integer.parseInt(request.getParameter("board_num"));
+	boardDTO vo = new boardDAO().getThisBoard(board_num);
+%>
     <!-- Header -->
     <header class="header-v4">
         <!-- Header desktop -->
@@ -56,14 +60,14 @@
                     <div class="right-top-bar flex-w h-full">
 
                         <!-- 로그인 되면 출력 -->
-                        <a href="CorrectionMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                        <a href="#memberSet" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
                             회원정보 수정
                         </a>
                         <a href="#" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
                             로그아웃
                         </a>
                         <!-- 로그아웃 상태 -->
-                        <a href="JoinMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                        <a href="#loginPage" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
                             로그인
                         </a>
                     </div>
@@ -177,14 +181,14 @@
                 <li>
                     <div class="right-top-bar flex-w h-full">
                         <!-- 로그인 되면 출력 -->
-                        <a href="CorrectionMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                        <a href="#memberSet" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
                             회원정보 수정
                         </a>
                         <a href="#" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
                             로그아웃
                         </a>
                         <!-- 로그아웃 상태 -->
-                        <a href="JoinMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                        <a href="#loginPage" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
                             로그인
                         </a>
                     </div>
@@ -312,7 +316,7 @@
             </div>
         </div>
     </div>
-
+	<form action="updateBoardservice">
     <div class="board_wrap">
         <div class="board_title">
             <strong>게시판</strong>
@@ -323,36 +327,22 @@
                 <div class="title">
                     <dl>
                         <dt>제목</dt>
-                        <dd><input type="text" placeholder="제목 입력" value="글 제목이 들어갑니다"></dd>
+                        <dd><input type="text" name="title" placeholder="제목 입력" value="<%=vo.getTitle()%>"></dd>
                     </dl>
                 </div>
                 <div class="info">
-                    <dl>
-                        <dt>글쓴이</dt>
-                        <dd><input type="text" placeholder="글쓴이 입력" value="김이름"></dd>
-                    </dl>
-                    <dl>
-                        <dt>비밀번호</dt>
-                        <dd><input type="password" placeholder="비밀번호 입력" value="1234"></dd>
-                    </dl>
+                    
                 </div>
                 <div class="cont">
-                    <textarea placeholder="내용 입력">
-                글 내용이 들어갑니다.
-                글 내용이 들어갑니다.
-                글 내용이 들어갑니다.
-                글 내용이 들어갑니다.
-                글 내용이 들어갑니다.
-                글 내용이 들어갑니다.
-                글 내용이 들어갑니다.
-                글 내용이 들어갑니다.
-                    </textarea>
+                    <textarea placeholder="내용 입력" name="text_content"><%=vo.getText_content() %></textarea>
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="board_view.jsp" class="on">수정</a>
-                <a href="board_view.jsp">취소</a>
+                <input type='hidden' name='board_num' value="<%=vo.getBoard_num()%>">
+                <div style="display: inline-block; border: solid 1px;"><input type='submit' value="수정완료" style="color:white; width: 80px; height: 50px;" value="수정"></div>
+            
             </div>
+            </form>
         </div>
     </div>
 

@@ -35,4 +35,16 @@ where member_info.user_id = product_info.user_id
 from paycheck a, product_info b
 where a.p_num=b.p_num(+) and lender_id=#{lender_id}
 	</select>
+			<select id="getBoardList" resultType="model.boardDTO">
+		select * from board
+	</select>
+	<select id="getThisBoard" resultType="model.boardDTO" parameterType="int">
+		select * from board where board_num=#{board_num}
+	</select>
+	<update id="updateBoard" parameterType="model.updateBoardDTO">
+		update board set title=#{title}, text_content=#{text_content} where board_num=#{board_num}
+	</update>
+	<insert id="setBoard" parameterType="model.setBoardDTO">
+		insert into board values (BOARD_NUM.NEXTVAL, #{user_id}, #{title}, #{text_content}, #{anonymous}, sysdate)
+	</insert>
  </mapper>
