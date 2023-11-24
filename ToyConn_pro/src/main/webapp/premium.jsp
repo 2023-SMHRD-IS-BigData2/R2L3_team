@@ -86,213 +86,240 @@
 						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
 					</a>
 
-					<!-- Menu desktop -->
-					<div class="menu-desktop">
-						<ul class="main-menu">
-							<li style="margin: 40px;">
-								<a href="main.jsp" style="font-size: large;font-weight: 600;">메인</a>
-							</li>
+<!-- Menu desktop -->
+                    <div class="menu-desktop">
+                        <ul class="main-menu">
+                            <li style="margin: 30px;">
+                                <a href="main.jsp" style="font-size: large;font-weight: 600;">메인</a>
+                            </li>
 
-							<li style="margin: 40px;">
-								<a href="toy_list.jsp" style="font-size: large;font-weight: 600;">동네 장난감</a>
-							</li>
+                            <li style="margin: 30px;">
+                                <a href="toy_list.jsp" style="font-size: large;font-weight: 600;">동네 장난감</a>
+                            </li>
 
-							<li class="label1" style="margin: 40px;" data-label1="hot">
-								<a href="premium.jsp" style="font-size: large;font-weight: 600;">프리미엄</a>
-							</li>
+                            <li class="label1" style="margin: 40px;" data-label1="hot">
+                                <a href="premium.jsp" style="font-size: large;font-weight: 600;">프리미엄</a>
+                            </li>
 
-							<li style="margin: 40px;">
-								<a href="trade_list.jsp" style="font-size: large;font-weight: 600;">거래 목록</a>
-								<ul class="sub-menu">
-									<li><a href="#">내 장난감</a></li>
-									<li><a href="#">빌린 장난감</a></li>
-								</ul>
-							</li>
+                            <li style="margin: 30px;">
+                                <a href="trade_list.jsp" style="font-size: large;font-weight: 600;">장난감 등록</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">내 장난감</a></li>
+                                    <li><a href="#">빌린 장난감</a></li>
+                                </ul>
+                            </li>
+                            <li style="margin: 30px;">
+                                <a href="board_list.jsp" style="font-size: large;font-weight: 600;">게시판</a>
+                            </li>
 
-							<li>
-								<a href="toy_join.jsp" style="font-size: large;font-weight: 600;">장난감 등록</a>
-							</li>
-						</ul>
-					</div>
+                            <li>
+                                <a href="toy_join.jsp" style="font-size: large;font-weight: 600;">거래 목록</a>
+                            </li>
+                        </ul>
+                    </div>
 
-					<!-- Icon header -->
-					<div class="wrap-icon-header flex-w flex-r-m">
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-							<i class="zmdi zmdi-search"></i>
-						</div>
+                    <!-- Icon header -->
+                    <div class="wrap-icon-header flex-w flex-r-m">
+                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+                            <i class="zmdi zmdi-search"></i>
+                        </div>
 
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-							data-notify="2">
-							<i class="zmdi zmdi-shopping-cart"></i>
-						</div>
+                        <!-- 상품 cart 개수 확인 -->
+                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+                            data-notify="7">
+                            <i class="zmdi zmdi-shopping-cart"></i>
+                        </div>
 
-						<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
-							data-notify="0">
-							<i class="zmdi zmdi-favorite-outline"></i>
-						</a>
-					</div>
-				</nav>
-			</div>
-		</div>
+                        <a href="#"
+                            class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
+                            data-notify="0">
+                            <i class="zmdi zmdi-favorite-outline"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
 
-		<!-- Header Mobile -->
-		<div class="wrap-header-mobile">
-			<!-- Logo moblie -->
-			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
-			</div>
+        <!-- Header Mobile -->
+        <div class="wrap-header-mobile">
+            <!-- Logo moblie -->
+            <div class="logo-mobile">
+                <a href="main.jsp"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+            </div>
 
-			<!-- Icon header -->
-			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-					<i class="zmdi zmdi-search"></i>
-				</div>
+            <!-- Icon header -->
+            <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+                <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+                    <i class="zmdi zmdi-search"></i>
+                </div>
 
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart"
-					data-notify="2">
-					<i class="zmdi zmdi-shopping-cart"></i>
-				</div>
+                <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart"
+                    data-notify="2">
+                    <i class="zmdi zmdi-shopping-cart"></i>
+                </div>
 
-				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
-					data-notify="0">
-					<i class="zmdi zmdi-favorite-outline"></i>
-				</a>
-			</div>
+                <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
+                    data-notify="0">
+                    <i class="zmdi zmdi-favorite-outline"></i>
+                </a>
+            </div>
 
-			<!-- Button show menu -->
-			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
-			</div>
-		</div>
+            <!-- Button show menu -->
+            <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </div>
+        </div>
 
 
-		<!-- Menu Mobile -->
-		<div class="menu-mobile">
-			<ul class="topbar-mobile">
-				<li>
-					<div class="left-top-bar">
-						More kids, More joy
-					</div>
-				</li>
+        <!-- Menu Mobile -->
+        <div class="menu-mobile">
+            <ul class="topbar-mobile">
+                <li>
+                    <div class="left-top-bar">
+                        More kids, More joy
+                    </div>
+                </li>
 
-				<li>
-					<div class="right-top-bar flex-w h-full">
-						<!-- 로그인 되면 출력 -->
-						<a href="#memberSet" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
-							회원정보 수정
-						</a>
-						<a href="#" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-							로그아웃
-						</a>
-						<!-- 로그아웃 상태 -->
-						<a href="#loginPage" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
-							로그인
-						</a>
-					</div>
-				</li>
-			</ul>
+                <li>
+                    <div class="right-top-bar flex-w h-full">
+                        <!-- 로그인 되면 출력 -->
+                        <a href="#memberSet" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
+                            회원정보 수정
+                        </a>
+                        <a href="#" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                            로그아웃
+                        </a>
+                        <!-- 로그아웃 상태 -->
+                        <a href="#loginPage" class="flex-c-m trans-04 p-lr-25 js-show-modal1" style="font-size: small;">
+                            로그인
+                        </a>
+                    </div>
+                </li>
+            </ul>
 
-			<ul class="main-menu-m">
-				<li style="margin: 40px;">
-					<a href="main.jsp" style="font-size: large;font-weight: 600;">메인</a>
-				</li>
+            <ul class="main-menu-m">
+                <li style="margin: 30px;">
+                    <a href="main.jsp" style="font-size: large;font-weight: 600;">메인</a>
+                </li>
 
-				<li style="margin: 40px;">
-					<a href="toy_list.jsp" style="font-size: large;font-weight: 600;">동네 장난감</a>
-				</li>
+                <li style="margin: 30px;">
+                    <a href="toy_list.jsp" style="font-size: large;font-weight: 600;">동네 장난감</a>
+                </li>
 
-				<li class="label1" style="margin: 40px;" data-label1="hot">
-					<a href="premium.jsp" style="font-size: large;font-weight: 600;">프리미엄</a>
-				</li>
+                <li class="label1" style="margin: 30px;" data-label1="hot">
+                    <a href="premium.jsp" style="font-size: large;font-weight: 600;">프리미엄</a>
+                </li>
 
-				<li style="margin: 40px;">
-					<a href="trade_list.jsp" style="font-size: large;font-weight: 600;">거래 목록</a>
-					<ul class="sub-menu">
-						<li><a href="#">내 장난감</a></li>
-						<li><a href="#">빌린 장난감</a></li>
-					</ul>
-				</li>
+                <li style="margin: 30px;">
+                    <a href="trade_list.jsp" style="font-size: large;font-weight: 600;">거래 목록</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">내 장난감</a></li>
+                        <li><a href="#">빌린 장난감</a></li>
+                    </ul>
+                </li>
 
-				<li>
-					<a href="toy_join.jsp" style="font-size: large;font-weight: 600;">장난감 등록</a>
-				</li>
-			</ul>
-		</div>
+                <li style="margin: 30px;">
+                    <a href="toy_join.jsp" style="font-size: large;font-weight: 600;">장난감 등록</a>
+                </li>
+                <li style="margin: 30px;">
+                    <a href="toy_join.jsp" style="font-size: large;font-weight: 600;">장난감 등록</a>
+                </li>
+            </ul>
+        </div>
 
-		<!-- Modal Search -->
-		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-			<div class="container-search-header">
-				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
-				</button>
+        <!-- Modal Search -->
+        <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+            <div class="container-search-header">
+                <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+                    <img src="images/icons/icon-close2.png" alt="CLOSE">
+                </button>
 
-				<form class="wrap-search-header flex-w p-l-15">
-					<button class="flex-c-m trans-04">
-						<i class="zmdi zmdi-search"></i>
-					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
-				</form>
-			</div>
-		</div>
-	</header>
+                <!-- 검색 기능 -->
+                <form action="#" class="wrap-search-header flex-w p-l-15">
+                    <button class="flex-c-m trans-04">
+                        <i class="zmdi zmdi-search"></i>
+                    </button>
+                    <input class="plh3" type="text" name="search" placeholder="Search...">
+                </form>
+            </div>
+        </div>
+    </header>
 
-	<!-- Cart -->
-	<div class="wrap-header-cart js-panel-cart">
-		<div class="s-full js-hide-cart"></div>
+    <!-- 오른쪽 상단 Cart 공간 -->
+    <div class="wrap-header-cart js-panel-cart">
+        <div class="s-full js-hide-cart"></div>
 
-		<div class="header-cart flex-col-l p-l-65 p-r-25">
-			<div class="header-cart-title flex-w flex-sb-m p-b-8">
-				<span class="mtext-103 cl2">
-					Your Cart
-				</span>
+        <div class="header-cart flex-col-l p-l-65 p-r-25">
+            <div class="header-cart-title flex-w flex-sb-m p-b-8">
+                <span class="mtext-103 cl2">
+                    알림
+                </span>
+                <!-- 닫기 버튼 -->
+                <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+                    <i class="zmdi zmdi-close"></i>
+                </div>
+            </div>
 
-				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-					<i class="zmdi zmdi-close"></i>
-				</div>
-			</div>
+            <div class="header-cart-content flex-w js-pscroll">
+                <ul class="header-cart-wrapitem w-full">
+                    <!-- 상품 리스트 -->
+                    <li class="header-cart-item flex-w flex-t m-b-12">
+                        <div class="header-cart-item-img">
+                            <!-- 상품 이미지 -->
+                            <img src="images/item-cart-01.jpg" alt="IMG">
+                        </div>
+                        <div class="header-cart-item-txt p-t-8">
+                            <!-- 상품 이름 -->
+                            <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+                                상품명
+                            </a>
+                            <!-- 상품 가격 -->
+                            <span class="header-cart-item-info">
+                                상품 가격
+                            </span>
+                        </div>
+                    </li>
 
-			<div class="header-cart-content flex-w js-pscroll">
-				<ul class="header-cart-wrapitem w-full">
+                    <li class="header-cart-item flex-w flex-t m-b-12">
+                        <div class="header-cart-item-img">
+                            <!-- 상품 이미지 -->
+                            <img src="images/item-cart-02.jpg" alt="IMG">
+                        </div>
 
-					<!-- 상품 리스트 -->
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<!-- 상품 이미지 -->
-							<img src="images/item-cart-01.jpg" alt="IMG">
-						</div>
+                        <div class="header-cart-item-txt p-t-8">
+                            <!-- 상품 이름 -->
+                            <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+                                name
+                            </a>
+                            <!-- 상품 개수 & 가격 -->
 
-						<div class="header-cart-item-txt p-t-8">
-							<!-- 상품 이름 -->
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat
-							</a>
-							<!-- 상품 개수 & 가격 -->
-							<span class="header-cart-item-info">
-								1 x $19.00
-							</span>
-						</div>
-					</li>
+                            <span class="header-cart-item-info">
+                                price
+                            </span>
+                        </div>
+                    </li>
 
-				</ul>
+                </ul>
 
-				<div class="w-full">
-					<!-- 이동 버튼 -->
-					<div class="header-cart-buttons flex-w w-full">
-						<a href="#"
-							class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-							채팅하기
-						</a>
 
-						<a href="#" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-							거래하기
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="w-full">
+                    <!-- 구매 시 이동 버튼 -->
+                    <div class="header-cart-buttons flex-w w-full">
+                        <a href="#"
+                            class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+                            채팅하기
+                        </a>
+
+                        <a href="#" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+                            거래하기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<!-- Title page -->
 	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
@@ -480,7 +507,7 @@
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<!-- 상품명 -->
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									<%=list.get(i).getP_name()%>
 								</a>
 								<!-- 가격 -->
