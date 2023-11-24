@@ -78,31 +78,34 @@
                         <img src="images/icons/logo-01.png" alt="IMG-LOGO">
                     </a>
 
-                    <!-- Menu desktop -->
+<!-- Menu desktop -->
                     <div class="menu-desktop">
                         <ul class="main-menu">
-                            <li style="margin: 40px;">
-                                <a href="main.html" style="font-size: large;font-weight: 600;">메인</a>
+                            <li style="margin: 30px;">
+                                <a href="main.jsp" style="font-size: large;font-weight: 600;">메인</a>
                             </li>
 
-                            <li style="margin: 40px;">
-                                <a href="toy_list.html" style="font-size: large;font-weight: 600;">동네 장난감</a>
+                            <li style="margin: 30px;">
+                                <a href="toy_list.jsp" style="font-size: large;font-weight: 600;">동네 장난감</a>
                             </li>
 
                             <li class="label1" style="margin: 40px;" data-label1="hot">
-                                <a href="premium.html" style="font-size: large;font-weight: 600;">프리미엄</a>
+                                <a href="premium.jsp" style="font-size: large;font-weight: 600;">프리미엄</a>
                             </li>
 
-                            <li style="margin: 40px;">
-                                <a href="trade_list.html" style="font-size: large;font-weight: 600;">거래 목록</a>
+                            <li style="margin: 30px;">
+                                <a href="trade_list.jsp" style="font-size: large;font-weight: 600;">장난감 등록</a>
                                 <ul class="sub-menu">
                                     <li><a href="#">내 장난감</a></li>
                                     <li><a href="#">빌린 장난감</a></li>
                                 </ul>
                             </li>
+                            <li style="margin: 30px;">
+                                <a href="board_list.jsp" style="font-size: large;font-weight: 600;">게시판</a>
+                            </li>
 
                             <li>
-                                <a href="toy_join.html" style="font-size: large;font-weight: 600;">장난감 등록</a>
+                                <a href="toy_join.jsp" style="font-size: large;font-weight: 600;">거래 목록</a>
                             </li>
                         </ul>
                     </div>
@@ -133,7 +136,7 @@
         <div class="wrap-header-mobile">
             <!-- Logo moblie -->
             <div class="logo-mobile">
-                <a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+                <a href="main.jsp"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
             </div>
 
             <!-- Icon header -->
@@ -189,28 +192,31 @@
             </ul>
 
             <ul class="main-menu-m">
-                <li style="margin: 40px;">
-                    <a href="main.html" style="font-size: large;font-weight: 600;">메인</a>
+                <li style="margin: 30px;">
+                    <a href="main.jsp" style="font-size: large;font-weight: 600;">메인</a>
                 </li>
 
-                <li style="margin: 40px;">
-                    <a href="toy_list.html" style="font-size: large;font-weight: 600;">동네 장난감</a>
+                <li style="margin: 30px;">
+                    <a href="toy_list.jsp" style="font-size: large;font-weight: 600;">동네 장난감</a>
                 </li>
 
-                <li class="label1" style="margin: 40px;" data-label1="hot">
-                    <a href="premium.html" style="font-size: large;font-weight: 600;">프리미엄</a>
+                <li class="label1" style="margin: 30px;" data-label1="hot">
+                    <a href="premium.jsp" style="font-size: large;font-weight: 600;">프리미엄</a>
                 </li>
 
-                <li style="margin: 40px;">
-                    <a href="trade_list.html" style="font-size: large;font-weight: 600;">거래 목록</a>
+                <li style="margin: 30px;">
+                    <a href="trade_list.jsp" style="font-size: large;font-weight: 600;">거래 목록</a>
                     <ul class="sub-menu">
                         <li><a href="#">내 장난감</a></li>
                         <li><a href="#">빌린 장난감</a></li>
                     </ul>
                 </li>
 
-                <li>
-                    <a href="toy_join.html" style="font-size: large;font-weight: 600;">장난감 등록</a>
+                <li style="margin: 30px;">
+                    <a href="toy_join.jsp" style="font-size: large;font-weight: 600;">장난감 등록</a>
+                </li>
+                <li style="margin: 30px;">
+                    <a href="toy_join.jsp" style="font-size: large;font-weight: 600;">장난감 등록</a>
                 </li>
             </ul>
         </div>
