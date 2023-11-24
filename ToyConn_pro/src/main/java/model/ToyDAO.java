@@ -78,7 +78,7 @@ public class ToyDAO {
 		try {
 			address = sqlSession.selectOne("getToyAddress", p_num);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.getStackTrace();
 		}finally {
 			sqlSession.close();
 		}

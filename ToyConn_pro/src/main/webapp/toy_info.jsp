@@ -56,8 +56,8 @@
 <body class="animsition">
 <%
 	int p_num = Integer.parseInt(request.getParameter("p_num")); 
-	ToyDTO toy = new ToyDAO().getToyInfo(p_num);
 	String address = new ToyDAO().getToyAddress(p_num);
+	ToyDTO toy = new ToyDAO().getToyInfo(p_num);
 %>
 	<!-- Header -->
 	<header class="header-v4">
@@ -360,10 +360,9 @@
 						<h4 class="mtext-105 cl2 js-name-detail p-b-14"><%=toy.getP_name()%></h4>
 						<!-- 가격 -->
 						<span class="mtext-106 cl2"> 1일 <%=toy.getRent_price()%>원 </span>
-
+						
 						<!-- 상품 설명 -->
 						<p class="stext-102 cl3 p-t-23"><%=toy.getP_contenct()%></p>
-
 						<br> <a href="#" class="js-show-modal1"> <img
 							src="images/kakaomap.jpg" alt="IMG-LOGO"
 							style="border-radius: 20%; width: 50px;"> 위치 확인
@@ -731,9 +730,8 @@
 	<!--===============================================================================================-->
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c4761ef1bd1bad042ac92bb3429a6cd9&libraries=services"></script>
-	
+
 	<script>
-	console.log(<%=address%>);
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 	mapOption = {
 	    center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
