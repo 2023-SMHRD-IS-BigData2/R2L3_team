@@ -54,7 +54,7 @@
 <!--===============================================================================================-->
 <style type="text/css">
 #FirstLoginCheck {
-display: none;
+	display: none;
 }
 </style>
 <!--===============================================================================================-->
@@ -66,21 +66,21 @@ display: none;
 </head>
 
 <body class="animsition">
-<%
+	<%
 	String id = "wkd123";//(String)session.getAttribute("id");
 	String address = new MemberInfoDAO().getAddress(id);
 	session.setAttribute("address", address);
 	List<addressToyDTO> list = new ToyDAO().getAddressToys();
-	
+
 	String result = address.substring(0, address.indexOf(" "));
-	if(result.length()>4){ //로까지
+	if (result.length() > 4) { //로까지
 		result = address.substring(0, 12);
-	}else{ //동까지
+	} else { //동까지
 		result = address.substring(0, 9);
 	}
-	
+
 	MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
-	
+
 	String user_id = null;
 	String nick = null;
 	if (memberInfo != null) {
@@ -90,8 +90,7 @@ display: none;
 		user_id = (String) session.getAttribute("user_id");
 		nick = (String) session.getAttribute("nick");
 	}
-
-%>
+	%>
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
@@ -112,7 +111,7 @@ display: none;
 						<!-- 로그아웃 상태 -->
 						<a href="#loginPage" onclick="kakaoLogin()"
 							class="flex-c-m trans-04 p-lr-25 js-show-modal1"
-							style="font-size: small;"><%= memberInfo != null ? nick : "로그인" %></a>
+							style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
 					</div>
 				</div>
 			</div>
@@ -128,26 +127,28 @@ display: none;
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li style="margin: 40px;"><a href="main.html"
+							<li style="margin: 30px;"><a href="main.jsp"
 								style="font-size: large; font-weight: 600;">메인</a></li>
 
-							<li style="margin: 40px;"><a href="toy_list.html"
+							<li style="margin: 30px;"><a href="toy_list.jsp"
 								style="font-size: large; font-weight: 600;">동네 장난감</a></li>
 
 							<li class="label1" style="margin: 40px;" data-label1="hot">
-								<a href="premium.html"
+								<a href="premium.jsp"
 								style="font-size: large; font-weight: 600;">프리미엄</a>
 							</li>
 
-							<li style="margin: 40px;"><a href="trade_list.html"
-								style="font-size: large; font-weight: 600;">거래 목록</a>
+							<li style="margin: 30px;"><a href="trade_list.jsp"
+								style="font-size: large; font-weight: 600;">장난감 등록</a>
 								<ul class="sub-menu">
 									<li><a href="#">내 장난감</a></li>
 									<li><a href="#">빌린 장난감</a></li>
 								</ul></li>
+							<li style="margin: 30px;"><a href="board_list.jsp"
+								style="font-size: large; font-weight: 600;">게시판</a></li>
 
-							<li><a href="toy_join.html"
-								style="font-size: large; font-weight: 600;">장난감 등록</a></li>
+							<li><a href="toy_join.jsp"
+								style="font-size: large; font-weight: 600;">거래 목록</a></li>
 						</ul>
 					</div>
 
@@ -178,7 +179,7 @@ display: none;
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png"
+				<a href="main.jsp"><img src="images/icons/logo-01.png"
 					alt="IMG-LOGO"></a>
 			</div>
 
@@ -233,24 +234,26 @@ display: none;
 			</ul>
 
 			<ul class="main-menu-m">
-				<li style="margin: 40px;"><a href="main.html"
+				<li style="margin: 30px;"><a href="main.jsp"
 					style="font-size: large; font-weight: 600;">메인</a></li>
 
-				<li style="margin: 40px;"><a href="toy_list.html"
+				<li style="margin: 30px;"><a href="toy_list.jsp"
 					style="font-size: large; font-weight: 600;">동네 장난감</a></li>
 
-				<li class="label1" style="margin: 40px;" data-label1="hot"><a
-					href="premium.html" style="font-size: large; font-weight: 600;">프리미엄</a>
+				<li class="label1" style="margin: 30px;" data-label1="hot"><a
+					href="premium.jsp" style="font-size: large; font-weight: 600;">프리미엄</a>
 				</li>
 
-				<li style="margin: 40px;"><a href="trade_list.html"
+				<li style="margin: 30px;"><a href="trade_list.jsp"
 					style="font-size: large; font-weight: 600;">거래 목록</a>
 					<ul class="sub-menu">
 						<li><a href="#">내 장난감</a></li>
 						<li><a href="#">빌린 장난감</a></li>
 					</ul></li>
 
-				<li><a href="toy_join.html"
+				<li style="margin: 30px;"><a href="toy_join.jsp"
+					style="font-size: large; font-weight: 600;">장난감 등록</a></li>
+				<li style="margin: 30px;"><a href="toy_join.jsp"
 					style="font-size: large; font-weight: 600;">장난감 등록</a></li>
 			</ul>
 		</div>
@@ -325,6 +328,7 @@ display: none;
 
 				</ul>
 
+
 				<div class="w-full">
 					<!-- 구매 시 이동 버튼 -->
 					<div class="header-cart-buttons flex-w w-full">
@@ -349,30 +353,37 @@ display: none;
 	<section class="bg0 p-t-23 p-b-140">
 		<div class="container">
 			<div class="p-b-10">
-				<h3 class="ltext-103 cl5">'<%=result %>' 주변 장난감</h3>
+				<h3 class="ltext-103 cl5">
+					'<%=result%>' 주변 장난감
+				</h3>
 			</div>
-		
+
 			<!-- 상품 목록 -->
 			<div class="row isotope-grid">
 				<!-- 참고.클래스 마지막 부분. (예: car, sword, lego)-->
-			<%for(int i=0; i<list.size();i++){
-			if(list.get(i).getAddress().contains(result)){ %>
+				<%
+				for (int i = 0; i < list.size(); i++) {
+					if (list.get(i).getAddress().contains(result)) {
+				%>
 				<!-- 상품 1 -->
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item sword">
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<!-- 1. 상품 사진 -->
-							<img src="images/crolling/<%=list.get(i).getImage_file()%>" alt="IMG-PRODUCT">
+							<img src="images/crolling/<%=list.get(i).getImage_file()%>"
+								alt="IMG-PRODUCT">
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<!-- 2. 상품명 -->
-								<a href="product-detail.html"
-									class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									<%=list.get(i).getP_name()%> </a>
+								<a href="toy_info.jsp"
+									class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"> <%=list.get(i).getP_name()%>
+								</a>
 								<!-- 3. 가격 -->
-								<span class="stext-105 cl3"> <%=list.get(i).getRent_price()%> 원</span>
+								<span class="stext-105 cl3"> <%=list.get(i).getRent_price()%>
+									원
+								</span>
 							</div>
 
 							<!-- 하트 아이콘 -->
@@ -388,10 +399,12 @@ display: none;
 						</div>
 					</div>
 				</div>
-				<%}
-			}%>
+				<%
+				}
+				}
+				%>
 			</div>
-			
+
 		</div>
 	</section>
 
@@ -508,7 +521,7 @@ display: none;
 	<!-- Modal1 : 회원가입 -->
 	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20" id="loginPage">
 		<div class="overlay-modal1 js-hide-modal1"></div>
-		
+
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent flex-w">
 				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
@@ -559,7 +572,7 @@ display: none;
 			</div>
 		</div>
 	</div>
-	
+
 	<form action="FirstLoginCheck" method="post" id="FirstLoginCheck">
 		<input type="text" id="userID" name="user_id" readonly="readonly">
 		<input type="text" id="userNick" name="nick" readonly="readonly">
@@ -672,29 +685,33 @@ display: none;
 	<!--===============================================================================================-->
 	<script type="text/javascript">
 		function kakaoLogin() {
-	        Kakao.Auth.login({
-	            success : function(response) {
-	                Kakao.API.request({
-	                    url : '/v2/user/me',
-	                    success : function(response) {
-	                        console.log(response);
-	                        KakaoToken = response;
-	                        document.querySelector("#userID").value = KakaoToken.id;
-	                        document.querySelector("#userNick").value = KakaoToken.properties.nickname;
-	                        document.querySelector("#FirstLoginCheck").submit();
-	                        },
-	                    fail : function(error) {
-	                        console.log(error);
-	                    }
-	                })
-	            },
-	            fail : function(error) {
-	                console.log(error);
-	            }
-	        })
-	    }
+			Kakao.Auth
+					.login({
+						success : function(response) {
+							Kakao.API
+									.request({
+										url : '/v2/user/me',
+										success : function(response) {
+											console.log(response);
+											KakaoToken = response;
+											document.querySelector("#userID").value = KakaoToken.id;
+											document.querySelector("#userNick").value = KakaoToken.properties.nickname;
+											document.querySelector(
+													"#FirstLoginCheck")
+													.submit();
+										},
+										fail : function(error) {
+											console.log(error);
+										}
+									})
+						},
+						fail : function(error) {
+							console.log(error);
+						}
+					})
+		}
 	</script>
-	
+
 	<script src="js/main.js"></script>
 	<!--===============================================================================================-->
 </body>

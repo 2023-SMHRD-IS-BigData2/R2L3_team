@@ -311,6 +311,12 @@
             </div>
         </div>
     </div>
+    
+    
+    
+    
+    
+    
     <hr>
     <h1 style="margin-left:190px;">물품등록</h1>
 
