@@ -24,8 +24,13 @@ public class ChangeAccount extends HttpServlet {
 		
 		String user_id = request.getParameter("user_id");
 		String nick = request.getParameter("nick");
-		String address = request.getParameter("address");
 		
+		String sample6_postcode = request.getParameter("sample6_postcode");
+		String sample6_address = request.getParameter("sample6_address");
+		String sample6_detailAddress = request.getParameter("sample6_detailAddress");
+		
+		String address = sample6_address + " " + sample6_detailAddress + " " + sample6_postcode;
+
 		MemberInfo memberInfo = new MemberInfo(user_id, nick, address);
 		
 		int row = new MemberInfoDAO().changeAccount(memberInfo);
@@ -38,7 +43,7 @@ public class ChangeAccount extends HttpServlet {
 			System.out.println("update error");
 		}
 		
-		response.sendRedirect("Main.jsp");
+		response.sendRedirect("main.jsp");
 	}
 
 }

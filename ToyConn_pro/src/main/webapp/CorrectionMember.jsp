@@ -1,3 +1,4 @@
+<%@page import="model.MemberInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -31,14 +32,15 @@ display: none;
 </head>
 <body>
 	<%
-	String user_id = (String) session.getAttribute("user_id");
-	String nick = (String) session.getAttribute("nick");
+	MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
+	String user_id = memberInfo.getUser_id();
+	String nick = memberInfo.getNick();
 	%>
 
 	<section class="container" style="margin-top: 5%;">
 		<div class="size-210 p-t-55 p-lr-15-lg" style="margin: 0 auto;">
-			<h4 class="mtext-105 cl2 txt-center p-b-30">회원가입</h4>
-			<form action="FirstJoinAccount" method="post">
+			<h4 class="mtext-105 cl2 txt-center p-b-30">회원정보 수정</h4>
+			<form action="ChangeAccount" method="post">
 				<div class="form-group m-b-20 how-pos4-parent">
 					<label class="label" for="subject">
 					닉네임
@@ -75,37 +77,33 @@ display: none;
 							value="지도에서 찾기">
 					</div>
 				</div>
-				<!-- <button onclick="AccountSubmit()" class="cl0 size-121 bg3 bor1">완료</button> -->
-				<input type="submit" value="완료" class="cl0 size-121 bg3 bor1">
+				<button onclick="AddressNullCheck()" class="cl0 size-121 bg3 bor1">완료</button>
+				<!-- <input type="submit" value="완료" class="cl0 size-121 bg3 bor1"> -->
 			</form>
 		</div>
 	</section>
 
-	<%-- <form action="FirstJoinAccount" method="post" id="FirstJoinAccount" class="HiddenInfo">
-		<input type="text" name="user_id" value="<%= user_id %>" readonly="readonly">
-		<input type="text" id="nick" name="nick" value="">
-		<input type="text" id="address" name="address" value="">
-	</form> --%>
-
-
 	<!-- 필수 js -->
 	<!-- --------------------------- -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<!-- <script type="text/javascript">
-		function AccountSubmit() {
+	<script>
+		function AddressNullCheck() {
+			let basic_nickname = (document.querySelector("#basic_nickname").textContent).length;
 			
-			let basic_address = document.querySelector("#sample6_address").value;
-			let detailAddress = document.querySelector("#sample6_detailAddress").value;
-			let postcode = document.querySelector("#sample6_postcode").value;
+			let sample6_postcode = (document.querySelector("#sample6_postcode").textContent).length;
+			let sample6_address = (document.querySelector("#sample6_address").textContent).length;
+			let sample6_detailAddress = (document.querySelector("#sample6_detailAddress").textContent).length;
 			
-			let address = basic_address + " " + detailAddress + " " + postcode;
+			if (basic_nickname > 0) {
+				window.alert("닉네임이 비어 있습니다!");
+			} else if ((sample6_postcode > 0) && (sample6_address > 0) && (sample6_detailAddress > 0)) {
+				window.alert("주소가 비어 있습니다!");
+			} else {
+				document.querySelector("form").submit();
+			}
 			
-			document.querySelector("#nick").value = document.querySelector("#basic_nickname").value;
-			document.querySelector("#address").value = address;
-			
-			document.querySelector("#FirstJoinAccount").submit();
 		}
-	</script> -->
+	</script>
 	
 	<script>
 		function sample6_execDaumPostcode() {

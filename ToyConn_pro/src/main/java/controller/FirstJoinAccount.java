@@ -28,9 +28,10 @@ public class FirstJoinAccount extends HttpServlet {
 		String nick = request.getParameter("nick");
 		
 		String sample6_postcode = request.getParameter("sample6_postcode");
-		String address = request.getParameter("address");
+		String sample6_address = request.getParameter("sample6_address");
 		String sample6_detailAddress = request.getParameter("sample6_detailAddress");
-		address = address + " " + sample6_detailAddress + " " + sample6_postcode;
+		
+		String address = sample6_address + " " + sample6_detailAddress + " " + sample6_postcode;
 		
 		BigDecimal score = BigDecimal.ZERO; // BigDecimal타입의 0값
 
