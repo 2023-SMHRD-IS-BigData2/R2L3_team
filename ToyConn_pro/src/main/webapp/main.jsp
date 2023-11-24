@@ -256,7 +256,7 @@
 						<li><a href="#">빌린 장난감</a></li>
 					</ul></li>
 
-				<li style="margin: 30px;"><a href="toy_join.jsp"
+				<li style="margin: 30px;"><a href="board_list.jsp"
 					style="font-size: large; font-weight: 600; color: black;">게시판</a></li>
 				<li style="margin: 30px;"><a href="toy_join.jsp"
 					style="font-size: large; font-weight: 600; color: black;">장난감
