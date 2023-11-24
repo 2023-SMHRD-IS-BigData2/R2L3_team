@@ -54,7 +54,7 @@ display: none;
 					<div class="form-control stext-111 cl2 plh3 size-120 p-tb-25">
 						<input type="text"
 							class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-							id="sample6_postcode" placeholder="우편번호"> 
+							id="sample6_postcode" name="sample6_postcode" placeholder="우편번호"> 
 						<input type="button"
 							class="flex-c-m stext-101 cl0 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
 							onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
@@ -65,7 +65,7 @@ display: none;
 							name="address" id="sample6_address" placeholder="주소"> 
 						<input type="text"
 							class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-							id="sample6_detailAddress" placeholder="상세주소"> 
+							id="sample6_detailAddress" name="sample6_detailAddress" placeholder="상세주소"> 
 						<input type="text"
 							class="form-control stext-111 cl2 plh3 size-116 p-r-30"
 							id="sample6_extraAddress" placeholder="참고항목"
