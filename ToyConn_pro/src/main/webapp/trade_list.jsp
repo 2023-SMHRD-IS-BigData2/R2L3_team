@@ -156,7 +156,7 @@
             <!-- Logo moblie -->
             <div class="logo-mobile">
                 <a href="main.jsp"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
-            </div>
+            </div> 
 
            	<!-- Icon header -->
 			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
