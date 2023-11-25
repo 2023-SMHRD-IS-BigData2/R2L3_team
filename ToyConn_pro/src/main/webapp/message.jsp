@@ -1,3 +1,9 @@
+<%@page import="model.ToyDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.ToyDTO"%>
+<%@page import="model.chattingDAO"%>
+<%@page import="model.chattingDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -51,6 +57,15 @@
 </head>
 
 <body class="animsition">
+<%
+	String id = "test4";//(String)session.getAttribute("id");
+	List<chattingDTO> list = new chattingDAO().getChatToyList(id);
+	
+	List<ToyDTO> ToyList = new ArrayList<>();
+	for(int i=0;i<list.size();i++){
+		ToyList.add(new ToyDAO().getToyInfo(list.get(i).getP_num()));
+	}
+%>
 
 	<!-- Header -->
 	<header class="header-v4">
@@ -330,16 +345,13 @@
 						<h2 style="color: white;">전체 대화</h2>
 					</header>
 					<ul>
-						<li><img src="images/item-cart-01.jpg" alt="">
+					<%for(int i=0; i<ToyList.size(); i++){%>
+						<li style="padding: 10px;"><!-- <img src="images/crolling/<%=ToyList.get(i).getImage_file()%>" alt=""> -->
 							<div>
-								<h2>상품 주인 이름</h2>
-								<h3>상품명</h3>
+								<h2><%=list.get(i).getSender()%></h2>
+								<h3><%=ToyList.get(i).getP_name()%></h3>
 							</div></li>
-						<li><img src="images/item-cart-01.jpg" alt="">
-							<div>
-								<h2>상품 주인 이름</h2>
-								<h3>상품명</h3>
-							</div></li>
+						<%}%>
 					</ul>
 				</aside>
 

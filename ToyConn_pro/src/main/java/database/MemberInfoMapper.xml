@@ -53,4 +53,15 @@ where a.p_num=b.p_num(+) and lender_id=#{lender_id}
 	<select id="getToy" resultType="model.ToyDTO" parameterType="int">
 		select * from product_info where p_num=#{p_num}
 	</select>
+		<insert id="setChatting" parameterType="model.chattingDTO">
+		insert into message_board values(num_chat.nextval, #{sender}, #{recipient}, #{text}, sysdate,#{p_num})
+	</insert>
+	<select id="getChatToyList" resultType="model.chattingDTO">
+		select * from message_board where chat_num in (select max(chat_num) from message_board where recipient=#{id} group by p_num)
+	</select>
+	<select id="getChattingList" parameterType="model.chattingListDTO" resultType="model.chattingDTO">
+		select *
+from message_board
+where (recipient=#{user_id} or sender=#{user_id}) and p_num=#{p_num}
+	</select>
  </mapper>
