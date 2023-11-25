@@ -59,7 +59,7 @@
 
 <body class="animsition">
 <%
-	String id = "test4";//(String)session.getAttribute("id");
+	String id = (String)session.getAttribute("id");
 	List<chattingDTO> list = new chattingDAO().getChatToyList(id);
 	int p_num = Integer.parseInt(request.getParameter("p_num"));
 	ToyDTO toy = new ToyDAO().getToyInfo(p_num);
@@ -352,7 +352,7 @@
 					<ul>
 					<%for(int i=0; i<ToyList.size(); i++){%>
 						<li style="padding: 10px;"><!-- <img src="images/crolling/<%=ToyList.get(i).getImage_file()%>" alt=""> -->
-							<div>
+							<div onclick="move()">
 								<h2><%=list.get(i).getSender()%></h2>
 								<h3><%=ToyList.get(i).getP_name()%></h3>
 							</div></li>
@@ -547,7 +547,11 @@
 			</div>
 		</div>
 	</div>
-
+<script>
+	function move() {
+		document.
+	}
+</script>
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 	<!--===============================================================================================-->
