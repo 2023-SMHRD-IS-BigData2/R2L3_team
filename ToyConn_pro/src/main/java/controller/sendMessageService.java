@@ -29,7 +29,7 @@ public class sendMessageService extends HttpServlet {
 		}else {
 			System.out.println("메시지 전송 실패");
 		}
-		response.sendRedirect("./message.jsp?p_num"+p_num);
+		response.sendRedirect("./message.jsp?p_num="+p_num);
 	}
 
 }
