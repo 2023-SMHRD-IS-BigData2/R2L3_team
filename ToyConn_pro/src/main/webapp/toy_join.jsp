@@ -319,192 +319,149 @@
     
     
     
-    <hr>
-    <h1 style="margin-left:190px;">물품등록</h1>
+    <div class="container">
+        <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+            <a href="main.jsp" class="stext-109 cl8 hov-cl1 trans-04">
+                메인
+                <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+            </a>
 
-    <section class="bg0 p-t-23 p-b-140" style="margin-top: 50px;">
-
-
+            <span class="stext-109 cl4">
+                장난감 등록
+            </span>
+        </div>
+    </div>
+    
+    <section class="bg0 p-t-104 p-b-116">
         <div class="container">
-            <form action="ProductService" name="newProduct" method="post" class="form-horizontal" enctype="multipart/form-data">
-                <div class="form-group row">
-                    <label class="col-sm-2">이미지 등록</label>
-                    <div class="col-sm-5">
-                        <input type="file" accept="images/png" src="images/image_join.png" name="image_file" class="form-control" multiple>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="flex-w flex-c-m m-tb-10">
-                        <div
-                            class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
-                            <i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
-                            <i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                            카테고리
-                        </div>
-                    </div>
-
-
-                    <div class="dis-none panel-filter w-full p-t-10">
-                        <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
-                            <div class="filter-col1 p-r-15 p-b-27">
-                                <div class="mtext-102 cl2 p-b-15">
-                                    물품
-                                </div>
-
-                                <ul>
-                                    <li class="p-b-6" name = "category">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            차/소방차/트럭
-                                        </a>
-                                    </li>
-
-                                    <li class="p-b-6" name = "category">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            로봇
-                                        </a>
-                                    </li>
-                                    <li class="p-b-6" name = "category">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            인형
-                                        </a>
-                                    </li>
-                                    <li class="p-b-6" name = "category">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            레고/모형
-                                        </a>
-                                    </li>
-                                    <li class="p-b-6" name = "category">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            드론/비행기
-                                        </a>
-                                    </li>
-                                    <li class="p-b-6" name = "category">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            동물모형
-                                        </a>
-                                    </li>
-                                    <li class="p-b-6" name = "category">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            요리/뷰티/병원/전화
-                                        </a>
-                                    </li>
-                                    <li class="p-b-6" name = "category">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            교육장난감
-                                        </a>
-                                    </li>
-                                    <li class="p-b-6" name = "category">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            기타
-                                        </a>
-                                    </li>
-                                </ul>
+            <div class="flex-w flex-tr">
+                <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md" style="margin: auto;">
+                    <form action="" name="newProduct" method="post" class="form-horizontal"
+                        enctype="multipart/form-data">
+                        <h4 class="mtext-105 cl2 txt-center p-b-30">
+                            물품 등록하기
+                        </h4>
+                        <div class="flex-w flex-r-m p-b-10 m-b-20">
+                            <div class="size-203 flex-c-m respon6">
+                                이미지 등록
                             </div>
-
-                            <div class="filter-col2 p-r-15 p-b-27">
-                                <div class="mtext-102 cl2 p-b-15">
-                                    성별
+                            <div class="size-204 respon6-next">
+                                <div class="rs1-select2 bor8 bg0">
+                                    <input type="file" accept="images/png" src="images/image_join.png" name="productImage"
+                                    class="form-control" multiple>
                                 </div>
-
-                                <ul>
-                                    <li class="p-b-6" name ="gender">
-                                        <a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-                                            여아완구
-                                        </a>
-                                    </li>
-
-                                    <li class="p-b-6" name ="gender">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            남아완구
-                                        </a>
-                                    </li>
-
-                                    <li class="p-b-6" name ="gender">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            영유아완구
-                                        </a>
-                                    </li>
-                                    <li class="p-b-6" name ="gender">
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            남여아완구
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-
-                            <div class="filter-col3 p-r-15 p-b-27">
-                                <div class="mtext-102 cl2 p-b-15">
-                                    품질 상태
-                                </div>
-
-                                <ul>
-                                    <li class="p-b-6" name = "p_quality">
-                                        <span class="fs-15 lh-12 m-r-6" style="color: #4272d7;">
-                                            <i class="zmdi zmdi-circle"></i>
-                                        </span>
-
-                                        <a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-                                            상
-                                        </a>
-                                    </li>
-
-                                    <li class="p-b-6" name = "p_quality">
-                                        <span class="fs-15 lh-12 m-r-6" style="color: #00ad5f;">
-                                            <i class="zmdi zmdi-circle"></i>
-                                        </span>
-
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            중
-                                        </a>
-                                    </li>
-
-                                    <li class="p-b-6" name = "p_quality">
-                                        <span class="fs-15 lh-12 m-r-6" style="color: #fa4251;">
-                                            <i class="zmdi zmdi-circle"></i>
-                                        </span>
-
-                                        <a href="#" class="filter-link stext-106 trans-04">
-                                            하
-                                        </a>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="flex-w flex-r-m p-b-10 m-b-20">
+                            <div class="size-203 flex-c-m respon6">
+                                카테고리1
+                            </div>
+
+                            <div class="size-204 respon6-next">
+                                <div class="rs1-select2 bor8 bg0">
+                                    <select class="js-select2" name="time">
+                                        <option>물품</option>
+                                        <option>차/소방차/트럭</option>
+                                        <option>로봇</option>
+                                        <option>인형</option>
+                                        <option>레고/모형</option>
+                                        <option>드론/비행기</option>
+                                        <option>동물모형</option>
+                                        <option>요리/뷰티/병원/전화</option>
+                                        <option>교육장난감</option>
+                                        <option>기타</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-w flex-r-m p-b-10 m-b-20">
+                            <div class="size-203 flex-c-m respon6">
+                                카테고리2
+                            </div>
+
+                            <div class="size-204 respon6-next">
+                                <div class="rs1-select2 bor8 bg0">
+                                    <select class="js-select2" name="time">
+                                        <option>성별</option>
+                                        <option>여아완구</option>
+                                        <option>남아완구</option>
+                                        <option>영유아완구</option>
+                                        <option>남여아완구</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-w flex-r-m p-b-10 m-b-20">
+                            <div class="size-203 flex-c-m respon6">
+                                카테고리3
+                            </div>
+
+                            <div class="size-204 respon6-next">
+                                <div class="rs1-select2 bor8 bg0">
+                                    <select class="js-select2" name="time">
+                                        <option>품질 상태</option>
+                                        <option>상</option>
+                                        <option>중</option>
+                                        <option>하</option>
+
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="flex-w flex-r-m p-b-10 m-b-20">
+                            <div class="size-203 flex-c-m respon6">
+                                상품명
+                            </div>
+
+                            <div class="size-204 respon6-next">
+                                <div class="rs1-select2 bor8 bg0">
+                                    <input type="text" name="productName" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-w flex-r-m p-b-10 m-b-20">
+                            <div class="size-203 flex-c-m respon6">
+                                가격
+                            </div>
+
+                            <div class="size-204 respon6-next">
+                                <div class="rs1-select2 bor8 bg0">
+                                    <input type="text" name="unitPrice" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-w flex-r-m p-b-10 m-b-30">
+                            <div class="size-203 flex-c-m respon6">
+                                상세정보
+                            </div>
+
+                            <div class="size-204 respon6-next">
+                                <div class="rs1-select2 bor8 bg0">
+                                    <textarea rows="1" cols="5" name="description" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit"
+                            class="btn btn-primary flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer"
+                            value="등록">
+                    </form>
                 </div>
-
-
-
-                <div class="form-group row">
-                    <label class="col-sm-2">상품명</label>
-                    <div class="col-sm-3">
-                        <input type="text" name="p_name" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2">가격</label>
-                    <div class="col-sm-3">
-                        <input type="text" name="rent_price" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-2">상세정보</label>
-                    <div class="col-sm-5">
-                        <textarea rows="1" cols="5" name="p_content" class="form-control"></textarea>
-                    </div>
-                </div>
-
-
-                <div class="form-group row">
-                    <div class="col-sm-3">
-                        <input type="submit" class="btn btn-primary" value="등록">
-                    </div>
-                </div>
-            </form>
-
+            </div>
         </div>
     </section>
+
+
+
+
+
 
    <!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
