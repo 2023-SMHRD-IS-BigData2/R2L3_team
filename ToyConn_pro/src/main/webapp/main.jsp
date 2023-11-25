@@ -169,8 +169,7 @@
                   </div>
 
                   <a href="message.jsp"
-                     class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
-                     data-notify="1">
+                     class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
                      <img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
                   </a>
                </div>
