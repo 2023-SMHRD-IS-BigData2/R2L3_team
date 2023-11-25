@@ -370,8 +370,10 @@
 						<br>
 						<button
 							class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
-							style="min-width: 100px; height: 40px;">채팅하기</button>
-
+							style="min-width: 100px; height: 40px;" onclick="moveChat()">채팅하기</button>
+						<form action="message.jsp" id="goChat">
+							<input type="hidden" name="p_num" value="<%=toy.getP_num()%>">
+						</form>
 
 					</div>
 
@@ -730,7 +732,12 @@
 	<!--===============================================================================================-->
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c4761ef1bd1bad042ac92bb3429a6cd9&libraries=services"></script>
-
+	<script type="text/javascript">
+		function moveChat() {
+			document.querySelector(
+			"#goChat").submit();
+		}
+	</script>
 	<script>
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 	mapOption = {

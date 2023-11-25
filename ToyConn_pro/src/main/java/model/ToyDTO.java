@@ -7,13 +7,13 @@ public class ToyDTO {
 	String p_name;
 	int rent_price;
 	String p_quality;
-	String p_contenct;
+	String p_content;
 	String p_status;
 	String r_status;
 	String genter;
 	String image_file;
 	public ToyDTO(int p_num, String user_id, String category, String p_name, int rent_price, String p_quality,
-			String p_contenct, String p_status, String r_status, String genter, String image_file) {
+			String p_content, String p_status, String r_status, String genter, String image_file) {
 
 		this.p_num = p_num;
 		this.user_id = user_id;
@@ -21,7 +21,7 @@ public class ToyDTO {
 		this.p_name = p_name;
 		this.rent_price = rent_price;
 		this.p_quality = p_quality;
-		this.p_contenct = p_contenct;
+		this.p_content = p_content;
 		this.p_status = p_status;
 		this.r_status = r_status;
 		this.genter = genter;
@@ -49,7 +49,7 @@ public class ToyDTO {
 		return p_quality;
 	}
 	public String getP_contenct() {
-		return p_contenct;
+		return p_content;
 	}
 	public String getP_status() {
 		return p_status;
