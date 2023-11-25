@@ -12,12 +12,12 @@ public class chattingDAO {
 	
 	// Factory를 사용해서 세션 생성(DB연결, close(), sql 실행)
 	SqlSession sqlSession = sqlSessionFactory.openSession(true);
-	public int setChatting(chattingDTO vo) {
+	public int setChatting(chattingOneDTO vo) {
 		int cnt = 0;
 		try {
 			cnt = sqlSession.insert("database.chattingMapper.setChatting", vo);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.getStackTrace();
 		}finally {
 			sqlSession.close();
 		}

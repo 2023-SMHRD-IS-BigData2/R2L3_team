@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import model.chattingDAO;
 import model.chattingDTO;
+import model.chattingOneDTO;
 
 
 @WebServlet("/sendMessageService")
@@ -21,7 +22,7 @@ public class sendMessageService extends HttpServlet {
 		String sender = (String)session.getAttribute("id");
 		String text_content = request.getParameter("textContent");
 		
-		chattingDTO vo = new chattingDTO(sender, recipient, text_content, p_num);
+		chattingOneDTO vo = new chattingOneDTO(sender, recipient, text_content, p_num);
 		
 		int cnt = new chattingDAO().setChatting(vo);
 		if(cnt>0) {

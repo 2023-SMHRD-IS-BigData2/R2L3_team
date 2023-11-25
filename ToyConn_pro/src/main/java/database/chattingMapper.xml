@@ -4,8 +4,8 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace ="database.chattingMapper">
-	<insert id="setChatting" parameterType="model.chattingDTO">
-		insert into message_board values(num_chat.nextval, #{sender}, #{recipient}, #{text}, sysdate,#{p_num})
+	<insert id="setChatting" parameterType="model.chattingOneDTO">
+		insert into message_board values(num_chat.nextval, #{sender}, #{recipient}, #{text_content}, sysdate, #{p_num})
 	</insert>
 	<select id="getChatToyList" resultType="model.chattingDTO">
 		select * from message_board where chat_num in (select max(chat_num) from message_board where recipient=#{id} group by p_num)
