@@ -239,15 +239,6 @@
 			</ul>
 		</div>
 
-                <li style="margin: 30px;">
-                    <a href="toy_join.jsp" style="font-size: large;font-weight: 600;">게시판</a>
-                </li>
-                <li style="margin: 30px;">
-                    <a href="toy_join.jsp" style="font-size: large;font-weight: 600;">장난감 등록</a>
-                </li>
-            </ul>
-        </div>
-
         <!-- Modal Search -->
         <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
             <div class="container-search-header">
