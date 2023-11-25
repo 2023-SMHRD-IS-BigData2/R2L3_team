@@ -15,7 +15,7 @@ public class chattingDAO {
 	public int setChatting(chattingDTO vo) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.insert("setChatting", vo);
+			cnt = sqlSession.insert("database.chattingMapper.setChatting", vo);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {
@@ -26,7 +26,7 @@ public class chattingDAO {
 	public List<chattingDTO> getChatToyList(String id) {
 		List<chattingDTO> list = null;
 		try {
-			list = sqlSession.selectList("getChatToyList", id);
+			list = sqlSession.selectList("database.chattingMapper.getChatToyList", id);
 		} catch (Exception e) {
 			e.getStackTrace();
 		}finally{
@@ -37,7 +37,7 @@ public class chattingDAO {
 	public List<chattingDTO> getChattingList(chattingListDTO vo) {
 		List<chattingDTO> list = null;
 		try {
-			list = sqlSession.selectList("getChattingList", vo);
+			list = sqlSession.selectList("database.chattingMapper.getChattingList", vo);
 		} catch (Exception e) {
 			e.getStackTrace();
 		}finally {

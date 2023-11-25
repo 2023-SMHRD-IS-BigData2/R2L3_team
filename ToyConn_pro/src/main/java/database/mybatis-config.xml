@@ -7,6 +7,7 @@
 	<typeAliases>
 		<typeAlias type="model.MemberInfo" alias="MemberInfo"/>
 		<typeAlias type="model.Product" alias="Product"/>
+		
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -22,5 +23,6 @@
 	<mappers>
 		<mapper resource="database/MemberInfoMapper.xml" />
 		<mapper resource="database/ProductMapper.xml" />
+		<mapper resource="database/chattingMapper.xml" />
 	</mappers>
 </configuration>
