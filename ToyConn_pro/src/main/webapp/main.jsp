@@ -156,22 +156,22 @@
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
-						<div
-							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<!-- 상품 cart 개수 확인 -->
-						<div
-							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+						
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="7">
-							<i class="zmdi zmdi-shopping-cart"></i>
+						<!--<i class="zmdi zmdi-shopping-cart"></i>-->
+						<img src="images/icons/종종.png" alt="" style="height: 20px;">
+
 						</div>
 
 						<a href="message.jsp"
 							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
 							data-notify="1">
-							<img src="images/icons/말풍선 .png" alt="" style="height: 30px;">
+							<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
 						</a>
 					</div>
 				</nav>
@@ -188,21 +188,22 @@
 
 			<!-- Icon header -->
 			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				<div
-					class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
 					<i class="zmdi zmdi-search"></i>
 				</div>
 
-				<div
-					class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart"
-					data-notify="2">
-					<i class="zmdi zmdi-shopping-cart"></i>
-				</div>
+				<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+							data-notify="7">
+						<!--<i class="zmdi zmdi-shopping-cart"></i>-->
+						<img src="images/icons/종종.png" alt="" style="height: 20px;">
 
-				<a href="#"
-					class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
-					data-notify="0"> <i class="zmdi zmdi-favorite-outline"></i>
-				</a>
+						</div>
+
+				<a href="message.jsp"
+							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
+							data-notify="1">
+							<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
+						</a>
 			</div>
 
 			<!-- Button show menu -->
