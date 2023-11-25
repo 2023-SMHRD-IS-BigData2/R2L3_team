@@ -1,3 +1,4 @@
+<%@page import="model.chattingListDTO"%>
 <%@page import="model.ToyDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.ToyDTO"%>
@@ -58,13 +59,16 @@
 
 <body class="animsition">
 <%
-	String id = "test4";//(String)session.getAttribute("id");
+	String id = (String)session.getAttribute("id");
 	List<chattingDTO> list = new chattingDAO().getChatToyList(id);
-	
+	int p_num = Integer.parseInt(request.getParameter("p_num"));
+	ToyDTO toy = new ToyDAO().getToyInfo(p_num);
 	List<ToyDTO> ToyList = new ArrayList<>();
 	for(int i=0;i<list.size();i++){
 		ToyList.add(new ToyDAO().getToyInfo(list.get(i).getP_num()));
 	}
+	chattingListDTO vo = new chattingListDTO(id, p_num);
+	List<chattingDTO> chatList = new chattingDAO().getChattingList(vo);
 %>
 
 	<!-- Header -->
@@ -360,31 +364,35 @@
 					<header>
 						<img src="images/item-cart-01.jpg" alt="">
 						<div>
-							<h2>상품 주인 이름</h2>
-							<h3>상품 명</h3>
+							<h2><%=toy.getUser_id()%></h2>
+							<h3><%=toy.getP_name()%></h3>
 						</div>
 					</header>
 					<ul id="chat">
+						<%for(int i=0; i<chatList.size(); i++){ %>
+						<%if(chatList.get(i).getRecipient().equals(id)){ %>
 						<li class="you">
 							<div class="entete">
 								<span class="status green"></span>
-								<h2>너 이름</h2>
+								<h2><%=chatList.get(i).getSender()%></h2>
 								<!-- 시간 -->
-								<h3>10:12AM</h3>
+								<h3><%=chatList.get(i).getChat_time()%></h3>
 							</div>
 							<div class="triangle"></div>
-							<div class="message">메세지 내용</div>
+							<div class="message"><%=chatList.get(i).getText_content()%></div>
 						</li>
+						<%}else{ %>
 						<li class="me">
 							<div class="entete">
-								<h3>10:12AM</h3>
-								<h2>나 이름</h2>
+								<h3>%=chatList.get(i).getChat_time()%></h3>
+								<h2><%=chatList.get(i).getSender()%></h2>
 								<span class="status blue"></span>
 							</div>
 							<div class="triangle"></div>
-							<div class="message">메세지 내용</div>
+							<div class="message"><%=chatList.get(i).getText_content()%></div>
 						</li>
-
+						
+						<%}}%>
 
 					</ul>
 					<hr>

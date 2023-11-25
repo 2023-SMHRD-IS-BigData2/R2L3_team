@@ -30,7 +30,7 @@ public class chattingDTO {
 	public String getSender() {
 		return sender;
 	}
-	public String getSecipient() {
+	public String getRecipient() {
 		return recipient;
 	}
 	public String getText_content() {
