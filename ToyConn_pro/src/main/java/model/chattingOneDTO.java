@@ -5,14 +5,14 @@ public class chattingOneDTO {
 	String recipient;
 	String text_content;
 	int p_num;
-	public chattingOneDTO() {
-		
-	}
 	public chattingOneDTO(String sender, String recipient, String text_content, int p_num) {
 		this.sender = sender;
 		this.recipient = recipient;
 		this.text_content = text_content;
 		this.p_num = p_num;
+	}
+	public chattingOneDTO() {
+		
 	}
 	public String getSender() {
 		return sender;
