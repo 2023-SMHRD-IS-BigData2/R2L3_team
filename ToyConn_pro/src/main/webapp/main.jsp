@@ -111,7 +111,7 @@
 							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
 							로그아웃 </a>
 						<!-- 로그아웃 상태 -->
-						<a href="#" onclick="kakaoLogin()"
+						<a href="#" id="kakaoLogin"
 							class="flex-c-m trans-04 p-lr-25"
 							style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
 					</div>
@@ -229,7 +229,7 @@
 							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
 							로그아웃 </a>
 						<!-- 로그아웃 상태 -->
-						<a href="#" onclick="kakaoLogin()"
+						<a href="#" id="kakaoLogin()"
 							class="flex-c-m trans-04 p-lr-25"
 							style="font-size: small;"> 로그인 </a>
 					</div>
@@ -583,7 +583,7 @@
 		});
 	</script>
 	<!--===============================================================================================-->
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		function kakaoLogin() {
 			Kakao.Auth
 					.login({
@@ -610,7 +610,7 @@
 						}
 					})
 		}
-	</script>
+	</script> -->
 
 	<script src="js/main.js"></script>
 	<!--===============================================================================================-->

@@ -71,7 +71,7 @@
 							로그아웃
 						</a>
 						<!-- 로그아웃 상태 -->
-						<a href="#" onclick="kakaoLogin()"
+						<a href="#" id="kakaoLogin()"
 						class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
 							로그인
 						</a>
@@ -193,7 +193,7 @@
                             로그아웃
                         </a>
                         <!-- 로그아웃 상태 -->
-                        <a href="#" onclick="kakaoLogin()"
+                        <a href="#" id="kakaoLogin()"
                         class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
                             로그인
                         </a>
