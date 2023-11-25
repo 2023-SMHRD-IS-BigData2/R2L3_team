@@ -331,19 +331,19 @@
         </div>
     </div>
 
-	<hr>
+	
 	<!--              ---------------------------------------------------------------------------------------------------------->
 	<div class="bor10 m-t-50 p-t-43 p-b-40">
 		<!-- Tab01 -->
 		<div class="tab01" style="margin-top: -30px;">
 			<!-- Nav tabs -->
-			<ul class="nav nav-tabs" role="tablist" style="font-size: 30px;">
+			<ul class="nav nav-tabs" role="tablist">
 				<!-- 대여중 -->
 				<li class="nav-item p-b-10"><a class="nav-link active"
-					data-toggle="tab" href="#rentING" role="tab">대여중</a></li>
+					data-toggle="tab" href="#rentING" role="tab" style="font-size: 35px;">대여중</a></li>
 				<!-- 차용중 -->
 				<li class="nav-item p-b-10"><a class="nav-link"
-					data-toggle="tab" href="#borING" role="tab">차용중</a></li>
+					data-toggle="tab" href="#borING" role="tab" style="font-size: 35px;">차용중</a></li>
 
 			</ul>
 
@@ -358,15 +358,15 @@
 						<div class="container">
 							<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
 								<a href="main.jsp" class="stext-109 cl8 hov-cl1 trans-04">
-									Mypage <i class="fa fa-angle-right m-l-9 m-r-10"
+									거래목록 <i class="fa fa-angle-right m-l-9 m-r-10"
 									aria-hidden="true"></i>
-								</a> <span class="stext-109 cl4"> 대여물품목록 </span>
+								</a> <span class="stext-109 cl4"> 대여중 </span>
 							</div>
 						</div>
 
 
 						<!-- Shoping Cart -->
-						<form class="bg0 p-t-75 p-b-85">
+						<form class="bg0 p-t-75">
 							<div class="container">
 								<div class="row">
 									<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -377,7 +377,7 @@
 														<th class="column-1">상품</th>
 														<th class="column-2">상품명</th>
 														<th class="column-3">가격</th>
-														<th class="column-4">대여해준아이디</th>
+														<th class="column-4">사용자아이디</th>
 														<th class="column-5">반납여부</th>
 													</tr>
 													<%for(int i=0; i<list.size(); i++){
@@ -414,16 +414,16 @@
 						<div class="container">
 							<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
 								<a href="main.jsp" class="stext-109 cl8 hov-cl1 trans-04">
-									Mypage <i class="fa fa-angle-right m-l-9 m-r-10"
+									거래목록 <i class="fa fa-angle-right m-l-9 m-r-10"
 									aria-hidden="true"></i>
-								</a> <span class="stext-109 cl4"> 대여중 </span>
+								</a> <span class="stext-109 cl4"> 대여물품목록 </span>
 							</div>
 						</div>
 
 
 
 						<!-- Shoping Cart -->
-						<form class="bg0 p-t-75 p-b-85">
+						<form class="bg0 p-t-75">
 							<div class="container">
 								<div class="row">
 									<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -434,7 +434,7 @@
 														<th class="column-1">상품</th>
 														<th class="column-2">상품명</th>
 														<th class="column-3">가격</th>
-														
+														<th class="column-4">사용자아이디</th>
 														<th class="column-5">반납여부</th>
 													</tr>
 													<%for(int i=0; i<list.size(); i++){ %>
@@ -474,7 +474,7 @@
 						<div class="container">
 							<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
 								<a href="main.jsp" class="stext-109 cl8 hov-cl1 trans-04">
-									Mypage <i class="fa fa-angle-right m-l-9 m-r-10"
+									거래목록 <i class="fa fa-angle-right m-l-9 m-r-10"
 									aria-hidden="true"></i>
 								</a> <span class="stext-109 cl4"> 차용중 </span>
 
@@ -483,7 +483,7 @@
 
 
 						<!-- Shoping Cart -->
-						<form class="bg0 p-t-75 p-b-85">
+						<form class="bg0 p-t-75">
 							<div class="container">
 								<div class="row">
 									<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -494,7 +494,7 @@
 														<th class="column-1">상품</th>
 														<th class="column-2">상품명</th>
 														<th class="column-3">가격</th>
-														<th class="column-4">대여해준아이디</th>
+														<th class="column-4">사용자아이디</th>
 														<th class="column-5">반납여부</th>
 													</tr>
 													<%for(int i=0; i<lendPcList.size(); i++){
@@ -529,15 +529,15 @@
 						<div class="container">
 							<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
 								<a href="main.jsp" class="stext-109 cl8 hov-cl1 trans-04">
-									Mypage <i class="fa fa-angle-right m-l-9 m-r-10"
+									거래목록 <i class="fa fa-angle-right m-l-9 m-r-10"
 									aria-hidden="true"></i>
-								</a> <span class="stext-109 cl4"> 차용중 </span>
+								</a> <span class="stext-109 cl4"> 차용물품목록 </span>
 							</div>
 						</div>
 
 
 						<!-- Shoping Cart -->
-						<form class="bg0 p-t-75 p-b-85">
+						<form class="bg0 p-t-75">
 							<div class="container">
 								<div class="row">
 									<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -548,7 +548,7 @@
 														<th class="column-1">상품</th>
 														<th class="column-2">상품명</th>
 														<th class="column-3">가격</th>
-														<th class="column-4">대여해준아이디</th>
+														<th class="column-4">사용자아이디</th>
 														<th class="column-5">반납여부</th>
 													</tr>
 													<%for(int i=0; i<lendPcList.size(); i++){
