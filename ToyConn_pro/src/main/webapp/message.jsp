@@ -59,7 +59,7 @@
 
 <body class="animsition">
 <%
-	String id = (String)session.getAttribute("id");
+	String id = "test4";//(String)session.getAttribute("id");
 	List<chattingDTO> list = new chattingDAO().getChatToyList(id);
 	int p_num = Integer.parseInt(request.getParameter("p_num"));
 	ToyDTO toy = new ToyDAO().getToyInfo(p_num);
@@ -396,12 +396,15 @@
 
 					</ul>
 					<hr>
+					<form action="sendMessageService">
+					<input type="hidden" name="recipient" value="<%=toy.getUser_id()%>">
+					<input type="hidden" name="p_num" value="<%=toy.getP_num()%>">
 					<footer class="flex-w flex-m p-t-50 p-b-23">
-						<textarea placeholder="택스트를 입력하시오"></textarea>
+						<textarea placeholder="택스트를 입력하시오" name="textContent"></textarea>
 						<input type="submit" class="cl0 bg1 bor1 p-lr-15"
 							style="size: 30px;">
-
 					</footer>
+					</form>
 
 				</main>
 				<hr>
