@@ -75,37 +75,14 @@ display: none;
 							value="지도에서 찾기">
 					</div>
 				</div>
-				<!-- <button onclick="AccountSubmit()" class="cl0 size-121 bg3 bor1">완료</button> -->
 				<input type="submit" value="완료" class="cl0 size-121 bg3 bor1">
 			</form>
 		</div>
 	</section>
 
-	<%-- <form action="FirstJoinAccount" method="post" id="FirstJoinAccount" class="HiddenInfo">
-		<input type="text" name="user_id" value="<%= user_id %>" readonly="readonly">
-		<input type="text" id="nick" name="nick" value="">
-		<input type="text" id="address" name="address" value="">
-	</form> --%>
-
-
 	<!-- 필수 js -->
 	<!-- --------------------------- -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<!-- <script type="text/javascript">
-		function AccountSubmit() {
-			
-			let basic_address = document.querySelector("#sample6_address").value;
-			let detailAddress = document.querySelector("#sample6_detailAddress").value;
-			let postcode = document.querySelector("#sample6_postcode").value;
-			
-			let address = basic_address + " " + detailAddress + " " + postcode;
-			
-			document.querySelector("#nick").value = document.querySelector("#basic_nickname").value;
-			document.querySelector("#address").value = address;
-			
-			document.querySelector("#FirstJoinAccount").submit();
-		}
-	</script> -->
 	
 	<script>
 		function sample6_execDaumPostcode() {

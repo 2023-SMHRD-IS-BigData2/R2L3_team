@@ -96,8 +96,8 @@
    }
    %>
    <%
-List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
-%>
+	List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
+	%>
    <!-- Header -->
    <header class="header-v4">
       <!-- Header desktop -->
@@ -110,9 +110,10 @@ List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
                <div class="right-top-bar flex-w h-full">
 
                   <!-- 로그인 되면 출력 -->
-                  <a href="CorrectionMember.jsp"
+                  <a href="#" id="CorrectionMember"
                      class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a> <a href="#"
+                     style="font-size: small;"> 회원정보 수정 </a>
+                  <a href="#" id="kakaoLogout"	
                      class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
                      로그아웃 </a>
                   <!-- 로그아웃 상태 -->
@@ -575,35 +576,6 @@ List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
       });
    </script>
    <!--===============================================================================================-->
-   <!-- <script type="text/javascript">
-      function kakaoLogin() {
-         Kakao.Auth
-               .login({
-                  success : function(response) {
-                     Kakao.API
-                           .request({
-                              url : '/v2/user/me',
-                              success : function(response) {
-                                 console.log(response);
-                                 KakaoToken = response;
-                                 document.querySelector("#userID").value = KakaoToken.id;
-                                 document.querySelector("#userNick").value = KakaoToken.properties.nickname;
-                                 document.querySelector(
-                                       "#FirstLoginCheck")
-                                       .submit();
-                              },
-                              fail : function(error) {
-                                 console.log(error);
-                              }
-                           })
-                  },
-                  fail : function(error) {
-                     console.log(error);
-                  }
-               })
-      }
-   </script> -->
-
    <script src="js/main.js"></script>
    <!--===============================================================================================-->
 </body>

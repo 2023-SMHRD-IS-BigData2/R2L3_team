@@ -35,6 +35,7 @@ display: none;
 	MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
 	String user_id = memberInfo.getUser_id();
 	String nick = memberInfo.getNick();
+	String address = memberInfo.getAddress();
 	%>
 
 	<section class="container" style="margin-top: 5%;">
@@ -75,6 +76,7 @@ display: none;
 						<input onclick=""
 							class="flex-c-m stext-101 cl0 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
 							value="지도에서 찾기">
+						<input type="text" id="before_address" value="<%= address %>" style="display: none;">
 					</div>
 				</div>
 				<button onclick="AddressNullCheck()" class="cl0 size-121 bg3 bor1">완료</button>
@@ -88,20 +90,17 @@ display: none;
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script>
 		function AddressNullCheck() {
-			let basic_nickname = (document.querySelector("#basic_nickname").textContent).length;
+			console.log("AddressNullCheck");
 			
-			let sample6_postcode = (document.querySelector("#sample6_postcode").textContent).length;
-			let sample6_address = (document.querySelector("#sample6_address").textContent).length;
-			let sample6_detailAddress = (document.querySelector("#sample6_detailAddress").textContent).length;
+			let before_Alladdress = document.querySelector("#before_address").value;
 			
-			if (basic_nickname > 0) {
-				window.alert("닉네임이 비어 있습니다!");
-			} else if ((sample6_postcode > 0) && (sample6_address > 0) && (sample6_detailAddress > 0)) {
-				window.alert("주소가 비어 있습니다!");
-			} else {
-				document.querySelector("form").submit();
-			}
+			let postcode = document.querySelector("#sample6_postcode").value;
+			let address = document.querySelector("#sample6_address").value;
+			let detailAddress = document.querySelector("#sample6_detailAddress").value;
 			
+			console.log(postcode + address + detailAddress);
+			
+			document.querySelector("form").submit();			
 		}
 	</script>
 	

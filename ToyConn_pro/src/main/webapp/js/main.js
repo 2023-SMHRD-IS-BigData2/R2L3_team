@@ -277,10 +277,10 @@
 	$('.js-hide-modal1').on('click', function() {
 		$('.js-modal1').removeClass('show-modal1');
 	});
-	
+
 	$('#kakaoLogin').on('click', function() {
 		console.log("kakaoLogin");
-		
+
 		Kakao.Auth.login({
 			success: function(response) {
 				Kakao.API.request({
@@ -293,8 +293,8 @@
 						$form.attr("action", "FirstLoginCheck");
 						$form.attr("method", "post");
 						$form.attr("style", "display:none;");
-						$form.append($('<input />', { type: 'text', name: 'user_id', value: KakaoToken.id}));
-						$form.append($('<input />', { type: 'text', name: 'nick', value: KakaoToken.properties.nickname}));
+						$form.append($('<input />', { type: 'text', name: 'user_id', value: KakaoToken.id }));
+						$form.append($('<input />', { type: 'text', name: 'nick', value: KakaoToken.properties.nickname }));
 						$form.appendTo("body");
 						$form.submit();
 					},
@@ -307,6 +307,35 @@
 				console.log(error);
 			}
 		})
-	})
+	});
+
+	$('#kakaoLogout').on('click', function() {
+		console.log("kakaoLogout");
+
+		if (Kakao.Auth.getAccessToken()) {
+			Kakao.API.request({
+				url: '/v1/user/unlink',
+				success: function(response) {
+					console.log(response)
+					let $form = $("<form></form>");
+					$form.attr("id", "LogoutAccount");
+					$form.attr("action", "LogoutAccount");
+					$form.attr("method", "post");
+					$form.attr("style", "display:none;");
+					$form.appendTo("body");
+					$form.submit();
+				},
+				fail: function(error) {
+					console.log(error)
+				},
+			})
+			Kakao.Auth.setAccessToken(undefined)
+		}
+	});
+	
+	$('#CorrectionMember').on('click', function() {
+		console.log("CorrectionMember");
+		$(location).attr("href", "CorrectionMember.jsp");
+	});
 
 })(jQuery);
