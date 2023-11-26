@@ -333,195 +333,111 @@
 	</section>
 
 	<!-- Product -->
-	<div class="bg0 m-t-23 p-b-140">
+		<div class="bg0 m-t-23 p-b-140">
 		<div class="container">
-			<div class="flex-w flex-sb-m p-b-52">
-				<!-- 상품 카테고리 -->
-				<!-- 카테고리 클릭 시 필터 기능 -->
-				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-						전체보기
-					</button>
+			<section class="bg0 p-t-104 p-b-116">
+				<div class="container">
+					<div class="flex-w flex-tr">
+						<div class="size-100  p-lr-70" >
+							<div class="flex-w flex-r-m p-b-10">
+								<div class="size-205 flex-c-m respon6">
+									전체보기
+								</div>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".car">
-						자동차
-					</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".sword">
-						칼
-					</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".lego">
-						Lego
-					</button>
+								<div class="flex-w flex-r-m p-b-10" style="margin-left: 50px;">
+									<div class="size-210 flex-c-m respon6">
 
-				</div>
+									</div>
 
-				<!-- Filter, Search js. 누르면 아래 창 뜸 -->
-				<div class="flex-w flex-c-m m-tb-10">
-					<div
-						class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
-						<i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
-						<i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-						Filter
-					</div>
+									<div class="size-205 respon6-next" style="margin-left: 30px;">
+										<div class="rs1-select2 bor8 bg0">
+											<select class="js-select2" name="time">
+												<option>물품</option>
+												<option>차/소방차/트럭</option>
+												<option>로봇</option>
+												<option>인형</option>
+												<option>레고/모형</option>
+												<option>드론/비행기</option>
+												<option>동물모형</option>
+												<option>요리/뷰티/병원/전화</option>
+												<option>교육장난감</option>
+												<option>기타</option>
+											</select>
+											<div class="dropDownSelect2"></div>
+										</div>
+									</div>
+								</div>
+								<div class="flex-w flex-r-m p-b-10" style="margin-left: 30px;">
+									<div class="size-210 flex-c-m respon6">
 
-					<div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
-						<i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
-						<i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-						Search
-					</div>
-				</div>
+									</div>
 
-				<!-- Search product 검색 기능 -->
-				<div class="dis-none panel-search w-full p-t-10 p-b-15">
-					<div class="bor8 dis-flex p-l-15">
-						<button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
-							<i class="zmdi zmdi-search"></i>
-						</button>
+									<div class="size-205 respon6-next" style="margin-left: 30px;">
+										<div class="rs1-select2 bor8 bg0">
+											<select class="js-select2" name="time">
+												<option>성별</option>
+												<option>여아완구</option>
+												<option>남아완구</option>
+												<option>영유아완구</option>
+												<option>남여아완구</option>
+											</select>
+											<div class="dropDownSelect2"></div>
+										</div>
+									</div>
+								</div>
+								<div class="flex-w flex-r-m p-b-10" style="margin-left: 30px;">
+									<div class="size-210 flex-c-m respon6">
 
-						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product"
-							placeholder="Search">
-					</div>
-				</div>
+									</div>
 
-				<!-- Filter 목록 -->
-				<div class="dis-none panel-filter w-full p-t-10">
-					<div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
-						<div class="filter-col1 p-r-15 p-b-27">
-							<div class="mtext-102 cl2 p-b-15">
-								Sort By
+									<div class="size-205 respon6-next" style="margin-left: 30px;">
+										<div class="rs1-select2 bor8 bg0">
+											<select class="js-select2" name="time">
+												<option>품질 상태</option>
+												<option>상</option>
+												<option>중</option>
+												<option>하</option>
+
+											</select>
+											<div class="dropDownSelect2"></div>
+										</div>
+									</div>
+								</div>
+								<div class="size-203 flex-c-m respon6" style="margin-left: 50px;">
+
+									<input type="submit" class="btn btn-primary" value="검색" style ="width: 117px; height: 47px;">
+
+								</div>
+
 							</div>
 
-							<ul>
-								<li class="p-b-6">
-									<a href="#" class="filter-link stext-106 trans-04">
-										Default
-									</a>
-								</li>
 
-								<li class="p-b-6">
-									<a href="#" class="filter-link stext-106 trans-04">
-										Popularity
-									</a>
-								</li>
+			</section>
+			<!--                        ----------------------------------------------------------------------------------------------------------->
 
-							</ul>
-						</div>
-
-						<div class="filter-col2 p-r-15 p-b-27">
-							<div class="mtext-102 cl2 p-b-15">
-								가격
-							</div>
-
-							<ul>
-								<li class="p-b-6">
-									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-										All
-									</a>
-								</li>
-
-								<li class="p-b-6">
-									<a href="#" class="filter-link stext-106 trans-04">
-										$0.00 - $50.00
-									</a>
-								</li>
-
-								<li class="p-b-6">
-									<a href="#" class="filter-link stext-106 trans-04">
-										$50.00 - $100.00
-									</a>
-								</li>
-							</ul>
-						</div>
-
-						<div class="filter-col3 p-r-15 p-b-27">
-							<div class="mtext-102 cl2 p-b-15">
-								품질 상태
-							</div>
-
-							<ul>
-								<li class="p-b-6">
-									<span class="fs-15 lh-12 m-r-6" style="color: #4272d7;">
-										<i class="zmdi zmdi-circle"></i>
-									</span>
-
-									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-										상
-									</a>
-								</li>
-
-								<li class="p-b-6">
-									<span class="fs-15 lh-12 m-r-6" style="color: #00ad5f;">
-										<i class="zmdi zmdi-circle"></i>
-									</span>
-
-									<a href="#" class="filter-link stext-106 trans-04">
-										중
-									</a>
-								</li>
-
-								<li class="p-b-6">
-									<span class="fs-15 lh-12 m-r-6" style="color: #fa4251;">
-										<i class="zmdi zmdi-circle"></i>
-									</span>
-
-									<a href="#" class="filter-link stext-106 trans-04">
-										하
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="filter-col2 p-r-15 p-b-27">
-							<div class="mtext-102 cl2 p-b-15">
-								성별
-							</div>
-
-							<ul>
-								<li class="p-b-6">
-									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-										나
-									</a>
-								</li>
-
-								<li class="p-b-6">
-									<a href="#" class="filter-link stext-106 trans-04">
-										남자아이
-									</a>
-								</li>
-
-								<li class="p-b-6">
-									<a href="#" class="filter-link stext-106 trans-04">
-										여자아이
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
 
 			<!-- 상품 목록 -->
-			<div class="row isotope-grid">
-			<%for(int i=0; i<list.size();i++){
-			if(list.get(i).getAddress().contains(result)){ %>
+			<div class="row isotope-grid" style="margin-left: 100px;">
+
 				<!-- 상품 1 -->
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<!-- 상품 사진 -->
-							<img src="images/crolling/<%=list.get(i).getImage_file()%>" alt="IMG-PRODUCT">
+							<img src="images/product-01.jpg" alt="IMG-PRODUCT">
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<!-- 상품명 -->
-								<a href="toy_info.jsp?p_num=<%=list.get(i).getP_num()%>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									<%=list.get(i).getP_name()%>
+								<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Esprit Ruffle Shirt
 								</a>
 								<!-- 가격 -->
 								<span class="stext-105 cl3">
-								<%=list.get(i).getRent_price()%>원
+									$16.64
 								</span>
 							</div>
 
@@ -537,14 +453,40 @@
 						</div>
 					</div>
 				</div>
-				<%}} %>
-				<!-- 상품 1-->
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<!-- 상품 사진 -->
+							<img src="images/product-01.jpg" alt="IMG-PRODUCT">
+						</div>
 
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<!-- 상품명 -->
+								<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Esprit Ruffle Shirt
+								</a>
+								<!-- 가격 -->
+								<span class="stext-105 cl3">
+									$16.64
+								</span>
+							</div>
 
+							<!-- 하트 아이콘 -->
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png"
+										alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l"
+										src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
 
 	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
