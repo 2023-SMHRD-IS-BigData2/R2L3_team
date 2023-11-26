@@ -498,7 +498,8 @@
 														<th class="column-5">반납여부</th>
 													</tr>
 													<%for(int i=0; i<lendPcList.size(); i++){
-														if(lendPcList.get(i).getLend().equals("대여중")){%>
+														if(lendPcList.get(i).getLend() != null){
+															if(lendPcList.get(i).getLend().equals("대여중")){%>
 													<tr class="table_row">
 														<td class="column-1">
 															<div class="how-itemcart1">
@@ -506,13 +507,13 @@
 															</div>
 														</td>
 														<td class="column-2">
-															<div class="how-itemcart1">로봇 (상품명)</div>
+															<div class="how-itemcart1"><%=lendPcList.get(i).getP_name() %></div>
 														</td>
-														<td class="column-3">5800</td>
-														<td class="column-4">아이디</td>
-														<td class="column-5">yes or no</td>
+														<td class="column-3"><%=lendPcList.get(i).getPrice()%></td>
+														<td class="column-4"><%=lendPcList.get(i).getLender_id()%></td>
+														<td class="column-5"><%=lendPcList.get(i).getToystate()%></td>
 													</tr>
-													<%}}%>
+													<%}}}%>
 												</table>
 											</div>
 										</div>
