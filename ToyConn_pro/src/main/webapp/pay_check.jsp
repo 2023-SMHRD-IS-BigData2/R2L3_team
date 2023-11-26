@@ -1,3 +1,5 @@
+<%@page import="model.ToyDAO"%>
+<%@page import="model.ToyDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,7 +28,14 @@
 </head>
 
 <body class="animsition">
-
+<%
+int p_num = (Integer)request.getAttribute("p_num");
+ToyDTO toy = new ToyDAO().getToyInfo(p_num);
+String startDate = (String)request.getAttribute("start_date");
+String endDate = (String)request.getAttribute("end_date");
+int result = (Integer)request.getAttribute("result");
+int pay = (Integer)request.getAttribute("pay");
+%>
 
 	<div style="margin: auto; padding-top: 15%;">
 		<div class="row">
@@ -51,16 +60,16 @@
 							</td>
 							<td>
 								<!-- 상품명 -->
-								<h4 class="mtext-105 cl2">Lightweight</h4>
+								<h4 class="mtext-105 cl2"><%=toy.getP_name()%></h4>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<h4 class="cl2">이름</h4>
+								<h4 class="cl2">대여자</h4>
 							</td>
 							<td>
 								<!-- 대여자 이름 -->
-								<h4 class="mtext-105 cl2">장난이</h4>
+								<h4 class="mtext-105 cl2"><%=toy.getUser_id()%></h4>
 							</td>
 						</tr>
 						<tr>
@@ -77,7 +86,7 @@
 								<h4 class="cl2">대여 날짜</h4>
 							</td>
 							<td>
-								<h4 class="cl2">7일</h4>
+								<h4 class="cl2"><%=result%>일</h4>
 							</td>
 						</tr>
 						<tr>
@@ -85,7 +94,7 @@
 								<h4 class="cl2">대여 가격</h4>
 							</td>
 							<td>
-								<!-- 가격 --> <span class="mtext-106 cl2"> $58.79 </span>
+								<!-- 가격 --> <span class="mtext-106 cl2"><%=pay%>원</span>
 							</td>
 						</tr>
 					</table>
@@ -106,7 +115,7 @@
 						</span> <span class="stext-107 cl6">
 							<button
 								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
-								style="min-width: 100px; height: 40px;">취소하기</button>
+								style="min-width: 100px; height: 40px;" onclick="moveMessage()">취소하기</button>
 						</span>
 					</div>
 				</div>

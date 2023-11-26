@@ -426,36 +426,39 @@
 		<div class="container">
 			<div class="row">
 				<!-- 날짜 선택 -->
+				<form action="payCheckService" id="pcm">
+				<input type="hidden" name = "p_num" value="<%=toy.getP_num()%>">
 				<div class="p-t-33">
 					<div class="flex-w flex-r-m p-b-10">
 						<div class="size-203 flex-c-m respon6">대여시작 일시</div>
 						<div class="size-204 respon6-next rs1-select2 bor8 bg0">
-							<input type="datetime-local">
+							<input type="date" name="start_date">
 						</div>
 					</div>
 
 					<div class="flex-w flex-r-m p-b-10">
 						<div class="size-203 flex-c-m respon6">대여끝날 일시</div>
 						<div class="size-204 respon6-next rs1-select2 bor8 bg0">
-							<input type="datetime-local">
+							<input type="date" name="end_date">
 						</div>
 					</div>
 				</div>
+				</form>
 				<!-- 결제 버튼 -->
 				<div class="p-t-33">
 					<div class="flex-w flex-r-m p-b-10">
 						<span class="p-lr-25 bor9">
 							<button
 								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-								style="min-width: 100px; height: 40px;">현금 결제</button>
+								style="min-width: 100px; height: 40px;" onclick="movePayCheck()">현금 결제</button>
 						</span> <span class="stext-107 cl6 p-lr-25">
 							<button
 								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-								style="min-width: 100px; height: 40px;">온라인 결제</button>
+								style="min-width: 100px; height: 40px;" onclick="movePayCheck()">온라인 결제</button>
 						</span> <span class="stext-107 cl6 p-lr-25">
 							<button
 								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-								style="min-width: 100px; height: 40px;">결제 확인</button>
+								style="min-width: 100px; height: 40px;" onclick="movePayCheck()">결제 확인</button>
 						</span>
 					</div>
 				</div>
@@ -553,8 +556,10 @@
 		</div>
 	</div>
 <script>
-	function move() {
-		document.
+	function movePayCheck() {
+		 document.querySelector(
+         "#pcm")
+         .submit();
 	}
 </script>
 	<!--===============================================================================================-->
