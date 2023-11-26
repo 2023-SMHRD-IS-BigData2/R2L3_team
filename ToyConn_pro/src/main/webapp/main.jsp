@@ -1,3 +1,5 @@
+<%@page import="model.payCheckDAO"%>
+<%@page import="model.payCheckDTO"%>
 <%@page import="model.MemberInfo"%>
 <%@page import="model.ToyDAO"%>
 <%@page import="model.addressToyDTO"%>
@@ -67,10 +69,10 @@
 
 <body class="animsition">
    <%
-   String user_id = (String)session.getAttribute("id");
+   String user_id =(String)session.getAttribute("id");
    String nick = null;
    if(user_id == null){
-      user_id = "toy123";
+      user_id = "test4";
    }
    String address = new MemberInfoDAO().getAddress(user_id);
    session.setAttribute("address", address);
@@ -93,6 +95,9 @@
       nick = (String) session.getAttribute("nick");
    }
    %>
+   <%
+List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
+%>
    <!-- Header -->
    <header class="header-v4">
       <!-- Header desktop -->
@@ -162,7 +167,7 @@
 
                   
                   <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-                     data-notify="7">
+                     data-notify="<%=PcList.size()%>">
                   <!--<i class="zmdi zmdi-shopping-cart"></i>-->
                   <img src="images/icons/종종.png" alt="" style="height: 20px;">
 
@@ -300,6 +305,7 @@
          <div class="header-cart-content flex-w js-pscroll">
             <ul class="header-cart-wrapitem w-full">
                <!-- 상품 리스트 -->
+               <%for(int i=0; i<PcList.size(); i++){ %>
                <li class="header-cart-item flex-w flex-t m-b-12">
                   <div class="header-cart-item-img">
                      <!-- 상품 이미지 -->
@@ -308,27 +314,12 @@
                   <div class="header-cart-item-txt p-t-8">
                      <!-- 상품 이름 -->
                      <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-                        상품명 </a>
+                        <%=PcList.get(i).getP_name()%> </a>
                      <!-- 상품 가격 -->
-                     <span class="header-cart-item-info"> 상품 가격 </span>
+                     <span class="header-cart-item-info"> <%=PcList.get(i).getPrice()%> </span>
                   </div>
                </li>
-
-               <li class="header-cart-item flex-w flex-t m-b-12">
-                  <div class="header-cart-item-img">
-                     <!-- 상품 이미지 -->
-                     <img src="images/item-cart-02.jpg" alt="IMG">
-                  </div>
-
-                  <div class="header-cart-item-txt p-t-8">
-                     <!-- 상품 이름 -->
-                     <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-                        name </a>
-                     <!-- 상품 개수 & 가격 -->
-
-                     <span class="header-cart-item-info"> price </span>
-                  </div>
-               </li>
+               <%}%>
 
             </ul>
 

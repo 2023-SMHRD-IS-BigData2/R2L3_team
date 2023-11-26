@@ -29,7 +29,7 @@ public class payCheckDAO {
 	public List<payCheckDTO> getPayCheck(String user_id){
 		List<payCheckDTO> list=null;
 		try {
-			list = sqlSession.selectList("getPayCheck", user_id);
+			list = sqlSession.selectList("database.ProductMapper.getPayCheck", user_id);
 		} catch (Exception e) {
 			e.getStackTrace();
 		}finally {
@@ -41,7 +41,7 @@ public class payCheckDAO {
 	public int updatePayCheck(pcUpdateDTO vo) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.update("updatePayCheck", vo);
+			cnt = sqlSession.update("database.ProductMapper.updatePayCheck", vo);
 		} catch (Exception e) {
 			e.getStackTrace();
 		}finally {

@@ -11,4 +11,7 @@
 	<insert id="setPayCheck" parameterType="model.payCheckDTO">
 		insert into paycheck values(pc_seq.nextval, #{user_id}, #{p_num}, #{lender_id}, #{p_name}, #{price}, #{pay_choice}, '확인요청', null)
 	</insert>
+	<select id="getPayCheck" resultType="model.payCheckDTO">
+		select * from paycheck where user_id=#{#user_id} and TOYSTATE='확인요청'
+	</select>
   </mapper>
