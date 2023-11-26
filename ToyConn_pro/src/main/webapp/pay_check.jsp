@@ -31,8 +31,6 @@
 <%
 int p_num = (Integer)request.getAttribute("p_num");
 ToyDTO toy = new ToyDAO().getToyInfo(p_num);
-String startDate = (String)request.getAttribute("start_date");
-String endDate = (String)request.getAttribute("end_date");
 int result = (Integer)request.getAttribute("result");
 int pay = (Integer)request.getAttribute("pay");
 %>
@@ -98,20 +96,38 @@ int pay = (Integer)request.getAttribute("pay");
 							</td>
 						</tr>
 					</table>
-
+					<form action="payService" id="offlinePay">
+						<input type='hidden' name="lender_id" value="<%=session.getAttribute("id")%>">
+						<input type='hidden' name="user_id" value="<%=toy.getUser_id()%>">
+						<input type='hidden' name="p_num" value="<%=toy.getP_num()%>">
+						<input type='hidden' name="p_name" value="<%=toy.getP_name()%>">
+						<input type='hidden' name="price" value="<%=pay%>">
+						<input type='hidden' name="result" value="<%=result%>">
+						<input type='hidden' name="pay_choice" value="현금">
+					</form>
+					<form action="payService" id="onlinePay">
+						<input type='hidden' name="lender_id" value="<%=session.getAttribute("id")%>">
+						<input type='hidden' name="user_id" value="<%=toy.getUser_id()%>">
+						<input type='hidden' name="p_num" value="<%=toy.getP_num()%>">
+						<input type='hidden' name="p_name" value="<%=toy.getP_name()%>">
+						<input type='hidden' name="price" value="<%=pay%>">
+						<input type='hidden' name="result" value="<%=result%>">
+						<input type='hidden' name="pay_choice" value="카드">
+					</form>
 					<div class="flex-w p-b-10">
 						<span class="stext-107 cl6" style="padding-right: 10px;">
+						
 							<button
 								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
-								style="min-width: 100px; height: 40px;">현금 결제</button>
+								style="min-width: 100px; height: 40px;" onclick="offlinepay()">현금 결제</button>
 						</span> <span class="stext-107 cl6" style="padding-right: 10px;">
 							<button
 								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
-								style="min-width: 100px; height: 40px;">온라인 결제</button>
+								style="min-width: 100px; height: 40px;" onclick="kakaoPay()">온라인 결제</button>
 						</span> <span class="stext-107 cl6" style="padding-right: 10px;">
 							<button
 								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
-								style="min-width: 100px; height: 40px;">결제 확인</button>
+								style="min-width: 100px; height: 40px;" onclick="onlinepay()">결제 확인</button>
 						</span> <span class="stext-107 cl6">
 							<button
 								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
@@ -125,6 +141,43 @@ int pay = (Integer)request.getAttribute("pay");
 
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+<script type="text/javascript">
+	function offlinepay() {
+			 document.querySelector(
+	         "#offlinePay")
+	         .submit();
+	}
+	function onlinepay(){
+			 document.querySelector(
+	         "#onlinePay")
+	         .submit();
+	}
+</script>
+
+	<script>
+var IMP = window.IMP;   // 생략 가능
+IMP.init("imp56447215"); 
+
+  function kakaoPay() {
+    IMP.request_pay({
+      pg: "kakaopay",
+      pay_method: "card",
+      merchant_uid: "ORD2018013-324<%=toy.getP_num()%>323",   // 주문번호
+      name: "<%=toy.getP_name()%>",
+      amount: <%=pay%>,                         // 숫자 타입
+      buyer_email: "gildong@gmail.com",
+      buyer_name: "<%=session.getAttribute("id")%>",
+      buyer_tel: "010-4242-4262",
+      buyer_addr: "<%=session.getAttribute("address")%>",
+      buyer_postcode: "01181",
+    }, function (rsp) { // callback
+    	if(rsp.status=="paid"){
+    		alert("결제완료");
+    	}
+    });
+  }
+</script>
 	<!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 	<!--===============================================================================================-->

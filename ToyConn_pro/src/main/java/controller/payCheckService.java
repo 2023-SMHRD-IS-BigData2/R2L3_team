@@ -79,8 +79,6 @@ public class payCheckService extends HttpServlet {
 		}
 		RequestDispatcher rd = request.getRequestDispatcher("./pay_check.jsp");
 		request.setAttribute("result", result);
-		request.setAttribute("start_date", date1);
-		request.setAttribute("end_date", date2);
 		request.setAttribute("pay", pay*result);
 		request.setAttribute("p_num", p_num);
 		rd.forward(request, response);

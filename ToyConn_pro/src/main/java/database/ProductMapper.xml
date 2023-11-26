@@ -8,5 +8,7 @@
   
    insert into PRODUCT_INFO values(num_product.nextval,#{user_id},#{category},#{p_name},#{rent_price},#{p_quality},#{p_content},#{p_status},#{r_status},#{gender},#{image_file})
   </insert>
- 
+	<insert id="setPayCheck" parameterType="model.payCheckDTO">
+		insert into paycheck values(pc_seq.nextval, #{user_id}, #{p_num}, #{lender_id}, #{p_name}, #{price}, #{pay_choice}, '확인요청', null)
+	</insert>
   </mapper>

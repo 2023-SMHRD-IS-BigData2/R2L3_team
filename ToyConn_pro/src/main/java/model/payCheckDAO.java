@@ -17,7 +17,7 @@ public class payCheckDAO {
 	public int setPayCheck(payCheckDTO vo){
 		int cnt = 0;
 		try {
-			cnt = sqlSession.insert("setPayCheck", vo);
+			cnt = sqlSession.insert("database.ProductMapper.setPayCheck", vo);
 		} catch (Exception e) {
 			e.getStackTrace();
 		}finally {
