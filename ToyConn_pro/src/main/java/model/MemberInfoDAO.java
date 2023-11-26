@@ -73,4 +73,15 @@ public class MemberInfoDAO {
 		}
 		return address;
 	}
+	public MemberInfo getMemberInfo(String id) {
+		MemberInfo vo = null;
+		try {
+			vo = session.selectOne("getMemberInfo", id);
+		} catch (Exception e) {
+			e.getStackTrace();
+		}finally {
+			session.close();
+		}
+		return vo;
+	}
 }

@@ -53,4 +53,7 @@ where a.p_num=b.p_num(+) and lender_id=#{lender_id}
 	<select id="getToy" resultType="model.ToyDTO" parameterType="int">
 		select * from product_info where p_num=#{p_num}
 	</select>
+	<select id="getMemberInfo" resultType="MemberInfo" parameterType="String">
+		select * from member_info where user_id=#{id}
+	</select>
  </mapper>

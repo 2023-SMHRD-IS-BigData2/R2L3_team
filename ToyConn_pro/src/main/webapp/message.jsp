@@ -1,3 +1,5 @@
+<%@page import="model.MemberInfo"%>
+<%@page import="model.MemberInfoDAO"%>
 <%@page import="model.chattingListDTO"%>
 <%@page import="model.ToyDAO"%>
 <%@page import="java.util.ArrayList"%>
@@ -60,6 +62,7 @@
 <body class="animsition">
 <%
 	String id = (String)session.getAttribute("id");
+	MemberInfo member = new MemberInfoDAO().getMemberInfo(id);
 	List<chattingDTO> list = new chattingDAO().getChatToyList(id);
 	int p_num = Integer.parseInt(request.getParameter("p_num"));
 	ToyDTO toy = new ToyDAO().getToyInfo(p_num);
@@ -67,6 +70,8 @@
 	for(int i=0;i<list.size();i++){
 		ToyList.add(new ToyDAO().getToyInfo(list.get(i).getP_num()));
 	}
+	String user_id = toy.getUser_id();
+	MemberInfo member2 = new MemberInfoDAO().getMemberInfo(user_id);
 	chattingListDTO vo = new chattingListDTO(id, p_num);
 	List<chattingDTO> chatList = new chattingDAO().getChattingList(vo);
 %>
@@ -353,7 +358,7 @@
 					<%for(int i=0; i<ToyList.size(); i++){%>
 						<li style="padding: 10px;"><!-- <img src="images/crolling/<%=ToyList.get(i).getImage_file()%>" alt=""> -->
 							<div onclick="move()">
-								<h2><%=list.get(i).getSender()%></h2>
+								<h2><%=member2.getNick()%></h2>
 								<h3><%=ToyList.get(i).getP_name()%></h3>
 							</div></li>
 						<%}%>
@@ -384,8 +389,8 @@
 						<%}else{ %>
 						<li class="me">
 							<div class="entete">
-								<h3>%=chatList.get(i).getChat_time()%></h3>
-								<h2><%=chatList.get(i).getSender()%></h2>
+								<h3><%=chatList.get(i).getChat_time()%></h3>
+								<h2><%=member.getNick()%></h2>
 								<span class="status blue"></span>
 							</div>
 							<div class="triangle"></div>
