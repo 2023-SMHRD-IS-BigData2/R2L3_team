@@ -1,3 +1,5 @@
+<%@page import="model.ToyDTO"%>
+<%@page import="model.ToyDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -40,7 +42,11 @@
 </head>
 
 <body class="animsition">
-
+<%
+	int p_num = Integer.parseInt(request.getParameter("p_num")); 
+	String address = new ToyDAO().getToyAddress(p_num);
+	ToyDTO toy = new ToyDAO().getToyInfo(p_num);
+%>
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
@@ -325,10 +331,10 @@
 							<div class="slick3 gallery-lb">
 								<div class="item-slick3">
 									<div class="wrap-pic-w pos-relative">
-										<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+										<img src="images/crolling/<%=toy.getImage_file()%>" alt="IMG-PRODUCT">
 
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-											href="images/product-detail-01.jpg">
+											href="images/crolling/<%=toy.getImage_file()%>">
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
@@ -342,16 +348,15 @@
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
 						<!-- 상품명 -->
 						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-							Lightweight Jacket
+							<%=toy.getP_name()%>
 						</h4>
 						<!-- 가격 -->
 						<span class="mtext-106 cl2">
-							$58.79
+							1일 : <%=toy.getRent_price()%>원
 						</span>
 						<!-- 상품 설명 -->
 						<p class="stext-102 cl3 p-t-23">
-							Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare
-							feugiat.
+							<%=toy.getP_contenct()%>
 						</p>
 
 						<!--  -->
