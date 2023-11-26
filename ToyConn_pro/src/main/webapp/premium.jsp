@@ -341,13 +341,7 @@
 						전체보기
 					</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".car">
-						자동차
-					</button>
-
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".lego">
-						Lego
-					</button>
+					
 				</div>
 
 				<!-- Filter, Search js. 누르면 아래 창 뜸 -->
