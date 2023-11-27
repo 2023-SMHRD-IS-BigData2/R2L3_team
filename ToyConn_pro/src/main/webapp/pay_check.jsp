@@ -121,6 +121,10 @@
 							type='hidden' name="result" value="<%=result%>"> <input
 							type='hidden' name="pay_choice" value="카드">
 					</form>
+					<form action="./message.jsp" id="back">
+						<input type='hidden' name="p_num" value="<%=toy.getP_num()%>">
+						
+					</form>
 					<div class="flex-w p-b-10">
 						<span class="stext-107 cl6" style="padding-right: 10px;">
 
@@ -163,6 +167,11 @@
 	         "#onlinePay")
 	         .submit();
 	}
+	function moveMessage(){
+		 document.querySelector(
+        "#back")
+        .submit();
+}
 </script>
 
 	<script>
