@@ -1,3 +1,4 @@
+<%@page import="model.MemberInfo"%>
 <%@page import="model.payCheckDAO"%>
 <%@page import="model.payCheckDTO"%>
 <%@page import="model.ToyDTO"%>
@@ -55,7 +56,16 @@
 <%
 	String id = "admin";//(String)session.getAttribute("id");
 	List<ToyDTO> list = new ToyDAO().getToyInfo(id);
+	String nick = null;
+	   String user_id = null;
+	   String address = null;
+	   MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
 
+	   if (memberInfo != null) {
+	      nick = memberInfo.getNick();
+	      user_id = memberInfo.getUser_id();
+	      session.setAttribute("id", user_id);
+	   }
 %>
  <%
 	List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
@@ -72,19 +82,36 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-
-						<!-- 로그인 되면 출력 -->
-						<a href="CorrectionMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-							회원정보 수정
-						</a>
-						<a href="#" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-							로그아웃
-						</a>
-						<!-- 로그아웃 상태 -->
-						<a href="#" id="kakaoLogin()"
-						class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-							로그인
-						</a>
+<%
+				if (memberInfo != null) { %>
+				<%  if (nick.equals("admin")) { %>
+				  <a href="Member_admin.jsp"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원관리 </a>
+				  <a href="#" id="CorrectionMember"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원정보 수정 </a>
+                  <a href="#" id="kakaoLogout"	
+                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                     로그아웃 </a>
+                  <a class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%= nick + " 관리자" %></a>
+                     <% } else { %>
+                  <!-- 로그인 되면 출력 -->
+                  <a href="#" id="CorrectionMember"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원정보 수정 </a>
+                  <a href="#" id="kakaoLogout"	
+                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                     로그아웃 </a>
+                  <a class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%= nick %></a>
+                <% }} else { %>                
+                  <!-- 로그아웃 상태 -->
+                  <a href="#" id="kakaoLogin"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
+                     <%} %>
 					</div>
 				</div>
 			</div>
@@ -144,8 +171,7 @@
 						</div>
 
 						<a href="message.jsp"
-							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 "
-							>
+							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
 							<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
 						</a>
 					</div>
@@ -200,18 +226,35 @@
 
                 <li>
                     <div class="right-top-bar flex-w h-full">
-                        <!-- 로그인 되면 출력 -->
-                        <a href="CorrectionMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                            회원정보 수정
-                        </a>
-                        <a href="#" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                            로그아웃
-                        </a>
-                        <!-- 로그아웃 상태 -->
-                        <a href="#" id="kakaoLogin()"
-                        class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                            로그인
-                        </a>
+			<%	if (memberInfo != null) { %>
+				<%  if (nick.equals("admin")) { %>
+				  <a href="Member_admin.jsp"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원관리 </a>
+				  <a href="#" id="CorrectionMember"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원정보 수정 </a>
+                  <a href="#" id="kakaoLogout"	
+                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                     로그아웃 </a>
+                  <a class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%= nick + " 관리자" %></a>
+                     <% } else { %>
+                  <!-- 로그인 되면 출력 -->
+                  <a href="#" id="CorrectionMember"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원정보 수정 </a>
+                  <a href="#" id="kakaoLogout"	
+                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                     로그아웃 </a>
+                  <a class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%= nick %></a>
+               <% }} else { %>                
+                  <!-- 로그아웃 상태 -->
+                  <a href="#" id="kakaoLogin"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
+                     <%} %>
                     </div>
                 </li>
             </ul>

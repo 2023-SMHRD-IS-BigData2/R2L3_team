@@ -354,14 +354,14 @@
 								<h2><a href="./message.jsp?p_num=<%=list.get(i).getP_num()%>" style="color: white;"><%=ToyList.get(i).getP_name().substring(0, 14)%>...</a></h2>
 								<h3><%=list.get(i).getText_content()%></h3>
 								
-							</div></li>
+							</div>
+						</li>
 						<%}%>
 					</ul>
 				</aside>
 
 				<main>
 					<header>
-						<img src="images/item-cart-01.jpg" alt="">
 						<div>
 							<h2><%=toy.getUser_id()%></h2>
 							<h3><%=toy.getP_name().substring(0, 17)%>...</h3>
@@ -398,67 +398,68 @@
 					<form action="sendMessageService">
 					<input type="hidden" name="recipient" value="<%=toy.getUser_id()%>">
 					<input type="hidden" name="p_num" value="<%=toy.getP_num()%>">
-					<footer class="flex-w flex-m p-t-50 p-b-23">
-						<textarea placeholder="택스트를 입력하시오" name="textContent"></textarea>
-						<input type="submit" class="cl0 bg1 bor1 p-lr-15"
-							style="size: 30px;">
-					</footer>
+					<footer>
+                        <div class="flex-w flex-r-m p-b-10 m-b-20">
+                            <div class="size-204 respon6-next" style="padding-left: 10px;">
+                                <div class="rs1-select2 bor8 bg0">
+                                    <textarea rows="1" name="description" class="form-control" style="border: 0;"
+                                        placeholder="택스트를 입력하시오"></textarea>
+                                </div>
+                            </div>
+                            <div class="size-203 flex-c-m respon6">
+                                <input type="submit" value="전송" style="min-width: 70px; height:40px;">
+                            </div>
+                        </div>
+                    </footer>
 					</form>
-
 				</main>
 				<hr>
 			</div>
-
 		</section>
-
 	</div>
 
 
 	<!-- -------------------------------------------------- -->
-	<!-- Product Detail -->
-	<section class="sec-product-detail p-b-60">
-		<div class="container">
-			<div class="row">
-				<!-- 날짜 선택 -->
-				<form action="payCheckService" id="pcm">
-				<input type="hidden" name = "p_num" value="<%=toy.getP_num()%>">
-				<div class="p-t-33">
-					<div class="flex-w flex-r-m p-b-10">
-						<div class="size-203 flex-c-m respon6">대여시작 일시</div>
-						<div class="size-204 respon6-next rs1-select2 bor8 bg0">
-							<input type="date" name="start_date">
-						</div>
-					</div>
+	<section class="bg0 p-b-116">
+        <div class="container">
+            <div class="flex-w flex-tr">
+                <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md" style="margin: auto;">
+                    <form action="" name="newProduct" method="post" class="form-horizontal"
+                        enctype="multipart/form-data">
+                        <h4 class="mtext-105 cl2 txt-center p-b-30">
+                            대여 기간 정하기
+                        </h4>
 
-					<div class="flex-w flex-r-m p-b-10">
-						<div class="size-203 flex-c-m respon6">대여끝날 일시</div>
-						<div class="size-204 respon6-next rs1-select2 bor8 bg0">
-							<input type="date" name="end_date">
-						</div>
-					</div>
-				</div>
-				</form>
-				<!-- 결제 버튼 -->
-				<div class="p-t-33">
-					<div class="flex-w flex-r-m p-b-10">
-						<span class="p-lr-25 bor9">
-							<button
-								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-								style="min-width: 100px; height: 40px;" onclick="movePayCheck()">현금 결제</button>
-						</span> <span class="stext-107 cl6 p-lr-25">
-							<button
-								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-								style="min-width: 100px; height: 40px;" onclick="movePayCheck()">온라인 결제</button>
-						</span> <span class="stext-107 cl6 p-lr-25">
-							<button
-								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-								style="min-width: 100px; height: 40px;" onclick="movePayCheck()">결제 확인</button>
-						</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                        <div class="flex-w flex-r-m p-b-10 m-b-20">
+                            <div class="size-203 flex-c-m respon6">
+                                대여시작 일시
+                            </div>
+
+                            <div class="size-204 respon6-next">
+                                <div class="rs1-select2 bor8 bg0">
+                                    <input type="date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-w flex-r-m p-b-10 m-b-20">
+                            <div class="size-203 flex-c-m respon6">
+                                대여끝날 일시
+                            </div>
+
+                            <div class="size-204 respon6-next">
+                                <div class="rs1-select2 bor8 bg0">
+                                    <input type="date">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit"
+                            class="btn btn-primary flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer"
+                            value="구매하기">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
