@@ -338,7 +338,7 @@
 			</div>
 		</div>
 	</div>
-	<hr>
+	
 	<!-- ------------------------------------------------ -->
 	<div class="row" style="background-color: rgb(235, 251, 245);">
 		<section id="container" style="background-color: rgb(255, 255, 255);">
@@ -402,7 +402,7 @@
                         <div class="flex-w flex-r-m p-b-10 m-b-20">
                             <div class="size-204 respon6-next" style="padding-left: 10px;">
                                 <div class="rs1-select2 bor8 bg0">
-                                    <textarea rows="1" name="description" class="form-control" style="border: 0;"
+                                    <textarea rows="1" name="textContent" class="form-control" style="border: 0;"
                                         placeholder="택스트를 입력하시오"></textarea>
                                 </div>
                             </div>
