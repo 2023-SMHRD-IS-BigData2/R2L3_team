@@ -35,6 +35,8 @@ public class payCheckService extends HttpServlet {
 		m.put("12", 31);
 		String date1 = request.getParameter("start_date");
 		String date2 = request.getParameter("end_date");
+		System.out.println(date1);
+		System.out.println(date2);
 		String[] start_date = request.getParameter("start_date").split("-");
 		String[] end_date = request.getParameter("end_date").split("-");
 		int result = 1;
