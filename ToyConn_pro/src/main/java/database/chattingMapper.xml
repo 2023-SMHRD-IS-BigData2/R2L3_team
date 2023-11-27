@@ -8,7 +8,7 @@
 		insert into message_board values(num_chat.nextval, #{sender}, #{recipient}, #{text_content}, sysdate, #{p_num})
 	</insert>
 	<select id="getChatToyList" resultType="model.chattingDTO">
-		select * from message_board where chat_num in (select max(chat_num) from message_board where recipient=#{id} or sender=%{id} group by p_num)
+		select * from message_board where chat_num in (select max(chat_num) from message_board where recipient=#{id} or sender=#{id} group by p_num)
 	</select>
 	<select id="getChattingList" parameterType="model.chattingListDTO" resultType="model.chattingDTO">
 		select *

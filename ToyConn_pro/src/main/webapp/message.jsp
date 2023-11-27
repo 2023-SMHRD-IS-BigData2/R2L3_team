@@ -64,7 +64,15 @@
 	String id = (String)session.getAttribute("id");
 	MemberInfo member = new MemberInfoDAO().getMemberInfo(id);
 	List<chattingDTO> list = new chattingDAO().getChatToyList(id);
-	int p_num = Integer.parseInt(request.getParameter("p_num"));
+	int p_num = 0;
+	if(request.getParameter("p_num")==null){
+		if(list.size()>0){
+			p_num = list.get(0).getP_num();
+		}
+	}else{
+		p_num = Integer.parseInt(request.getParameter("p_num"));
+	}
+	
 	ToyDTO toy = new ToyDAO().getToyInfo(p_num);
 	List<ToyDTO> ToyList = new ArrayList<>();
 	for(int i=0;i<list.size();i++){
@@ -357,9 +365,10 @@
 					<ul>
 					<%for(int i=0; i<list.size(); i++){%>
 						<li style="padding: 10px;"><!-- <img src="images/crolling/<%=ToyList.get(i).getImage_file()%>" alt=""> -->
-							<div onclick="move()">
-								<h2><%=list.get(i).getSender()%></h2>
-								<h3><%=ToyList.get(i).getP_name()%></h3>
+							<div>
+								<h2><a href="./message.jsp?p_num=<%=list.get(i).getP_num()%>" style="color: white;"><%=ToyList.get(i).getP_name().substring(0, 14)%>...</a></h2>
+								<h3><%=list.get(i).getText_content()%></h3>
+								
 							</div></li>
 						<%}%>
 					</ul>
@@ -370,7 +379,7 @@
 						<img src="images/item-cart-01.jpg" alt="">
 						<div>
 							<h2><%=toy.getUser_id()%></h2>
-							<h3><%=toy.getP_name()%></h3>
+							<h3><%=toy.getP_name().substring(0, 17)%>...</h3>
 						</div>
 					</header>
 					<ul id="chat">
@@ -562,6 +571,7 @@
          .submit();
 	}
 </script>
+
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 	<!--===============================================================================================-->
