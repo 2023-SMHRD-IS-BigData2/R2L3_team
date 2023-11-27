@@ -355,10 +355,10 @@
 						<h2 style="color: white;">전체 대화</h2>
 					</header>
 					<ul>
-					<%for(int i=0; i<ToyList.size(); i++){%>
+					<%for(int i=0; i<list.size(); i++){%>
 						<li style="padding: 10px;"><!-- <img src="images/crolling/<%=ToyList.get(i).getImage_file()%>" alt=""> -->
 							<div onclick="move()">
-								<h2><%=member2.getNick()%></h2>
+								<h2><%=list.get(i).getSender()%></h2>
 								<h3><%=ToyList.get(i).getP_name()%></h3>
 							</div></li>
 						<%}%>
