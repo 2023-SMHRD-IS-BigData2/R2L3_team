@@ -555,14 +555,14 @@
 													<tr class="table_row">
 														<td class="column-1">
 															<div class="how-itemcart1">
-																<img src="images/item-cart-04.jpg" alt="IMG">
+																<img src="images/crolling/<%=lendPcList.get(i).getImage_file()%>" alt="IMG">
 															</div>
 														</td>
 														<td class="column-2">
 															<div class="how-itemcart1"><%=lendPcList.get(i).getP_name() %></div>
 														</td>
 														<td class="column-3"><%=lendPcList.get(i).getPrice()%></td>
-														<td class="column-4"><%=lendPcList.get(i).getLender_id()%></td>
+														<td class="column-4"><%=lendPcList.get(i).getUser_id()%></td>
 														<td class="column-5"><%=lendPcList.get(i).getToystate()%></td>
 													</tr>
 													<%}}}%>
@@ -584,7 +584,7 @@
 								<a href="main.jsp" class="stext-109 cl8 hov-cl1 trans-04">
 									거래목록 <i class="fa fa-angle-right m-l-9 m-r-10"
 									aria-hidden="true"></i>
-								</a> <span class="stext-109 cl4"> 차용물품목록 </span>
+								</a> <span class="stext-109 cl4"> 차용물품내역 </span>
 							</div>
 						</div>
 
@@ -602,7 +602,7 @@
 														<th class="column-2">상품명</th>
 														<th class="column-3">가격</th>
 														<th class="column-4">사용자아이디</th>
-														<th class="column-5">반납여부</th>
+														<th class="column-5">현재상태</th>
 													</tr>
 													<%for(int i=0; i<lendPcList.size(); i++){
 														%>
@@ -618,7 +618,11 @@
 														</td>
 														<td class="column-3"><%=lendPcList.get(i).getPrice()%></td>
 														<td class="column-4"><%=lendPcList.get(i).getUser_id()%></td>
-														<td class="column-5"><%=lendPcList.get(i).getToystate()%></td>
+														<%if(lendPcList.get(i).getLend()!=null){%>
+														<td class="column-5"><%=lendPcList.get(i).getLend()%></td>
+														<%}else{%>
+														<td class="column-5">대여가능</td>
+														<%}%> 
 													</tr>
 													<%}%>
 
