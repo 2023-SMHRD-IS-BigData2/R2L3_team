@@ -71,27 +71,22 @@
    <%
    String nick = null;
    String user_id = null;
+   String address = null;
    MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
 
    if (memberInfo != null) {
       nick = memberInfo.getNick();
       user_id = memberInfo.getUser_id();
       session.setAttribute("id", user_id);
-   } 
-   if(user_id == null){
-      user_id = "test4";
+   } else {
+	   user_id = "test4";
    }
-   String address = new MemberInfoDAO().getAddress(user_id);
+   address = new MemberInfoDAO().getAddress(user_id);
    session.setAttribute("address", address);
    List<addressToyDTO> list = new ToyDAO().getAddressToys();
 
-   String result = address.substring(0, address.indexOf(" "));
-   if (result.length() > 4) { //로까지
-      result = address.substring(0, 12);
-   } else { //동까지
-      result = address.substring(0, 9);
-   }
-
+   String[] strList = address.split(" ");
+   String result = strList[0] + " " + strList[1] + " " + strList[2];
    %>
    <%
 	List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
