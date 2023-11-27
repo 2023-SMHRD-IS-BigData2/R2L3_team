@@ -110,17 +110,8 @@
                <div class="right-top-bar flex-w h-full">
 				<%
 				if (memberInfo != null) { %>
-                  <!-- 로그인 되면 출력 -->
-                  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick %></a>
-				<%-- <% } else if (nick.equals("admin")) { %>
-				  <a href="#"
+				<%  if (nick.equals("admin")) { %>
+				  <a href="Member_admin.jsp"
                      class="flex-c-m trans-04 p-lr-25"
                      style="font-size: small;"> 회원관리 </a>
 				  <a href="#" id="CorrectionMember"
@@ -130,8 +121,18 @@
                      class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
                      로그아웃 </a>
                   <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick + " 관리자" %></a>  --%>
-                <% } else { %>                
+                     style="font-size: small;"><%= nick + " 관리자" %></a>
+                     <% } else { %>
+                  <!-- 로그인 되면 출력 -->
+                  <a href="#" id="CorrectionMember"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원정보 수정 </a>
+                  <a href="#" id="kakaoLogout"	
+                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                     로그아웃 </a>
+                  <a class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%= nick %></a>
+                <% }} else { %>                
                   <!-- 로그아웃 상태 -->
                   <a href="#" id="kakaoLogin"
                      class="flex-c-m trans-04 p-lr-25"

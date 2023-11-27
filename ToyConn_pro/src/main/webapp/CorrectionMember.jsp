@@ -73,9 +73,6 @@ display: none;
 							class="form-control stext-111 cl2 plh3 size-116 p-r-30"
 							id="sample6_extraAddress" placeholder="참고항목"
 							style="display: none;"> 
-						<input onclick=""
-							class="flex-c-m stext-101 cl0 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
-							value="지도에서 찾기">
 						<input type="text" id="before_address" value="<%= address %>" style="display: none;">
 					</div>
 				</div>
