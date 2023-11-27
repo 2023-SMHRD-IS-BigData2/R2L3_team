@@ -66,7 +66,8 @@
 <body class="animsition">
 	<%
 	int p_num = Integer.parseInt(request.getParameter("p_num"));
-	String address = new ToyDAO().getToyAddress(p_num);
+	String Taddress = new ToyDAO().getToyAddress(p_num);
+	String address = null;
 	ToyDTO toy = new ToyDAO().getToyInfo(p_num);
 
 	String user_id = (String) session.getAttribute("id");
@@ -797,8 +798,8 @@
 	var geocoder = new kakao.maps.services.Geocoder();
 
 	// 주소로 좌표를 검색합니다
-	geocoder.addressSearch('<%=address%>
-		', function(result, status) {
+	geocoder.addressSearch('<%=Taddress%>'
+			, function(result, status) {
 
 			// 정상적으로 검색이 완료됐으면 
 			if (status === kakao.maps.services.Status.OK) {

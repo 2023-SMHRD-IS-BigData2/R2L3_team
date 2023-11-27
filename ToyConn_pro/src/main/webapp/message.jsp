@@ -364,7 +364,11 @@
 					<header>
 						<div>
 							<h2><%=toy.getUser_id()%></h2>
-							<h3><%=toy.getP_name().substring(0, 17)%>...</h3>
+							<%if(toy.getP_name().length()>17){ %>
+								<h3><%=toy.getP_name().substring(0, 17)%>...</h3>
+							<%}else{ %>
+								<h3><%=toy.getP_name()%></h3>
+							<%}%>
 						</div>
 					</header>
 					<ul id="chat">
@@ -424,7 +428,7 @@
         <div class="container">
             <div class="flex-w flex-tr">
                 <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md" style="margin: auto;">
-                    <form action="" name="newProduct" method="post" class="form-horizontal"
+                    <form action="payCheckService" name="newProduct" method="post" class="form-horizontal"
                         enctype="multipart/form-data">
                         <h4 class="mtext-105 cl2 txt-center p-b-30">
                             대여 기간 정하기
@@ -437,7 +441,7 @@
 
                             <div class="size-204 respon6-next">
                                 <div class="rs1-select2 bor8 bg0">
-                                    <input type="date">
+                                    <input type="date" name="start_date">
                                 </div>
                             </div>
                         </div>
@@ -448,10 +452,11 @@
 
                             <div class="size-204 respon6-next">
                                 <div class="rs1-select2 bor8 bg0">
-                                    <input type="date">
+                                    <input type="date" name="end_date">
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" name="p_num" value="<%=p_num%>">
                         <input type="submit"
                             class="btn btn-primary flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer"
                             value="구매하기">
