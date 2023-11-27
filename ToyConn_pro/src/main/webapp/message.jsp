@@ -359,7 +359,7 @@
 						<li style="padding: 10px;"><!-- <img src="images/crolling/<%=ToyList.get(i).getImage_file()%>" alt=""> -->
 							<div onclick="move()">
 								<h2><%=list.get(i).getSender()%></h2>
-								<h3><%=Toy%></h3>
+								<h3><%=ToyList.get(i).getP_name()%></h3>
 							</div></li>
 						<%}%>
 					</ul>
