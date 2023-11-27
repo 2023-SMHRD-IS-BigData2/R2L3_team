@@ -543,30 +543,25 @@
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<a href="#">
-						<h4 class="stext-301 cl0 p-b-30">카테고리</h4>
-					</a>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<a href="#">
+				<div class="col-sm-6 col-lg-3 p-b-50" style="margin-left: 200px;">
+					<a href="agreement.jsp">
 						<h4 class="stext-301 cl0 p-b-30">이용약관</h4>
 					</a>
 				</div>
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<a href="#">
-						<h4 class="stext-301 cl0 p-b-30">중고거래</h4>
-					</a>
-				</div>
+				
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
+				<div class="col-sm-6 col-lg-3 p-b-50" style="margin-left: 200px;">
 					<a href="#">
 						<h4 class="stext-301 cl0 p-b-30">신고</h4>
+						<p class="stext-107 cl7 size-201">
+							<b>신고사항</b> <br>
+							전화번호 : 062-000-0000<br> 
+							Email : aaa@naver.com
+						</p>
 					</a>
 				</div>
-				<div class="col-sm-6 col-lg-3 p-b-50">
+				<div class="col-sm-6 col-lg-3 p-b-50" style="margin-left: 200px;">
 					<a href="#">
 						<h4 class="stext-301 cl0 p-b-30">R2L3</h4>
 					</a>
