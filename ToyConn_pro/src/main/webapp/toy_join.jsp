@@ -1,3 +1,5 @@
+<%@page import="model.payCheckDAO"%>
+<%@page import="model.payCheckDTO"%>
 <%@page import="model.MemberInfo"%>
 <%@page import="model.ToyDAO"%>
 <%@page import="model.addressToyDTO"%>
@@ -85,6 +87,9 @@
 		user_id = (String) session.getAttribute("user_id");
 		nick = (String) session.getAttribute("nick");
 	}
+	%>
+	<%
+	List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
 	%>
 	<!-- Header -->
 	<header class="header-v4">
@@ -175,15 +180,15 @@
 
 						<div
 							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-							data-notify="7">
+							data-notify="<%=PcList.size()%>">
 							<!--<i class="zmdi zmdi-shopping-cart"></i>-->
 							<img src="images/icons/종종.png" alt="" style="height: 20px;">
 
 						</div>
 
 						<a href="message.jsp"
-							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
-							data-notify="1"> <img src="images/icons/말풍선 .png" alt=""
+							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11"
+							> <img src="images/icons/말풍선 .png" alt=""
 							style="height: 20px;">
 						</a>
 					</div>
@@ -208,15 +213,15 @@
 
 				<div
 					class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-					data-notify="7">
+					data-notify="<%=PcList.size()%>">
 					<!--<i class="zmdi zmdi-shopping-cart"></i>-->
 					<img src="images/icons/종종.png" alt="" style="height: 20px;">
 
 				</div>
 
 				<a href="message.jsp"
-					class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
-					data-notify="1"> <img src="images/icons/말풍선 .png" alt=""
+					class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 "
+					> <img src="images/icons/말풍선 .png" alt=""
 					style="height: 20px;">
 				</a>
 			</div>
@@ -321,65 +326,55 @@
 	</header>
 
 	<!-- 오른쪽 상단 Cart 공간 -->
-	<div class="wrap-header-cart js-panel-cart">
-		<div class="s-full js-hide-cart"></div>
-
-		<div class="header-cart flex-col-l p-l-65 p-r-25">
-			<div class="header-cart-title flex-w flex-sb-m p-b-8">
-				<span class="mtext-103 cl2"> 알림 </span>
-				<!-- 닫기 버튼 -->
-				<div
-					class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-					<i class="zmdi zmdi-close"></i>
+		<div class="wrap-header-cart js-panel-cart">
+			<div class="s-full js-hide-cart"></div>
+	
+			<div class="header-cart flex-col-l p-l-65 p-r-25">
+				<div class="header-cart-title flex-w flex-sb-m p-b-8">
+					<span class="mtext-103 cl2"> 알림 </span>
+					<!-- 닫기 버튼 -->
+					<div
+						class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+						<i class="zmdi zmdi-close"></i>
+					</div>
 				</div>
-			</div>
+	
 
 			<div class="header-cart-content flex-w js-pscroll">
 				<ul class="header-cart-wrapitem w-full">
+
 					<!-- 상품 리스트 -->
 					<li class="header-cart-item flex-w flex-t m-b-12">
 						<div class="header-cart-item-img">
 							<!-- 상품 이미지 -->
 							<img src="images/item-cart-01.jpg" alt="IMG">
 						</div>
-						<div class="header-cart-item-txt p-t-8">
-							<!-- 상품 이름 -->
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								상품명 </a>
-							<!-- 상품 가격 -->
-							<span class="header-cart-item-info"> 상품 가격 </span>
-						</div>
-					</li>
-
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<!-- 상품 이미지 -->
-							<img src="images/item-cart-02.jpg" alt="IMG">
-						</div>
 
 						<div class="header-cart-item-txt p-t-8">
 							<!-- 상품 이름 -->
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								name </a>
+								White Shirt Pleat
+							</a>
 							<!-- 상품 개수 & 가격 -->
-
-							<span class="header-cart-item-info"> price </span>
+							<span class="header-cart-item-info">
+								1 x $19.00
+							</span>
+						</div>
+						<div class="w-full">
+							<!-- 이동 버튼 -->
+							<div class="header-cart-buttons flex-w w-full" style="margin-top: 10px;">
+								<a href="#"
+									class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10" style="min-width:100px; height: 30px;" >
+									채팅하기
+								</a>
+		
+								<a href="#" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10" style="min-width:100px; height: 30px;">
+									거래하기
+								</a>
+							</div>
 						</div>
 					</li>
-
 				</ul>
-
-
-				<div class="w-full">
-					<!-- 구매 시 이동 버튼 -->
-					<div class="header-cart-buttons flex-w w-full">
-						<a href="#"
-							class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-							채팅하기 </a> <a href="#"
-							class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-							거래하기 </a>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
