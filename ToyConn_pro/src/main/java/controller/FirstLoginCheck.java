@@ -24,6 +24,7 @@ public class FirstLoginCheck extends HttpServlet {
 
 		String user_id = request.getParameter("user_id");
 		String nick = request.getParameter("nick");
+		String url = request.getParameter("url");
 
 		System.out.println(user_id);
 		System.out.println(nick);
@@ -36,7 +37,7 @@ public class FirstLoginCheck extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("memberInfo", row);
 
-			response.sendRedirect("main.jsp");
+			response.sendRedirect(url);
 
 		} else {
 			System.out.println("Not in");

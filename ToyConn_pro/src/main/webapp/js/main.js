@@ -280,6 +280,9 @@
 
 	$('#kakaoLogin').on('click', function() {
 		console.log("kakaoLogin");
+		
+		let url = window.location.href;
+		url = url.slice(url.lastIndexOf("/") + 1);
 
 		Kakao.Auth.login({
 			success: function(response) {
@@ -295,6 +298,7 @@
 						$form.attr("style", "display:none;");
 						$form.append($('<input />', { type: 'text', name: 'user_id', value: KakaoToken.id }));
 						$form.append($('<input />', { type: 'text', name: 'nick', value: KakaoToken.properties.nickname }));
+						$form.append($('<input />', { type: 'text', name: 'url', value: url}));
 						$form.appendTo("body");
 						$form.submit();
 					},
@@ -311,6 +315,9 @@
 
 	$('#kakaoLogout').on('click', function() {
 		console.log("kakaoLogout");
+		
+		let url = window.location.href;
+		url = url.slice(url.lastIndexOf("/") + 1);
 
 		if (Kakao.Auth.getAccessToken()) {
 			Kakao.API.request({
@@ -322,6 +329,7 @@
 					$form.attr("action", "LogoutAccount");
 					$form.attr("method", "post");
 					$form.attr("style", "display:none;");
+					$form.append($('<input />', { type: 'text', name: 'url', value: url}));
 					$form.appendTo("body");
 					$form.submit();
 				},
