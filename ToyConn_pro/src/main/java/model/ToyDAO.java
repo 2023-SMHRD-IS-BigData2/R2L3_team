@@ -53,7 +53,7 @@ public class ToyDAO {
 	public int updateGiveState(int p_num) {
 		int cnt=0;
 		try {
-			cnt = sqlSession.update("updateGiveState", p_num);
+			cnt = sqlSession.update("database.ProductMapper.updateGiveState", p_num);
 		} catch (Exception e) {
 			e.getStackTrace();
 		}finally {

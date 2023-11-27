@@ -55,5 +55,7 @@ public class payCheckDTO {
 	public String getLend() {
 		return lend;
 	}
-	
+	public int getPc_num() {
+		return pc_num;
+	}
 }

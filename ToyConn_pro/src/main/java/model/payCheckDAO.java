@@ -37,7 +37,19 @@ public class payCheckDAO {
 		}
 		return list;
 	}
+	public List<payCheckDTO> getUserlend(String user_id){
+		List<payCheckDTO> list=null;
+		try {
+			list = sqlSession.selectList("database.ProductMapper.getUserlend", user_id);
+		} catch (Exception e) {
+			e.getStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return list;
+	}
 
+	
 	public int updatePayCheck(pcUpdateDTO vo) {
 		int cnt = 0;
 		try {
@@ -66,5 +78,16 @@ public class payCheckDAO {
 			}
 		}
 		return li;
+	}
+	public int updatePC(int pc_num) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.update("updatePC", pc_num);
+		} catch (Exception e) {
+			e.getStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return cnt;
 	}
 }

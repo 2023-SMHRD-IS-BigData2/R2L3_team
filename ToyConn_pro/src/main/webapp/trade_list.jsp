@@ -1,3 +1,4 @@
+<%@page import="model.MemberInfoDAO"%>
 <%@page import="model.MemberInfo"%>
 <%@page import="model.lenderPayCheckDTO"%>
 <%@page import="model.payCheckDAO"%>
@@ -69,7 +70,9 @@
 	String user_id = (String) session.getAttribute("id");
 	String nick = null;
 	MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
-
+	
+	List<payCheckDTO> userLend = new payCheckDAO().getUserlend(user_id);
+	
 	if (memberInfo != null) {
 		nick = memberInfo.getNick();
 		session.setAttribute("id", memberInfo.getUser_id());
@@ -398,26 +401,32 @@
 
 
 						<!-- Shoping Cart -->
-						<form class="bg0 p-t-75">
+						
 							<div class="container">
 								<div class="row">
 									<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
 										<div class="m-l-25 m-r--38 m-lr-0-xl">
 											<div class="wrap-table-shopping-cart">
+											<form action="takeService">
 												<table class="table-shopping-cart">
 													<tr class="table_head">
 														<th class="column-1">상품</th>
 														<th class="column-2">상품명</th>
 														<th class="column-3">가격</th>
-														<th class="column-4">사용자아이디</th>
-														<th class="column-5">반납여부</th>
+														<th class="column-4">빌려간사람</th>
+														<th class="column-5">대여여부</th>
+														<th class="column-5">반납 확인</th>
 													</tr>
 													<%for(int i=0; i<list.size(); i++){
-														for(int j=0; j<pclist.size(); j++){
-															if(list.get(i).getP_num()==pclist.get(j).getP_num()){
-																if(list.get(i).getP_status().equals("대여중")){%>
+														for(int j=0; j<userLend.size(); j++){
+															if(list.get(i).getP_num()==userLend.get(j).getP_num()){
+																if(userLend.get(i).getLend().equals("대여중")){
+																	String lender_id = userLend.get(i).getLender_id();
+																	String nck = new MemberInfoDAO().getNick(lender_id);
+																	%>
 													
 													<tr class="table_row">
+													
 														<td class="column-1">
 															<div class="how-itemcart1">
 																<img src="images/crolling/<%=list.get(i).getImage_file()%>" alt="IMG">
@@ -426,18 +435,27 @@
 														<td class="column-2">
 															<div class="how-itemcart1"><%=list.get(i).getP_name()%></div>
 														</td>
-														<td class="column-3"><%=pclist.get(j).getPrice()%></td>
-														<td class="column-4"><%=pclist.get(j).getLender_id()%></td>
+														<td class="column-3"><%=userLend.get(j).getPrice()%></td>
+														<td class="column-4"><%=nck%></td>
 														<td class="column-5"><%=list.get(i).getP_status()%></td>
+														
+														<td class="column-5" style="padding-left: 100px">
+															
+															<input type='hidden' name='p_num' value="<%=list.get(i).getP_num()%>">
+															<input type='hidden' name='PC_num' value="<%=userLend.get(i).getPc_num()%>">
+															<input type='submit' value='반납확인'></td>
 													</tr>
+													
 													<%}}}}%>
 												</table>
+												
+											</form>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</form>
+						
 					</div>
 
 					<div class="how-pos2 p-lr-15-md">
@@ -469,7 +487,9 @@
 														<th class="column-4">사용자아이디</th>
 														<th class="column-5">반납여부</th>
 													</tr>
-													<%for(int i=0; i<list.size(); i++){ %>
+													<%for(int i=0; i<list.size(); i++){ 
+														
+													%>
 													<tr class="table_row">
 														<td class="column-1">
 															<div class="how-itemcart1">

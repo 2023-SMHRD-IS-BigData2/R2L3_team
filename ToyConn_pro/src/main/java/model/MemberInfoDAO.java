@@ -84,4 +84,15 @@ public class MemberInfoDAO {
 		}
 		return vo;
 	}
+	public String getNick(String id) {
+		String nick = "";
+		try {
+			nick = session.selectOne("database.MemberInfoMapper.getNick", id);
+		} catch (Exception e) {
+			e.getStackTrace();
+		}finally {
+			session.close();
+		}
+		return nick;
+	}
 }

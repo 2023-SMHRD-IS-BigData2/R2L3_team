@@ -56,4 +56,10 @@ where a.p_num=b.p_num(+) and lender_id=#{lender_id}
 	<select id="getMemberInfo" resultType="MemberInfo" parameterType="String">
 		select * from member_info where user_id=#{id}
 	</select>
+	<select id="getNick" resultType="String" parameterType="String">
+		select nick from member_info where user_id=#{id}
+	</select>
+	<update id="updateTakeState" parameterType="int">
+		update product_info set p_status='대여가능' where p_num=#{p_num}
+	</update>
  </mapper>
