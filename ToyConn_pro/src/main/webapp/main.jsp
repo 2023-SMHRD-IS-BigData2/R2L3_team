@@ -69,8 +69,15 @@
 
 <body class="animsition">
    <%
-   String user_id =(String)session.getAttribute("id");
    String nick = null;
+   String user_id = null;
+   MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
+
+   if (memberInfo != null) {
+      nick = memberInfo.getNick();
+      user_id = memberInfo.getUser_id();
+      session.setAttribute("id", user_id);
+   } 
    if(user_id == null){
       user_id = "test4";
    }
@@ -85,15 +92,6 @@
       result = address.substring(0, 9);
    }
 
-   MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
-
-   if (memberInfo != null) {
-      nick = memberInfo.getNick();
-      session.setAttribute("id", memberInfo.getUser_id());
-   } else if (session.getAttribute("user_id") != null) {
-      user_id = (String) session.getAttribute("user_id");
-      nick = (String) session.getAttribute("nick");
-   }
    %>
    <%
 	List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
