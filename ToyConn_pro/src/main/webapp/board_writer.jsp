@@ -375,7 +375,7 @@
             <p>문의 사항을 적어주세요.</p>
         </div>
         <div class="board_write_wrap">
-        <form action="setBoardService">
+        <form action="setBoardService" id="insert">
             <div class="board_write">
                 <div class="title">
                 
@@ -395,9 +395,7 @@
                 </div>
             </div>
             <div class="bt_wrap">
-            	<div style="display:inline-block; border: solid 1px black; margin-bottom: 5px;">
-                <input type="submit" class="on" style="width: 78px; height: 41px;">
-                </div>
+            	<a class="on" onclick="insert()">등록</a>
                 <a href="board_list.jsp" >취소</a>
             </div>
             </form>
@@ -458,6 +456,13 @@
 
     <!--===============================================================================================-->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+	function insert() {
+		 document.querySelector(
+         "#insert")
+         .submit();
+	}
+</script>
     <!--===============================================================================================-->
     <script src="vendor/animsition/js/animsition.min.js"></script>
     <!--===============================================================================================-->
