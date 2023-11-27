@@ -96,7 +96,7 @@
 					<div class="left-top-bar">More kids, More joy</div>
 
 					<div class="right-top-bar flex-w h-full">
-<% if (memberInfo != null) { %>
+			<% if (memberInfo != null) { %>
 				<%  if (nick.equals("admin")) { %>
 				  <a href="Member_admin.jsp"
                      class="flex-c-m trans-04 p-lr-25"
