@@ -25,7 +25,8 @@ public class FirstLoginCheck extends HttpServlet {
 		String user_id = request.getParameter("user_id");
 		String nick = request.getParameter("nick");
 		String url = request.getParameter("url");
-
+		
+		System.out.println(url);
 		System.out.println(user_id);
 		System.out.println(nick);
 
@@ -33,19 +34,15 @@ public class FirstLoginCheck extends HttpServlet {
 
 		if (row != null) {
 			System.out.println("In");
-
 			HttpSession session = request.getSession();
 			session.setAttribute("memberInfo", row);
-
 			response.sendRedirect(url);
 
 		} else {
 			System.out.println("Not in");
-
 			HttpSession session = request.getSession();
 			session.setAttribute("user_id", user_id);
 			session.setAttribute("nick", nick);
-			
 			response.sendRedirect("JoinMember.jsp");
 		}
 
