@@ -81,7 +81,7 @@
 	<%
 	List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
 	%>
-	
+
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
@@ -92,35 +92,39 @@
 					<div class="left-top-bar">More kids, More joy</div>
 
 					<div class="right-top-bar flex-w h-full">
-			<% if (memberInfo != null) { %>
-				<%  if (nick.equals("admin")) { %>
-				  <a href="Member_admin.jsp"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원관리 </a>
-				  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick + " 관리자" %></a>
-                     <% } else { %>
-                  <!-- 로그인 되면 출력 -->
-                  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick %></a>
-             <% }} else { %>                
-                  <!-- 로그아웃 상태 -->
-                  <a href="#" id="kakaoLogin"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
-                <% } %>
+						<%
+						if (memberInfo != null) {
+						%>
+						<%
+						if (nick.equals("admin")) {
+						%>
+						<a href="Member_admin.jsp" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 회원관리 </a> <a href="#"
+							id="CorrectionMember" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 회원정보 수정 </a> <a href="#"
+							id="kakaoLogout" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 로그아웃 </a> <a
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;"><%=nick + " 관리자"%></a>
+						<%
+						} else {
+						%>
+						<!-- 로그인 되면 출력 -->
+						<a href="#" id="CorrectionMember"
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+							회원정보 수정 </a> <a href="#" id="kakaoLogout"
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+							로그아웃 </a> <a class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"><%=nick%></a>
+						<%
+						}
+						} else {
+						%>
+						<!-- 로그아웃 상태 -->
+						<a href="#" id="kakaoLogin" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
+						<%
+						}
+						%>
 					</div>
 				</div>
 			</div>
@@ -178,9 +182,8 @@
 						</div>
 
 						<a href="message.jsp"
-							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 "
-							> <img src="images/icons/말풍선 .png" alt=""
-							style="height: 20px;">
+							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
+							<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
 						</a>
 					</div>
 				</nav>
@@ -211,9 +214,8 @@
 				</div>
 
 				<a href="message.jsp"
-					class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 "
-					> <img src="images/icons/말풍선 .png" alt=""
-					style="height: 20px;">
+					class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
+					<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
 				</a>
 			</div>
 
@@ -224,17 +226,17 @@
 			</div>
 		</div>
 
-					<form action="payService" id="onlinePay">
-						<input type='hidden' name="lender_id"
-							value="<%=session.getAttribute("id")%>"> <input
-							type='hidden' name="user_id" value="<%=toy.getUser_id()%>">
-						<input type='hidden' name="p_num" value="<%=toy.getP_num()%>">
-						<input type='hidden' name="p_name" value="<%=toy.getP_name()%>">
-						<input type='hidden' name="price" value="<%=toy.getRent_price()%>"> <input
-							type='hidden' name="result" value="<%=3%>"> <input
-							type='hidden' name="pay_choice" value="카드">
-						<input type="hidden" name="isPre" value="pre"> 
-					</form>
+		<form action="payService" id="onlinePay">
+			<input type='hidden' name="lender_id"
+				value="<%=session.getAttribute("id")%>"> <input
+				type='hidden' name="user_id" value="<%=toy.getUser_id()%>">
+			<input type='hidden' name="p_num" value="<%=toy.getP_num()%>">
+			<input type='hidden' name="p_name" value="<%=toy.getP_name()%>">
+			<input type='hidden' name="price" value="<%=toy.getRent_price()%>">
+			<input type='hidden' name="result" value="<%=3%>"> <input
+				type='hidden' name="pay_choice" value="카드"> <input
+				type="hidden" name="isPre" value="pre">
+		</form>
 		<!-- Menu Mobile -->
 		<div class="menu-mobile">
 			<ul class="topbar-mobile">
@@ -244,35 +246,39 @@
 
 				<li>
 					<div class="right-top-bar flex-w h-full">
-			<% if (memberInfo != null) { %>
-				<%  if (nick.equals("admin")) { %>
-				  <a href="Member_admin.jsp"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원관리 </a>
-				  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick + " 관리자" %></a>
-                     <% } else { %>
-                  <!-- 로그인 되면 출력 -->
-                  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick %></a>
-             <% }} else { %>                
-                  <!-- 로그아웃 상태 -->
-                  <a href="#" id="kakaoLogin"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
-                <% } %>
+						<%
+						if (memberInfo != null) {
+						%>
+						<%
+						if (nick.equals("admin")) {
+						%>
+						<a href="Member_admin.jsp" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 회원관리 </a> <a href="#"
+							id="CorrectionMember" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 회원정보 수정 </a> <a href="#"
+							id="kakaoLogout" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 로그아웃 </a> <a
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;"><%=nick + " 관리자"%></a>
+						<%
+						} else {
+						%>
+						<!-- 로그인 되면 출력 -->
+						<a href="#" id="CorrectionMember"
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+							회원정보 수정 </a> <a href="#" id="kakaoLogout"
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+							로그아웃 </a> <a class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"><%=nick%></a>
+						<%
+						}
+						} else {
+						%>
+						<!-- 로그아웃 상태 -->
+						<a href="#" id="kakaoLogin" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
+						<%
+						}
+						%>
 					</div>
 				</li>
 			</ul>
@@ -327,19 +333,19 @@
 	</header>
 
 	<!-- 오른쪽 상단 Cart 공간 -->
-		<div class="wrap-header-cart js-panel-cart">
-			<div class="s-full js-hide-cart"></div>
-	
-			<div class="header-cart flex-col-l p-l-65 p-r-25">
-				<div class="header-cart-title flex-w flex-sb-m p-b-8">
-					<span class="mtext-103 cl2"> 알림 </span>
-					<!-- 닫기 버튼 -->
-					<div
-						class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-						<i class="zmdi zmdi-close"></i>
-					</div>
+	<div class="wrap-header-cart js-panel-cart">
+		<div class="s-full js-hide-cart"></div>
+
+		<div class="header-cart flex-col-l p-l-65 p-r-25">
+			<div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl2"> 알림 </span>
+				<!-- 닫기 버튼 -->
+				<div
+					class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+					<i class="zmdi zmdi-close"></i>
 				</div>
-	
+			</div>
+
 
 			<div class="header-cart-content flex-w js-pscroll">
 				<ul class="header-cart-wrapitem w-full">
@@ -354,24 +360,19 @@
 						<div class="header-cart-item-txt p-t-8">
 							<!-- 상품 이름 -->
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat
-							</a>
+								White Shirt Pleat </a>
 							<!-- 상품 개수 & 가격 -->
-							<span class="header-cart-item-info">
-								1 x $19.00
-							</span>
+							<span class="header-cart-item-info"> 1 x $19.00 </span>
 						</div>
 						<div class="w-full">
 							<!-- 이동 버튼 -->
-							<div class="header-cart-buttons flex-w w-full" style="margin-top: 10px;">
+							<div class="header-cart-buttons flex-w w-full"
+								style="margin-top: 10px;">
 								<a href="#"
-									class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10" style="min-width:100px; height: 30px;" >
-									채팅하기
-								</a>
-		
-								<a href="#" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10" style="min-width:100px; height: 30px;">
-									거래하기
-								</a>
+									class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10"
+									style="min-width: 100px; height: 30px;"> 채팅하기 </a> <a href="#"
+									class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10"
+									style="min-width: 100px; height: 30px;"> 거래하기 </a>
 							</div>
 						</div>
 					</li>
@@ -387,9 +388,9 @@
 			<div class="row">
 				<div class="col-md-6 col-lg-7 p-b-30">
 					<div class="p-l-25 p-r-30 p-lr-0-lg">
-						<div class="wrap-slick3 flex-sb flex-w">
+						<div class="wrap-slick3 flex-sb flex-w" style="float: right;">
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
-							<div class="slick3 gallery-lb">
+							<div class="gallery-lb" style="width: 80%;">
 								<div class="item-slick3">
 									<div class="wrap-pic-w pos-relative">
 										<img src="images/crolling/<%=toy.getImage_file()%>"
@@ -404,7 +405,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
 						<!-- 상품명 -->
@@ -436,174 +436,172 @@
 							</div>
 						</div>
 						<br>
-						<%if(pc!=null){%>
-							<p>결제 완료</p>
-						<%}%>
+						<%
+						if (pc != null) {
+						%>
+						<p>결제 완료</p>
+						<%
+						}
+						%>
 						<div class="flex-w flex-r-m p-b-10">
-
 							<span class="stext-107 cl6 p-lr-25" style="padding-right: 80px;">
 								<button
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-									style="min-width: 100px; height: 40px;" onclick="kakaoPay()">온라인 결제</button>
+									style="min-width: 100px; height: 40px;" onclick="kakaoPay()">온라인
+									결제</button>
 							</span> <span class="stext-107 cl6 p-lr-25" style="padding-right: 80px;">
 								<button
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-									style="min-width: 100px; height: 40px;" onclick="onlinepay()">결제 확인</button>
+									style="min-width: 100px; height: 40px;" onclick="onlinepay()">결제
+									확인</button>
 							</span>
 						</div>
 						<br>
-						
-
 					</div>
+				</div>
+				</div>
+				<div class="bor10 m-t-50 p-t-43 p-b-40">
+					<!-- Tab01 -->
+					<div class="tab01">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<!-- 상품 설명 -->
+							<li class="nav-item p-b-10"><a class="nav-link active"
+								data-toggle="tab" href="#description" role="tab">Description</a>
+							</li>
+							<!-- 상품 정보 -->
+							<li class="nav-item p-b-10"><a class="nav-link"
+								data-toggle="tab" href="#information" role="tab">Additional
+									information</a></li>
+							<!-- 상품 리뷰 -->
+							<li class="nav-item p-b-10"><a class="nav-link"
+								data-toggle="tab" href="#reviews" role="tab">Reviews (1)</a></li>
+						</ul>
 
+						<!-- Tab panes -->
+						<div class="tab-content p-t-43">
+							<!-- 상품 설명 -->
+							<div class="tab-pane fade show active" id="description"
+								role="tabpanel">
+								<div class="how-pos2 p-lr-15-md">
+									<p class="stext-102 cl6">Aenean sit amet gravida nisi. Nam
+										fermentum est felis, quis feugiat nunc fringilla sit amet. Ut
+										in blandit ipsum. Quisque luctus dui at ante aliquet, in
+										hendrerit lectus interdum. Morbi elementum sapien rhoncus
+										pretium maximus. Nulla lectus enim, cursus et elementum sed,
+										sodales vitae eros. Ut ex quam, porta consequat interdum in,
+										faucibus eu velit. Quisque rhoncus ex ac libero varius
+										molestie. Aenean tempor sit amet orci nec iaculis. Cras sit
+										amet nulla libero. Curabitur dignissim, nunc nec laoreet
+										consequat, purus nunc porta lacus, vel efficitur tellus augue
+										in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non
+										tempor erat. Duis in egestas nunc.</p>
+								</div>
+							</div>
 
+							<!-- 상품 정보 -->
+							<div class="tab-pane fade" id="information" role="tabpanel">
+								<div class="row">
+									<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+										<ul class="p-lr-28 p-lr-15-sm">
+											<li class="flex-w flex-t p-b-7"><span
+												class="stext-102 cl3 size-205"> Weight </span> <span
+												class="stext-102 cl6 size-206"> 0.79 kg </span></li>
 
+											<li class="flex-w flex-t p-b-7"><span
+												class="stext-102 cl3 size-205"> Dimensions </span> <span
+												class="stext-102 cl6 size-206"> 110 x 33 x 100 cm </span></li>
 
+											<li class="flex-w flex-t p-b-7"><span
+												class="stext-102 cl3 size-205"> Materials </span> <span
+												class="stext-102 cl6 size-206"> 60% cotton </span></li>
 
-					<div class="bor10 m-t-50 p-t-43 p-b-40">
-						<!-- Tab01 -->
-						<div class="tab01">
-							<!-- Nav tabs -->
-							<ul class="nav nav-tabs" role="tablist">
-								<!-- 상품 설명 -->
-								<li class="nav-item p-b-10"><a class="nav-link active"
-									data-toggle="tab" href="#description" role="tab">Description</a>
-								</li>
-								<!-- 상품 정보 -->
-								<li class="nav-item p-b-10"><a class="nav-link"
-									data-toggle="tab" href="#information" role="tab">Additional
-										information</a></li>
-								<!-- 상품 리뷰 -->
-								<li class="nav-item p-b-10"><a class="nav-link"
-									data-toggle="tab" href="#reviews" role="tab">Reviews (1)</a></li>
-							</ul>
+											<li class="flex-w flex-t p-b-7"><span
+												class="stext-102 cl3 size-205"> Color </span> <span
+												class="stext-102 cl6 size-206"> Black, Blue, Grey,
+													Green, Red, White </span></li>
 
-							<!-- Tab panes -->
-							<div class="tab-content p-t-43">
-								<!-- 상품 설명 -->
-								<div class="tab-pane fade show active" id="description"
-									role="tabpanel">
-									<div class="how-pos2 p-lr-15-md">
-										<p class="stext-102 cl6">Aenean sit amet gravida nisi. Nam
-											fermentum est felis, quis feugiat nunc fringilla sit amet. Ut
-											in blandit ipsum. Quisque luctus dui at ante aliquet, in
-											hendrerit lectus interdum. Morbi elementum sapien rhoncus
-											pretium maximus. Nulla lectus enim, cursus et elementum sed,
-											sodales vitae eros. Ut ex quam, porta consequat interdum in,
-											faucibus eu velit. Quisque rhoncus ex ac libero varius
-											molestie. Aenean tempor sit amet orci nec iaculis. Cras sit
-											amet nulla libero. Curabitur dignissim, nunc nec laoreet
-											consequat, purus nunc porta lacus, vel efficitur tellus augue
-											in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non
-											tempor erat. Duis in egestas nunc.</p>
+											<li class="flex-w flex-t p-b-7"><span
+												class="stext-102 cl3 size-205"> Size </span> <span
+												class="stext-102 cl6 size-206"> XL, L, M, S </span></li>
+										</ul>
 									</div>
 								</div>
+							</div>
 
-								<!-- 상품 정보 -->
-								<div class="tab-pane fade" id="information" role="tabpanel">
-									<div class="row">
-										<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-											<ul class="p-lr-28 p-lr-15-sm">
-												<li class="flex-w flex-t p-b-7"><span
-													class="stext-102 cl3 size-205"> Weight </span> <span
-													class="stext-102 cl6 size-206"> 0.79 kg </span></li>
-
-												<li class="flex-w flex-t p-b-7"><span
-													class="stext-102 cl3 size-205"> Dimensions </span> <span
-													class="stext-102 cl6 size-206"> 110 x 33 x 100 cm </span></li>
-
-												<li class="flex-w flex-t p-b-7"><span
-													class="stext-102 cl3 size-205"> Materials </span> <span
-													class="stext-102 cl6 size-206"> 60% cotton </span></li>
-
-												<li class="flex-w flex-t p-b-7"><span
-													class="stext-102 cl3 size-205"> Color </span> <span
-													class="stext-102 cl6 size-206"> Black, Blue, Grey,
-														Green, Red, White </span></li>
-
-												<li class="flex-w flex-t p-b-7"><span
-													class="stext-102 cl3 size-205"> Size </span> <span
-													class="stext-102 cl6 size-206"> XL, L, M, S </span></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-
-								<!-- 리뷰 -->
-								<div class="tab-pane fade" id="reviews" role="tabpanel">
-									<div class="row">
-										<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-											<div class="p-b-30 m-lr-15-sm">
-												<!-- Review -->
-												<div class="flex-w flex-t p-b-68">
-													<div
-														class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-														<img src="images/avatar-01.jpg" alt="AVATAR">
-													</div>
-
-													<div class="size-207">
-														<div class="flex-w flex-sb-m p-b-17">
-															<!-- 사용자 이름 -->
-															<span class="mtext-107 cl2 p-r-20"> Ariana Grande
-															</span> <span class="fs-18 cl11"> <i
-																class="zmdi zmdi-star"></i> <i class="zmdi zmdi-star"></i>
-																<i class="zmdi zmdi-star"></i> <i class="zmdi zmdi-star"></i>
-																<i class="zmdi zmdi-star-half"></i>
-															</span>
-														</div>
-
-														<p class="stext-102 cl6">Quod autem in homine
-															praestantissimum atque optimum est, id deseruit. Apud
-															ceteros autem philosophos</p>
-													</div>
+							<!-- 리뷰 -->
+							<div class="tab-pane fade" id="reviews" role="tabpanel">
+								<div class="row">
+									<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+										<div class="p-b-30 m-lr-15-sm">
+											<!-- Review -->
+											<div class="flex-w flex-t p-b-68">
+												<div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
+													<img src="images/avatar-01.jpg" alt="AVATAR">
 												</div>
 
-												<!-- Add review -->
-												<form class="w-full">
-													<h5 class="mtext-108 cl2 p-b-7">Add a review</h5>
-
-													<p class="stext-102 cl6">Your email address will not be
-														published. Required fields are marked *</p>
-
-													<div class="flex-w flex-m p-t-50 p-b-23">
-														<span class="stext-102 cl3 m-r-16"> Your Rating </span> <span
-															class="wrap-rating fs-18 cl11 pointer"> <i
-															class="item-rating pointer zmdi zmdi-star-outline"></i> <i
-															class="item-rating pointer zmdi zmdi-star-outline"></i> <i
-															class="item-rating pointer zmdi zmdi-star-outline"></i> <i
-															class="item-rating pointer zmdi zmdi-star-outline"></i> <i
-															class="item-rating pointer zmdi zmdi-star-outline"></i> <input
-															class="dis-none" type="number" name="rating">
+												<div class="size-207">
+													<div class="flex-w flex-sb-m p-b-17">
+														<!-- 사용자 이름 -->
+														<span class="mtext-107 cl2 p-r-20"> Ariana Grande </span>
+														<span class="fs-18 cl11"> <i class="zmdi zmdi-star"></i>
+															<i class="zmdi zmdi-star"></i> <i class="zmdi zmdi-star"></i>
+															<i class="zmdi zmdi-star"></i> <i
+															class="zmdi zmdi-star-half"></i>
 														</span>
 													</div>
 
-													<div class="row p-b-25">
-														<div class="col-12 p-b-5">
-															<label class="stext-102 cl3" for="review">Your
-																review</label>
-															<textarea
-																class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10"
-																id="review" name="review"></textarea>
-														</div>
+													<p class="stext-102 cl6">Quod autem in homine
+														praestantissimum atque optimum est, id deseruit. Apud
+														ceteros autem philosophos</p>
+												</div>
+											</div>
 
-														<div class="col-sm-6 p-b-5">
-															<label class="stext-102 cl3" for="name">Name</label> <input
-																class="size-111 bor8 stext-102 cl2 p-lr-20" id="name"
-																type="text" name="name">
-														</div>
+											<!-- Add review -->
+											<form class="w-full">
+												<h5 class="mtext-108 cl2 p-b-7">Add a review</h5>
 
-														<div class="col-sm-6 p-b-5">
-															<label class="stext-102 cl3" for="email">Email</label> <input
-																class="size-111 bor8 stext-102 cl2 p-lr-20" id="email"
-																type="text" name="email">
-														</div>
+												<p class="stext-102 cl6">Your email address will not be
+													published. Required fields are marked *</p>
+
+												<div class="flex-w flex-m p-t-50 p-b-23">
+													<span class="stext-102 cl3 m-r-16"> Your Rating </span> <span
+														class="wrap-rating fs-18 cl11 pointer"> <i
+														class="item-rating pointer zmdi zmdi-star-outline"></i> <i
+														class="item-rating pointer zmdi zmdi-star-outline"></i> <i
+														class="item-rating pointer zmdi zmdi-star-outline"></i> <i
+														class="item-rating pointer zmdi zmdi-star-outline"></i> <i
+														class="item-rating pointer zmdi zmdi-star-outline"></i> <input
+														class="dis-none" type="number" name="rating">
+													</span>
+												</div>
+
+												<div class="row p-b-25">
+													<div class="col-12 p-b-5">
+														<label class="stext-102 cl3" for="review">Your
+															review</label>
+														<textarea
+															class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10"
+															id="review" name="review"></textarea>
 													</div>
 
-													<button
-														class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
-														Submit</button>
-												</form>
-											</div>
+													<div class="col-sm-6 p-b-5">
+														<label class="stext-102 cl3" for="name">Name</label> <input
+															class="size-111 bor8 stext-102 cl2 p-lr-20" id="name"
+															type="text" name="name">
+													</div>
+
+													<div class="col-sm-6 p-b-5">
+														<label class="stext-102 cl3" for="email">Email</label> <input
+															class="size-111 bor8 stext-102 cl2 p-lr-20" id="email"
+															type="text" name="email">
+													</div>
+												</div>
+
+												<button
+													class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
+													Submit</button>
+											</form>
 										</div>
 									</div>
 								</div>
@@ -772,7 +770,7 @@
 	<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-		<script>
+	<script>
 var IMP = window.IMP;   // 생략 가능
 IMP.init("imp56447215"); 
 
@@ -786,7 +784,8 @@ IMP.init("imp56447215");
       buyer_email: "gildong@gmail.com",
       buyer_name: "<%=session.getAttribute("id")%>",
       buyer_tel: "010-4242-4262",
-      buyer_addr: "<%=session.getAttribute("address")%>",
+      buyer_addr: "<%=session.getAttribute("address")%>
+		",
 				buyer_postcode : "01181",
 			}, function(rsp) { // callback
 				if (rsp.status == "paid") {
@@ -803,11 +802,9 @@ IMP.init("imp56447215");
 	<!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
 	<script>
-	function onlinepay(){
-		 document.querySelector(
-        "#onlinePay")
-        .submit();
-}
+		function onlinepay() {
+			document.querySelector("#onlinePay").submit();
+		}
 		$(".js-select2").each(function() {
 			$(this).select2({
 				minimumResultsForSearch : 20,
@@ -844,7 +841,7 @@ IMP.init("imp56447215");
 	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
 	<!--===============================================================================================-->
 	<script src="vendor/sweetalert/sweetalert.min.js"></script>
-	
+
 	<!--===============================================================================================-->
 	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<script>

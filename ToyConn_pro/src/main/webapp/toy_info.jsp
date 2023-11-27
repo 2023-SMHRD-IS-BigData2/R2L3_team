@@ -393,7 +393,7 @@
 					<div class="p-l-25 p-r-30 p-lr-0-lg">
 						<div class="wrap-slick3 flex-sb flex-w" style="float: right;">
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
-							<div class="gallery-lb" style="width: 400px;">
+							<div class="gallery-lb" style="width: 80%;">
 								<div class="item-slick3">
 									<div class="wrap-pic-w pos-relative">
 										<img src="images/crolling/<%=toy.getImage_file()%>"
@@ -408,7 +408,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
 						<!-- 상품명 -->
@@ -416,7 +415,6 @@
 						<!-- 가격 -->
 						<span class="mtext-106 cl2"> 1일 <%=toy.getRent_price()%>원
 						</span>
-
 						<!-- 상품 설명 -->
 						<p class="stext-102 cl3 p-t-23"><%=toy.getP_contenct()%></p>
 						<br> <a href="#" class="js-show-modal1"> <img
@@ -429,10 +427,7 @@
 						<form action="message.jsp" id="goChat">
 							<input type="hidden" name="p_num" value="<%=toy.getP_num()%>">
 						</form>
-
 					</div>
-
-
 				</div>
 			</div>
 			<div class="bor10 m-t-50 p-t-43 p-b-40">
