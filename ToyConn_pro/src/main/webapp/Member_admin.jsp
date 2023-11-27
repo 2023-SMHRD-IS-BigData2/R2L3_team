@@ -3,118 +3,129 @@
 <%@page import="model.payCheckDAO"%>
 <%@page import="model.payCheckDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <title>회원관리</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.png" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" href="css/css.css">
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<meta charset="UTF-8">
+<title>회원관리</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="images/icons/favicon.png" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="vendor/MagnificPopup/magnific-popup.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" href="css/css.css">
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
-   Kakao.init('884fc5c900adbd0a43cf5178eee68d38'); // 카카오 키
-   console.log(Kakao.isInitialized()); // SDK 초기화 (boolean)
+	Kakao.init('884fc5c900adbd0a43cf5178eee68d38'); // 카카오 키
+	console.log(Kakao.isInitialized()); // SDK 초기화 (boolean)
 </script>
 </head>
 
 <body class="animsition">
-<%
-String nick = null;
-String user_id = null;
-MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
+	<%
+	String nick = null;
+	String user_id = null;
+	MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
 
-if (memberInfo != null) {
-   nick = memberInfo.getNick();
-   user_id = memberInfo.getUser_id();
-   session.setAttribute("id", user_id);
-} 
+	if (memberInfo != null) {
+		nick = memberInfo.getNick();
+		user_id = memberInfo.getUser_id();
+		session.setAttribute("id", user_id);
+	}
 	List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
 	%>
-    <!-- Header -->
-    <header class="header-v4">
-        <!-- Header desktop -->
-        <div class="container-menu-desktop">
-            <!-- Topbar -->
-            <div class="top-bar">
-                <div class="content-topbar flex-sb-m h-full container">
-                    <div class="left-top-bar">
-                        More kids, More joy
-                    </div>
+	<!-- Header -->
+	<header class="header-v4">
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
+			<!-- Topbar -->
+			<div class="top-bar">
+				<div class="content-topbar flex-sb-m h-full container">
+					<div class="left-top-bar">More kids, More joy</div>
 
-                    <div class="right-top-bar flex-w h-full">
-				<%
-				if (memberInfo != null) { %>
-				<%  if (nick.equals("admin")) { %>
-				  <a href="Member_admin.jsp"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원관리 </a>
-				  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick + " 관리자" %></a>
-                     <% } else { %>
-                  <!-- 로그인 되면 출력 -->
-                  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick %></a>
-                <% }} else { %>                
-                  <!-- 로그아웃 상태 -->
-                  <a href="#" id="kakaoLogin"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
-                     <%} %>
-                    </div>
-                </div>
-            </div>
+					<div class="right-top-bar flex-w h-full">
+						<%
+						if (memberInfo != null) {
+						%>
+						<%
+						if (nick.equals("admin")) {
+						%>
+						<a href="Member_admin.jsp" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 회원관리 </a> <a href="#"
+							id="CorrectionMember" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 회원정보 수정 </a> <a href="#"
+							id="kakaoLogout" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 로그아웃 </a> <a
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;"><%=nick + " 관리자"%></a>
+						<%
+						} else {
+						%>
+						<!-- 로그인 되면 출력 -->
+						<a href="#" id="CorrectionMember"
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+							회원정보 수정 </a> <a href="#" id="kakaoLogout"
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+							로그아웃 </a> <a class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"><%=nick%></a>
+						<%
+						}
+						} else {
+						%>
+						<!-- 로그아웃 상태 -->
+						<a href="#" id="kakaoLogin" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
+						<%
+						}
+						%>
+					</div>
+				</div>
+			</div>
 
-            <div class="wrap-menu-desktop">
-                <nav class="limiter-menu-desktop container">
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop container">
 
-                    <!-- Logo desktop -->
-                    <a href="#" class="logo">
-                        <img src="images/icons/logo-01.png" alt="IMG-LOGO">
-                    </a>
+					<!-- Logo desktop -->
+					<a href="#" class="logo"> <img src="images/icons/logo-01.png"
+						alt="IMG-LOGO">
+					</a>
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
@@ -160,9 +171,8 @@ if (memberInfo != null) {
 						</div>
 
 						<a href="message.jsp"
-							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 "
-							> <img src="images/icons/말풍선 .png" alt=""
-							style="height: 20px;">
+							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
+							<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
 						</a>
 					</div>
 				</nav>
@@ -179,22 +189,23 @@ if (memberInfo != null) {
 
 			<!-- Icon header -->
 			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
+				<div
+					class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
 					<i class="zmdi zmdi-search"></i>
 				</div>
 
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-							data-notify="<%=PcList.size()%>">
-						<!--<i class="zmdi zmdi-shopping-cart"></i>-->
-						<img src="images/icons/종종.png" alt="" style="height: 20px;">
+				<div
+					class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+					data-notify="<%=PcList.size()%>">
+					<!--<i class="zmdi zmdi-shopping-cart"></i>-->
+					<img src="images/icons/종종.png" alt="" style="height: 20px;">
 
-						</div>
+				</div>
 
 				<a href="message.jsp"
-							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 "
-							>
-							<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
-						</a>
+					class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
+					<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
+				</a>
 			</div>
 
 			<!-- Button show menu -->
@@ -214,36 +225,39 @@ if (memberInfo != null) {
 
 				<li>
 					<div class="right-top-bar flex-w h-full">
-				<%
-				if (memberInfo != null) { %>
-				<%  if (nick.equals("admin")) { %>
-				  <a href="Member_admin.jsp"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원관리 </a>
-				  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick + " 관리자" %></a>
-                     <% } else { %>
-                  <!-- 로그인 되면 출력 -->
-                  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick %></a>
-                <% }} else { %>                
-                  <!-- 로그아웃 상태 -->
-                  <a href="#" id="kakaoLogin"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
-                     <%} %>
+						<%
+						if (memberInfo != null) {
+						%>
+						<%
+						if (nick.equals("admin")) {
+						%>
+						<a href="Member_admin.jsp" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 회원관리 </a> <a href="#"
+							id="CorrectionMember" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 회원정보 수정 </a> <a href="#"
+							id="kakaoLogout" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 로그아웃 </a> <a
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;"><%=nick + " 관리자"%></a>
+						<%
+						} else {
+						%>
+						<!-- 로그인 되면 출력 -->
+						<a href="#" id="CorrectionMember"
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+							회원정보 수정 </a> <a href="#" id="kakaoLogout"
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+							로그아웃 </a> <a class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"><%=nick%></a>
+						<%
+						}
+						} else {
+						%>
+						<!-- 로그아웃 상태 -->
+						<a href="#" id="kakaoLogin" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
+						<%
+						}
+						%>
 					</div>
 				</li>
 			</ul>
@@ -297,20 +311,20 @@ if (memberInfo != null) {
 		</div>
 	</header>
 
-	 <!-- 오른쪽 상단 Cart 공간 -->
-		<div class="wrap-header-cart js-panel-cart">
-			<div class="s-full js-hide-cart"></div>
-	
-			<div class="header-cart flex-col-l p-l-65 p-r-25">
-				<div class="header-cart-title flex-w flex-sb-m p-b-8">
-					<span class="mtext-103 cl2"> 알림 </span>
-					<!-- 닫기 버튼 -->
-					<div
-						class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-						<i class="zmdi zmdi-close"></i>
-					</div>
+	<!-- 오른쪽 상단 Cart 공간 -->
+	<div class="wrap-header-cart js-panel-cart">
+		<div class="s-full js-hide-cart"></div>
+
+		<div class="header-cart flex-col-l p-l-65 p-r-25">
+			<div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl2"> 알림 </span>
+				<!-- 닫기 버튼 -->
+				<div
+					class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+					<i class="zmdi zmdi-close"></i>
 				</div>
-	
+			</div>
+
 
 			<div class="header-cart-content flex-w js-pscroll">
 				<ul class="header-cart-wrapitem w-full">
@@ -325,24 +339,19 @@ if (memberInfo != null) {
 						<div class="header-cart-item-txt p-t-8">
 							<!-- 상품 이름 -->
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat
-							</a>
+								White Shirt Pleat </a>
 							<!-- 상품 개수 & 가격 -->
-							<span class="header-cart-item-info">
-								1 x $19.00
-							</span>
+							<span class="header-cart-item-info"> 1 x $19.00 </span>
 						</div>
 						<div class="w-full">
 							<!-- 이동 버튼 -->
-							<div class="header-cart-buttons flex-w w-full" style="margin-top: 10px;">
+							<div class="header-cart-buttons flex-w w-full"
+								style="margin-top: 10px;">
 								<a href="#"
-									class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10" style="min-width:100px; height: 30px;" >
-									채팅하기
-								</a>
-		
-								<a href="#" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10" style="min-width:100px; height: 30px;">
-									거래하기
-								</a>
+									class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10"
+									style="min-width: 100px; height: 30px;"> 채팅하기 </a> <a href="#"
+									class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10"
+									style="min-width: 100px; height: 30px;"> 거래하기 </a>
 							</div>
 						</div>
 					</li>
@@ -351,41 +360,40 @@ if (memberInfo != null) {
 		</div>
 	</div>
 
-    <div class="board_wrap">
-        <div class="board_title">
-            <strong>회원관리</strong>
-            <p>회원관리해 주세요</p>
-        </div>
-        <div class="board_list_wrap">
-            <div class="board_list">
-                <div class="top">
-                    <div class="num" style="width: 15%;">아이디</div>
-                    <div class="title" style="width: 15%;">닉네임</div>
-                    <div class="writer" style="width: 45%;">주소</div>
-                    <div class="date" style="width: 15%">가입일자</div>
-                    <div class="count" style="width: 10%;">삭제</div>
-                </div>
-                <div>
-                    <div class="num" style="width: 15%;">죽음도</div>
-                    <div class="title" style="width: 15%;text-align: center;">이기게</div>
-                    <div class="writer " style="width: 45%;">광주 동구 하늘정원</div>
-                    <div class="date" style="width: 15%">2023.11.24</div>
-                    <div class="count" style="width: 10%;"><a href="#" class="on" >삭제</a></div>
-                </div>
-                
-            </div>
-            <div class="board_page">
-                <a href="#" class="bt first"><<</a>
-                <a href="#" class="bt prev"><</a>
-                <a href="#" class="num on">1</a>
- 
-                <a href="#" class="bt next">></a>
-                <a href="#" class="bt last">>></a>
-            </div>
-            
-        </div>
-    </div>
-    <!-- Footer -->
+	<div class="board_wrap">
+		<div class="board_title">
+			<strong>회원관리</strong>
+			<p>회원관리해 주세요</p>
+		</div>
+		<div class="board_list_wrap">
+			<div class="board_list">
+				<div class="top">
+					<div class="num" style="width: 15%;">아이디</div>
+					<div class="title" style="width: 15%;">닉네임</div>
+					<div class="writer" style="width: 45%;">주소</div>
+					<div class="date" style="width: 15%">가입일자</div>
+					<div class="count" style="width: 10%;">삭제</div>
+				</div>
+				<div>
+					<div class="num" style="width: 15%;">죽음도</div>
+					<div class="title" style="width: 15%; text-align: center;">이기게</div>
+					<div class="writer " style="width: 45%;">광주 동구 하늘정원</div>
+					<div class="date" style="width: 15%">2023.11.24</div>
+					<div class="count" style="width: 10%;">
+						<a href="#" class="on">삭제</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="board_page">
+				<a href="#" class="bt first"><<</a> <a href="#" class="bt prev"><</a>
+				<a href="#" class="num on">1</a> <a href="#" class="bt next">></a> <a
+					href="#" class="bt last">>></a>
+			</div>
+
+		</div>
+	</div>
+	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
@@ -403,13 +411,12 @@ if (memberInfo != null) {
 					<a href="#">
 						<h4 class="stext-301 cl0 p-b-30">신고</h4>
 						<p class="stext-107 cl7 size-201">
-							<b>신고사항</b> <br>
-							전화번호 : 062-000-0000<br> 
-							Email : aaa@naver.com
+							<b>신고사항</b> <br> 전화번호 : 062-000-0000<br> Email :
+							aaa@naver.com
 						</p>
 					</a>
 				</div>
-			
+
 			</div>
 
 			<div class="p-t-40">
@@ -431,114 +438,119 @@ if (memberInfo != null) {
 	</footer>
 
 
-    <!-- Back to top -->
-    <div class="btn-back-to-top" id="myBtn">
-        <span class="symbol-btn-back-to-top">
-            <i class="zmdi zmdi-chevron-up"></i>
-        </span>
-    </div>
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top"> <i
+			class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
 
-    <!--===============================================================================================-->
-    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/bootstrap/js/popper.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script>
-        $(".js-select2").each(function () {
-            $(this).select2({
-                minimumResultsForSearch: 20,
-                dropdownParent: $(this).next('.dropDownSelect2')
-            });
-        })
-    </script>
-    <!--===============================================================================================-->
-    <script src="vendor/daterangepicker/moment.min.js"></script>
-    <script src="vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/slick/slick.min.js"></script>
-    <script src="js/slick-custom.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/parallax100/parallax100.js"></script>
-    <script>
-        $('.parallax100').parallax100();
-    </script>
-    <!--===============================================================================================-->
-    <script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-    <script>
-        $('.gallery-lb').each(function () { // the containers for all your galleries
-            $(this).magnificPopup({
-                delegate: 'a', // the selector for gallery item
-                type: 'image',
-                gallery: {
-                    enabled: true
-                },
-                mainClass: 'mfp-fade'
-            });
-        });
-    </script>
-    <!--===============================================================================================-->
-    <script src="vendor/isotope/isotope.pkgd.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/sweetalert/sweetalert.min.js"></script>
-    <script>
-        $('.js-addwish-b2').on('click', function (e) {
-            e.preventDefault();
-        });
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function() {
+			$(this).select2({
+				minimumResultsForSearch : 20,
+				dropdownParent : $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+	<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/slick/slick.min.js"></script>
+	<script src="js/slick-custom.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/parallax100/parallax100.js"></script>
+	<script>
+		$('.parallax100').parallax100();
+	</script>
+	<!--===============================================================================================-->
+	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	<script>
+		$('.gallery-lb').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+				delegate : 'a', // the selector for gallery item
+				type : 'image',
+				gallery : {
+					enabled : true
+				},
+				mainClass : 'mfp-fade'
+			});
+		});
+	</script>
+	<!--===============================================================================================-->
+	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/sweetalert/sweetalert.min.js"></script>
+	<script>
+		$('.js-addwish-b2').on('click', function(e) {
+			e.preventDefault();
+		});
 
-        $('.js-addwish-b2').each(function () {
-            var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-            $(this).on('click', function () {
-                swal(nameProduct, "is added to wishlist !", "success");
+		$('.js-addwish-b2').each(
+				function() {
+					var nameProduct = $(this).parent().parent().find(
+							'.js-name-b2').html();
+					$(this).on('click', function() {
+						swal(nameProduct, "is added to wishlist !", "success");
 
-                $(this).addClass('js-addedwish-b2');
-                $(this).off('click');
-            });
-        });
+						$(this).addClass('js-addedwish-b2');
+						$(this).off('click');
+					});
+				});
 
-        $('.js-addwish-detail').each(function () {
-            var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+		$('.js-addwish-detail').each(
+				function() {
+					var nameProduct = $(this).parent().parent().parent().find(
+							'.js-name-detail').html();
 
-            $(this).on('click', function () {
-                swal(nameProduct, "is added to wishlist !", "success");
+					$(this).on('click', function() {
+						swal(nameProduct, "is added to wishlist !", "success");
 
-                $(this).addClass('js-addedwish-detail');
-                $(this).off('click');
-            });
-        });
+						$(this).addClass('js-addedwish-detail');
+						$(this).off('click');
+					});
+				});
 
-        /*---------------------------------------------*/
+		/*---------------------------------------------*/
 
-        $('.js-addcart-detail').each(function () {
-            var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-            $(this).on('click', function () {
-                swal(nameProduct, "is added to cart !", "success");
-            });
-        });
+		$('.js-addcart-detail').each(
+				function() {
+					var nameProduct = $(this).parent().parent().parent()
+							.parent().find('.js-name-detail').html();
+					$(this).on('click', function() {
+						swal(nameProduct, "is added to cart !", "success");
+					});
+				});
+	</script>
+	<!--===============================================================================================-->
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function() {
+			$(this).css('position', 'relative');
+			$(this).css('overflow', 'hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed : 1,
+				scrollingThreshold : 1000,
+				wheelPropagation : false,
+			});
 
-    </script>
-    <!--===============================================================================================-->
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script>
-        $('.js-pscroll').each(function () {
-            $(this).css('position', 'relative');
-            $(this).css('overflow', 'hidden');
-            var ps = new PerfectScrollbar(this, {
-                wheelSpeed: 1,
-                scrollingThreshold: 1000,
-                wheelPropagation: false,
-            });
-
-            $(window).on('resize', function () {
-                ps.update();
-            })
-        });
-    </script>
-    <!--===============================================================================================-->
-    <script src="js/main.js"></script>
+			$(window).on('resize', function() {
+				ps.update();
+			})
+		});
+	</script>
+	<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 </body>
 
 </html>
