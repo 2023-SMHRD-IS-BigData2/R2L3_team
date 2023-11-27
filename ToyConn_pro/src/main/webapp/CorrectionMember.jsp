@@ -90,15 +90,6 @@ display: none;
 	<script>
 		function AddressNullCheck() {
 			console.log("AddressNullCheck");
-			
-			let before_Alladdress = document.querySelector("#before_address").value;
-			
-			let postcode = document.querySelector("#sample6_postcode").value;
-			let address = document.querySelector("#sample6_address").value;
-			let detailAddress = document.querySelector("#sample6_detailAddress").value;
-			
-			console.log(postcode + address + detailAddress);
-			
 			document.querySelector("form").submit();			
 		}
 	</script>

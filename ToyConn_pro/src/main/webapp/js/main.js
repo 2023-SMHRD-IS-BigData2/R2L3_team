@@ -321,9 +321,9 @@
 
 		if (Kakao.Auth.getAccessToken()) {
 			Kakao.API.request({
-				url: '/v1/user/unlink',
+				url: '/v1/user/logout',
 				success: function(response) {
-					console.log(response)
+					console.log(response);
 					let $form = $("<form></form>");
 					$form.attr("id", "LogoutAccount");
 					$form.attr("action", "LogoutAccount");
@@ -334,10 +334,10 @@
 					$form.submit();
 				},
 				fail: function(error) {
-					console.log(error)
+					console.log(error);
 				},
 			})
-			Kakao.Auth.setAccessToken(undefined)
+			Kakao.Auth.setAccessToken(undefined);
 		}
 	});
 	

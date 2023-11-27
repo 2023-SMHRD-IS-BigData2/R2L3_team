@@ -36,7 +36,7 @@ public class FirstLoginCheck extends HttpServlet {
 			System.out.println("In");
 			HttpSession session = request.getSession();
 			session.setAttribute("memberInfo", row);
-			response.sendRedirect(url);
+			response.sendRedirect("main.jsp");
 
 		} else {
 			System.out.println("Not in");

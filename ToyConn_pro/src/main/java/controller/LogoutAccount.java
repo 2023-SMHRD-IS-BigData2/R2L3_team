@@ -18,10 +18,11 @@ public class LogoutAccount extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		String url = request.getParameter("url");
+		System.out.println(url);
 		
 		HttpSession session = request.getSession();
 		session.invalidate();
-		response.sendRedirect(url);
+		response.sendRedirect("main.jsp");
 	}
 
 }
