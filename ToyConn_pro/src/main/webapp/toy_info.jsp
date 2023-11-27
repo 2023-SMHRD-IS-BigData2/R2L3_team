@@ -102,8 +102,7 @@
 					<div class="left-top-bar">More kids, More joy</div>
 
 					<div class="right-top-bar flex-w h-full">
-<%
-				if (memberInfo != null) { %>
+			<% if (memberInfo != null) { %>
 				<%  if (nick.equals("admin")) { %>
 				  <a href="Member_admin.jsp"
                      class="flex-c-m trans-04 p-lr-25"
@@ -126,7 +125,7 @@
                      로그아웃 </a>
                   <a class="flex-c-m trans-04 p-lr-25"
                      style="font-size: small;"><%= nick %></a>
-                <% }} else { %>                
+             <% }} else { %>                
                   <!-- 로그아웃 상태 -->
                   <a href="#" id="kakaoLogin"
                      class="flex-c-m trans-04 p-lr-25"
