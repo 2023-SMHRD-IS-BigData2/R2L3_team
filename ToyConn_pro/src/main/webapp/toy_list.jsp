@@ -479,6 +479,7 @@
 				<!-- 상품 1 -->
 				<%
 				for (int i = 0; i < list.size(); i++) {
+					if(list.get(i).getAddress().contains(result)&&!list.get(i).getUser_id().equals(id)){
 				%>
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<div class="block2">
@@ -513,6 +514,7 @@
 					</div>
 				</div>
 				<%
+				}
 				}
 				%>
 
