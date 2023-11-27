@@ -1,4 +1,7 @@
-<%@page import="java.util.Arrays"%>
+<%@page import="model.MemberInfo"%>
+<%@page import="model.ToyDAO"%>
+<%@page import="model.addressToyDTO"%>
+<%@page import="model.MemberInfoDAO"%>
 <%@page import="model.boardDAO"%>
 <%@page import="model.boardDTO"%>
 <%@page import="java.util.List"%>
@@ -42,11 +45,41 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="css/css.css">
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+   Kakao.init('884fc5c900adbd0a43cf5178eee68d38'); // 카카오 키
+   console.log(Kakao.isInitialized()); // SDK 초기화 (boolean)
+</script>
 </head>
 
 <body class="animsition">
 <%
-List<boardDTO> list = new boardDAO().getBoardList();
+List<boardDTO> board_list = new boardDAO().getBoardList();
+
+String user_id = (String) session.getAttribute("id");
+String nick = null;
+if (user_id == null) {
+	user_id = "test4";
+}
+String address = new MemberInfoDAO().getAddress(user_id);
+session.setAttribute("address", address);
+List<addressToyDTO> list = new ToyDAO().getAddressToys();
+
+String result = address.substring(0, address.indexOf(" "));
+if (result.length() > 4) { //로까지
+	result = address.substring(0, 12);
+} else { //동까지
+	result = address.substring(0, 9);
+}
+MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
+
+if (memberInfo != null) {
+	nick = memberInfo.getNick();
+	session.setAttribute("id", memberInfo.getUser_id());
+} else if (session.getAttribute("user_id") != null) {
+	user_id = (String) session.getAttribute("user_id");
+	nick = (String) session.getAttribute("nick");
+}
 %>
     <!-- Header -->
     <header class="header-v4">
@@ -60,19 +93,35 @@ List<boardDTO> list = new boardDAO().getBoardList();
                     </div>
 
                     <div class="right-top-bar flex-w h-full">
-
-                        <!-- 로그인 되면 출력 -->
-                        <a href="CorrectionMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                            회원정보 수정
-                        </a>
-                        <a href="#" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                            로그아웃
-                        </a>
-                        <!-- 로그아웃 상태 -->
-                        <a href="#" id="kakaoLogin()" 
-                        class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                            로그인
-                        </a>
+			<% if (memberInfo != null) { %>
+				<%  if (nick.equals("admin")) { %>
+				  <a href="Member_admin.jsp"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원관리 </a>
+				  <a href="#" id="CorrectionMember"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원정보 수정 </a>
+                  <a href="#" id="kakaoLogout"	
+                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                     로그아웃 </a>
+                  <a class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%= nick + " 관리자" %></a>
+                     <% } else { %>
+                  <!-- 로그인 되면 출력 -->
+                  <a href="#" id="CorrectionMember"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원정보 수정 </a>
+                  <a href="#" id="kakaoLogout"	
+                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                     로그아웃 </a>
+                  <a class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%= nick %></a>
+             <% }} else { %>                
+                  <!-- 로그아웃 상태 -->
+                  <a href="#" id="kakaoLogin"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
+                <% } %>
                     </div>
                 </div>
             </div>
@@ -188,18 +237,35 @@ List<boardDTO> list = new boardDAO().getBoardList();
 
                 <li>
                     <div class="right-top-bar flex-w h-full">
-                        <!-- 로그인 되면 출력 -->
-                        <a href="CorrectionMember.jsp" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                            회원정보 수정
-                        </a>
-                        <a href="#" class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                            로그아웃
-                        </a>
-                        <!-- 로그아웃 상태 -->
-                        <a href="#" id="kakaoLogin()"
-                        class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                            로그인
-                        </a>
+			<% if (memberInfo != null) { %>
+				<%  if (nick.equals("admin")) { %>
+				  <a href="Member_admin.jsp"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원관리 </a>
+				  <a href="#" id="CorrectionMember"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원정보 수정 </a>
+                  <a href="#" id="kakaoLogout"	
+                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                     로그아웃 </a>
+                  <a class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%= nick + " 관리자" %></a>
+                     <% } else { %>
+                  <!-- 로그인 되면 출력 -->
+                  <a href="#" id="CorrectionMember"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"> 회원정보 수정 </a>
+                  <a href="#" id="kakaoLogout"	
+                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+                     로그아웃 </a>
+                  <a class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%= nick %></a>
+             <% }} else { %>                
+                  <!-- 로그아웃 상태 -->
+                  <a href="#" id="kakaoLogin"
+                     class="flex-c-m trans-04 p-lr-25"
+                     style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
+                <% } %>
                     </div>
                 </li>
             </ul>
@@ -333,16 +399,16 @@ List<boardDTO> list = new boardDAO().getBoardList();
                     <div class="writer">글쓴이</div>
                     <div class="date">작성일</div>
                 </div>
-                <%for(int i=list.size()-1; i>=0; i--){ %>
+                <%for(int i=board_list.size()-1; i>=0; i--){ %>
                 <div>
-                    <div class="num"><%=list.get(i).getBoard_num()%></div>
-                    <div class="title"><a href="board_view.jsp?board_num=<%=list.get(i).getBoard_num()%>"><%=list.get(i).getTitle()%></a></div>
-                    <%if(list.get(i).getAnonymous().equals("N")){ %>
-                    <div class="writer"><%=list.get(i).getUser_id() %></div>
+                    <div class="num"><%=board_list.get(i).getBoard_num()%></div>
+                    <div class="title"><a href="board_view.jsp?board_num=<%=board_list.get(i).getBoard_num()%>"><%=board_list.get(i).getTitle()%></a></div>
+                    <%if(board_list.get(i).getAnonymous().equals("N")){ %>
+                    <div class="writer"><%=board_list.get(i).getUser_id() %></div>
                     <%}else{%>
                     <div class="writer">익명</div>
                     <%}%>
-                    <div class="date"><%=list.get(i).getWrite_date().substring(0, 11)%></div>
+                    <div class="date"><%=board_list.get(i).getWrite_date().substring(0, 11)%></div>
                     
                 </div>
                 <%}%>
