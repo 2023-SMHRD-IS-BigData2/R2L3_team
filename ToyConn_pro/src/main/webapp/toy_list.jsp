@@ -359,7 +359,7 @@ if(request.getParameter("qual")!=null){
 								</div>
 
 
-								<form action="toy_list">
+								<form action="toy_list" style="width: 300px; display: inline-block; display: flex;">
 								<div class="flex-w flex-r-m p-b-10" style="margin-left: 50px;">
 									<div class="size-210 flex-c-m respon6">
 
