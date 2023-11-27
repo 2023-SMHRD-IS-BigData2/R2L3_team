@@ -351,7 +351,12 @@
 					<%for(int i=0; i<list.size(); i++){%>
 						<li style="padding: 10px;"><!-- <img src="images/crolling/<%=ToyList.get(i).getImage_file()%>" alt=""> -->
 							<div>
+							<%if(ToyList.get(i).getP_name().length()>14){ %>
 								<h2><a href="./message.jsp?p_num=<%=list.get(i).getP_num()%>" style="color: white;"><%=ToyList.get(i).getP_name().substring(0, 14)%>...</a></h2>
+								<%}else{ %>
+									<h2><a href="./message.jsp?p_num=<%=list.get(i).getP_num()%>" style="color: white;"><%=ToyList.get(i).getP_name().substring(0, ToyList.get(i).getP_name().length())%></a></h2>
+								<%} %>
+								
 								<h3><%=list.get(i).getText_content()%></h3>
 								
 							</div>
