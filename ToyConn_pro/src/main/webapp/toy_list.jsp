@@ -331,7 +331,21 @@
 			<%=result%> 장난감
 		</h2>
 	</section>
+<%
+String catego = null;
+String gender = null;
+String qual = null;
+if(request.getParameter("catego")!=null){
+	catego = request.getParameter("catego");
+}
+if(request.getParameter("gender")!=null){
+	gender = request.getParameter("gender");
+}
+if(request.getParameter("qual")!=null){
+	qual = request.getParameter("qual");
+}
 
+%>
 	<!-- Product -->
 		<div class="bg0 m-t-23 p-b-140">
 		<div class="container">
@@ -345,7 +359,7 @@
 								</div>
 
 
-
+								<form action="toy_list" style="width: 300px; display: inline-block; display: flex;">
 								<div class="flex-w flex-r-m p-b-10" style="margin-left: 50px;">
 									<div class="size-210 flex-c-m respon6">
 
@@ -353,17 +367,17 @@
 
 									<div class="size-205 respon6-next" style="margin-left: 30px;">
 										<div class="rs1-select2 bor8 bg0">
-											<select class="js-select2" name="time">
-												<option>물품</option>
-												<option>차/소방차/트럭</option>
-												<option>로봇</option>
-												<option>인형</option>
-												<option>레고/모형</option>
-												<option>드론/비행기</option>
-												<option>동물모형</option>
-												<option>요리/뷰티/병원/전화</option>
-												<option>교육장난감</option>
-												<option>기타</option>
+											<select class="js-select2" name="catego">
+												<option value="all">전체 카테고리</option>
+												<option value="car">차/소방차/트럭</option>
+												<option value="robot">로봇</option>
+												<option value="doll">인형</option>
+												<option value="lego">레고/모형</option>
+												<option value="dron">드론/비행기</option>
+												<option value="animal">동물모형</option>
+												<option value="cook">요리/뷰티/병원/전화</option>
+												<option value="adu">교육장난감</option>
+												<option value="etc">기타</option>
 											</select>
 											<div class="dropDownSelect2"></div>
 										</div>
@@ -376,12 +390,12 @@
 
 									<div class="size-205 respon6-next" style="margin-left: 30px;">
 										<div class="rs1-select2 bor8 bg0">
-											<select class="js-select2" name="time">
-												<option>성별</option>
-												<option>여아완구</option>
-												<option>남아완구</option>
-												<option>영유아완구</option>
-												<option>남여아완구</option>
+											<select class="js-select2" name="gender">
+												<option value="all">전체 성별</option>
+												<option value="girl">여아완구</option>
+												<option value="boy">남아완구</option>
+												<option value="baby">영유아완구</option>
+												<option value="girlboy">남여아완구</option>
 											</select>
 											<div class="dropDownSelect2"></div>
 										</div>
@@ -394,11 +408,11 @@
 
 									<div class="size-205 respon6-next" style="margin-left: 30px;">
 										<div class="rs1-select2 bor8 bg0">
-											<select class="js-select2" name="time">
-												<option>품질 상태</option>
-												<option>상</option>
-												<option>중</option>
-												<option>하</option>
+											<select class="js-select2" name="qual">
+												<option value="all">전체 품질</option>
+												<option value="top">상</option>
+												<option value="middle">중</option>
+												<option value="bottom">하</option>
 
 											</select>
 											<div class="dropDownSelect2"></div>
@@ -410,6 +424,7 @@
 									<input type="submit" class="btn btn-primary" value="검색" style ="width: 117px; height: 47px;">
 
 								</div>
+								</form>
 
 							</div>
 
@@ -420,24 +435,24 @@
 
 			<!-- 상품 목록 -->
 			<div class="row isotope-grid" style="margin-left: 100px;">
-
 				<!-- 상품 1 -->
+				<%for(int i=0; i<list.size(); i++){ %>
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<!-- 상품 사진 -->
-							<img src="images/product-01.jpg" alt="IMG-PRODUCT">
+							<img src="images/crolling/<%=list.get(i).getImage_file()%>" alt="IMG-PRODUCT">
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<!-- 상품명 -->
-								<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Esprit Ruffle Shirt
+								<a href="toy_info.jsp?p_num=<%=list.get(i).getP_num()%>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<%=list.get(i).getP_name()%>
 								</a>
 								<!-- 가격 -->
 								<span class="stext-105 cl3">
-									$16.64
+									<%=list.get(i).getRent_price()%>원
 								</span>
 							</div>
 
@@ -453,37 +468,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<div class="block2">
-						<div class="block2-pic hov-img0">
-							<!-- 상품 사진 -->
-							<img src="images/product-01.jpg" alt="IMG-PRODUCT">
-						</div>
-
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<!-- 상품명 -->
-								<a href="product-detail.jsp" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Esprit Ruffle Shirt
-								</a>
-								<!-- 가격 -->
-								<span class="stext-105 cl3">
-									$16.64
-								</span>
-							</div>
-
-							<!-- 하트 아이콘 -->
-							<div class="block2-txt-child2 flex-r p-t-3">
-								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png"
-										alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l"
-										src="images/icons/icon-heart-02.png" alt="ICON">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+				<%}%>
+				
 			</div>
 		</div>
 	</div>
