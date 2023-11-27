@@ -29,6 +29,10 @@ public class ChangeAccount extends HttpServlet {
 		String sample6_address = request.getParameter("sample6_address");
 		String sample6_detailAddress = request.getParameter("sample6_detailAddress");
 		
+		if (sample6_detailAddress == null) {
+			sample6_detailAddress = "  ";
+		}
+		
 		String address = sample6_address + "/" + sample6_detailAddress + "/" + sample6_postcode;
 
 		MemberInfo memberInfo = new MemberInfo(user_id, nick, address);
