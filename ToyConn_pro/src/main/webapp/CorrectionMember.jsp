@@ -36,6 +36,8 @@ display: none;
 	String user_id = memberInfo.getUser_id();
 	String nick = memberInfo.getNick();
 	String address = memberInfo.getAddress();
+	
+	String[] listAddress = address.split("/");
 	%>
 
 	<section class="container" style="margin-top: 5%;">
@@ -57,7 +59,7 @@ display: none;
 					<div class="form-control stext-111 cl2 plh3 size-120 p-tb-25">
 						<input type="text"
 							class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-							id="sample6_postcode" name="sample6_postcode" placeholder="우편번호"> 
+							id="sample6_postcode" name="sample6_postcode" placeholder="우편번호" value="<%= listAddress[2] %>"> 
 						<input type="button"
 							class="flex-c-m stext-101 cl0 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
 							onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
@@ -65,10 +67,10 @@ display: none;
 
 						<input type="text"
 							class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-							name="sample6_address" id="sample6_address" placeholder="주소"> 
+							name="sample6_address" id="sample6_address" placeholder="주소" value="<%= listAddress[0] %>"> 
 						<input type="text"
 							class="form-control stext-111 cl2 plh3 size-116 p-r-30"
-							id="sample6_detailAddress" name="sample6_detailAddress" placeholder="상세주소"> 
+							id="sample6_detailAddress" name="sample6_detailAddress" placeholder="상세주소" value="<%= listAddress[1] %>"> 
 						<input type="text"
 							class="form-control stext-111 cl2 plh3 size-116 p-r-30"
 							id="sample6_extraAddress" placeholder="참고항목"
