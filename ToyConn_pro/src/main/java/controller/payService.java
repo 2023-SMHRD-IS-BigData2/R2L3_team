@@ -26,7 +26,7 @@ public class payService extends HttpServlet {
 		int result = Integer.parseInt(request.getParameter("result"));
 		String pay_choice = request.getParameter("pay_choice");
 		payCheckDTO vo = new payCheckDTO(lender_id, user_id, p_num, p_name, price, pay_choice);
-		
+		String isPre = request.getParameter("isPre");
 		int cnt = new payCheckDAO().setPayCheck(vo);
 		if(cnt>0) {
 			System.out.println("paycheck input완료");
@@ -36,11 +36,15 @@ public class payService extends HttpServlet {
 			
 		}
 		ToyDTO toy = new ToyDAO().getToyInfo(p_num);
+		if(isPre==null) {
 		RequestDispatcher rd = request.getRequestDispatcher("./pay_check.jsp");
 		request.setAttribute("p_num", p_num);
 		request.setAttribute("pay", price);
 		request.setAttribute("result", result);
 		rd.forward(request, response);
+		}else {
+			response.sendRedirect("./premium_info.jsp?pc=1&p_num="+p_num);
+		}
 	}
 
 }

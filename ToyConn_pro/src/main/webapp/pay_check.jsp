@@ -176,8 +176,7 @@ IMP.init("imp56447215");
       buyer_email: "gildong@gmail.com",
       buyer_name: "<%=session.getAttribute("id")%>",
       buyer_tel: "010-4242-4262",
-      buyer_addr: "<%=session.getAttribute("address")%>
-		",
+      buyer_addr: "<%=session.getAttribute("address")%>",
 				buyer_postcode : "01181",
 			}, function(rsp) { // callback
 				if (rsp.status == "paid") {
