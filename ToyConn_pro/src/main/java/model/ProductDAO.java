@@ -9,7 +9,7 @@ public class ProductDAO {
 
 	static SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 
-	public int registerProduct(Product vo) {
+	public int registerProduct(setToyDTO vo) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		int cnt = 0;
 		try {

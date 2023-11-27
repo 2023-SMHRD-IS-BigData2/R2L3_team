@@ -398,7 +398,7 @@
 				<div
 					class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md"
 					style="margin: auto;">
-					<form action="" name="newProduct" method="post"
+					<form action="fileUploadService" name="newProduct" method="post"
 						class="form-horizontal" enctype="multipart/form-data">
 						<h4 class="mtext-105 cl2 txt-center p-b-30">물품 등록하기</h4>
 						<div class="flex-w flex-r-m p-b-10 m-b-20">
@@ -417,7 +417,7 @@
 
 							<div class="size-204 respon6-next">
 								<div class="rs1-select2 bor8 bg0">
-									<select class="js-select2" name="time">
+									<select class="js-select2" name="cate">
 										<option>물품</option>
 										<option>차/소방차/트럭</option>
 										<option>로봇</option>
@@ -438,7 +438,7 @@
 
 							<div class="size-204 respon6-next">
 								<div class="rs1-select2 bor8 bg0">
-									<select class="js-select2" name="time">
+									<select class="js-select2" name="gender">
 										<option>성별</option>
 										<option>여아완구</option>
 										<option>남아완구</option>
@@ -454,7 +454,7 @@
 
 							<div class="size-204 respon6-next">
 								<div class="rs1-select2 bor8 bg0">
-									<select class="js-select2" name="time">
+									<select class="js-select2" name="qual">
 										<option>품질 상태</option>
 										<option>상</option>
 										<option>중</option>
@@ -473,7 +473,7 @@
 
 							<div class="size-204 respon6-next">
 								<div class="rs1-select2 bor8 bg0">
-									<input type="text" name="productName" class="form-control">
+									<input type="text" name="p_name" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -483,7 +483,7 @@
 
 							<div class="size-204 respon6-next">
 								<div class="rs1-select2 bor8 bg0">
-									<input type="text" name="unitPrice" class="form-control">
+									<input type="text" name="p_price" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -492,7 +492,7 @@
 
 							<div class="size-204 respon6-next">
 								<div class="rs1-select2 bor8 bg0">
-									<textarea rows="1" cols="5" name="description"
+									<textarea rows="1" cols="5" name="p_content"
 										class="form-control"></textarea>
 								</div>
 							</div>
@@ -568,6 +568,13 @@
 
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+				<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
 	<!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 	<!--===============================================================================================-->
