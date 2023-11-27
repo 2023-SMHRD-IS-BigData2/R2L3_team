@@ -71,12 +71,7 @@ public class payCheckDAO {
 		}finally {
 			sqlSession.close();
 		}
-		if(li!=null) {
-			System.out.println("list가 넣어져있습니다.");
-			for(int i=0; i<li.size(); i++) {
-				System.out.println(li.get(i));
-			}
-		}
+
 		return li;
 	}
 	public int updatePC(int pc_num) {
