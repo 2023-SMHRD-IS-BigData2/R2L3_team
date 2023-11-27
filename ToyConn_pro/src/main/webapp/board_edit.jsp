@@ -384,7 +384,7 @@
 			</div>
 		</div>
 	</div>
-	<form action="updateBoardservice">
+	<form action="updateBoardservice" id="edit">
 		<div class="board_wrap">
 			<div class="board_title">
 				<strong>게시판</strong>
@@ -409,15 +409,16 @@
 				<div class="bt_wrap">
 					<input type='hidden' name='board_num'
 						value="<%=vo.getBoard_num()%>">
-					<div style="display: inline-block; border: solid 1px;">
-						<input type='submit' value="수정완료"
-							style="color: white; width: 80px; height: 50px;" value="수정">
-					</div>
+	            <div class="bt_wrap">
+	                <a class="on" onclick="edit()">수정</a>
+	                <a href="./board_view.jsp">취소</a>
+	            </div>
 
 				</div>
+					</div>
+	</div>
 	</form>
-	</div>
-	</div>
+
 
 	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
@@ -474,6 +475,13 @@
 
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	function edit() {
+		 document.querySelector(
+        "#edit")
+        .submit();
+	}
+	</script>
 	<!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 	<!--===============================================================================================-->
