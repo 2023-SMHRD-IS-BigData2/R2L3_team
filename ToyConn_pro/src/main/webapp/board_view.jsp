@@ -419,64 +419,50 @@
             </div>
         </div>
     </div>
-    <!-- Footer -->
-    <footer class="bg3 p-t-75 p-b-32">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <a href="#">
-                        <h4 class="stext-301 cl0 p-b-30">
-                            카테고리
-                        </h4>
-                    </a>
-                </div>
+   <!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-lg-3 p-b-50" style="margin-left: 150px;">
+					<a href="agreement.jsp">
+						<h4 class="stext-301 cl0 p-b-30">이용약관</h4>
+					</a>
+				</div>
+				<div class="col-sm-6 col-lg-3 p-b-50" style="margin-left: 150px;">
+					<a href="#">
+						<h4 class="stext-301 cl0 p-b-30">R2L3</h4>
+					</a>
+				</div>
+				<div class="col-sm-6 col-lg-3 p-b-50" style="margin-left: 150px;">
+					<a href="#">
+						<h4 class="stext-301 cl0 p-b-30">신고</h4>
+						<p class="stext-107 cl7 size-201">
+							<b>신고사항</b> <br>
+							전화번호 : 062-000-0000<br> 
+							Email : aaa@naver.com
+						</p>
+					</a>
+				</div>
+			
+			</div>
 
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <a href="#">
-                        <h4 class="stext-301 cl0 p-b-30">
-                            이용약관
-                        </h4>
-                    </a>
-                </div>
+			<div class="p-t-40">
+				<p class="stext-107 cl6 txt-center">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Copyright &copy;
+					<script>
+						document.write(new Date().getFullYear());
+					</script>
+					All rights reserved | Made with <i class="fa fa-heart-o"
+						aria-hidden="true"></i> by <a href="https://colorlib.com"
+						target="_blank">Colorlib</a> &amp; distributed by <a
+						href="https://themewagon.com" target="_blank">ThemeWagon</a>
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <a href="#">
-                        <h4 class="stext-301 cl0 p-b-30">
-                            중고거래
-                        </h4>
-                    </a>
-                </div>
-
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <a href="#">
-                        <h4 class="stext-301 cl0 p-b-30">
-                            신고
-                        </h4>
-                    </a>
-                </div>
-                <div class="col-sm-6 col-lg-3 p-b-50">
-                    <a href="#">
-                        <h4 class="stext-301 cl0 p-b-30">
-                            R2L3
-                        </h4>
-                    </a>
-                </div>
-            </div>
-
-            <div class="p-t-40">
-                <p class="stext-107 cl6 txt-center">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i
-                        class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                        target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com"
-                        target="_blank">ThemeWagon</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
-                </p>
-            </div>
-        </div>
-    </footer>
+				</p>
+			</div>
+		</div>
+	</footer>
 
 
     <!-- Back to top -->
