@@ -434,7 +434,7 @@
 							<span class="stext-107 cl6 p-lr-25" style="padding-right: 80px;">
 								<button
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-									style="min-width: 100px; height: 40px;">온라인 결제</button>
+									style="min-width: 100px; height: 40px;" onclick="kakaoPay()">온라인 결제</button>
 							</span> <span class="stext-107 cl6 p-lr-25" style="padding-right: 80px;">
 								<button
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
@@ -761,6 +761,30 @@
 
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+		<script>
+var IMP = window.IMP;   // 생략 가능
+IMP.init("imp56447215"); 
+
+  function kakaoPay() {
+    IMP.request_pay({
+      pg: "kakaopay",
+      pay_method: "card",
+      merchant_uid: "ORD2018013-324<%=toy.getP_num()%>323",   // 주문번호
+      name: "<%=toy.getP_name()%>",
+      amount: <%=toy.getRent_price()%>,                         // 숫자 타입
+      buyer_email: "gildong@gmail.com",
+      buyer_name: "<%=session.getAttribute("id")%>",
+      buyer_tel: "010-4242-4262",
+      buyer_addr: "<%=session.getAttribute("address")%>
+		",
+				buyer_postcode : "01181",
+			}, function(rsp) { // callback
+				if (rsp.status == "paid") {
+					alert("결제완료");
+				}
+			});
+		}
+	</script>
 	<!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 	<!--===============================================================================================-->
