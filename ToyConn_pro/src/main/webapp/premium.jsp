@@ -400,9 +400,13 @@
 									<%=list.get(i).getP_name()%>
 								</a>
 								<!-- 가격 -->
-								<span class="stext-105 cl3">
-									<%=list.get(i).getRent_price()%>
+								<span class="stext-105 cl3" >
+									원가: <del><%=list.get(i).getRent_price()*100%></del>원
 								</span>
+								<span class="stext-105 cl3">
+									1일 대여료: <b><%=list.get(i).getRent_price()%></b>원
+								</span>
+								
 							</div>
 
 							<!-- 하트 아이콘 -->
