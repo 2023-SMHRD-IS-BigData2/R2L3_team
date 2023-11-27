@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>공지사항</title>
+    <title>회원관리</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="images/icons/favicon.png" />
