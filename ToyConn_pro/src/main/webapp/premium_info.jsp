@@ -63,6 +63,7 @@
 	String address = new ToyDAO().getToyAddress(p_num);
 	ToyDTO toy = new ToyDAO().getToyInfo(p_num);
 	String user_id = (String) session.getAttribute("id");
+	String pc = request.getParameter("pc");
 	String nick = null;
 	MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
 
@@ -74,6 +75,7 @@
 		nick = (String) session.getAttribute("nick");
 	}
 	%>
+	
 	<!-- Header -->
 	<header class="header-v4">
 		<!-- Header desktop -->
@@ -216,7 +218,17 @@
 			</div>
 		</div>
 
-
+					<form action="payService" id="onlinePay">
+						<input type='hidden' name="lender_id"
+							value="<%=session.getAttribute("id")%>"> <input
+							type='hidden' name="user_id" value="<%=toy.getUser_id()%>">
+						<input type='hidden' name="p_num" value="<%=toy.getP_num()%>">
+						<input type='hidden' name="p_name" value="<%=toy.getP_name()%>">
+						<input type='hidden' name="price" value="<%=toy.getRent_price()%>"> <input
+							type='hidden' name="result" value="<%=3%>"> <input
+							type='hidden' name="pay_choice" value="카드">
+						<input type="hidden" name="isPre" value="pre"> 
+					</form>
 		<!-- Menu Mobile -->
 		<div class="menu-mobile">
 			<ul class="topbar-mobile">
@@ -428,7 +440,9 @@
 							</div>
 						</div>
 						<br>
-
+						<%if(pc!=null){%>
+							<p>결제 완료</p>
+						<%}%>
 						<div class="flex-w flex-r-m p-b-10">
 
 							<span class="stext-107 cl6 p-lr-25" style="padding-right: 80px;">
@@ -438,10 +452,11 @@
 							</span> <span class="stext-107 cl6 p-lr-25" style="padding-right: 80px;">
 								<button
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-									style="min-width: 100px; height: 40px;">결제 확인</button>
+									style="min-width: 100px; height: 40px;" onclick="onlinepay()">결제 확인</button>
 							</span>
 						</div>
 						<br>
+						
 
 					</div>
 
@@ -758,7 +773,7 @@
 			</div>
 		</div>
 	</div>
-
+	<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 		<script>
@@ -775,8 +790,7 @@ IMP.init("imp56447215");
       buyer_email: "gildong@gmail.com",
       buyer_name: "<%=session.getAttribute("id")%>",
       buyer_tel: "010-4242-4262",
-      buyer_addr: "<%=session.getAttribute("address")%>
-		",
+      buyer_addr: "<%=session.getAttribute("address")%>",
 				buyer_postcode : "01181",
 			}, function(rsp) { // callback
 				if (rsp.status == "paid") {
@@ -793,6 +807,11 @@ IMP.init("imp56447215");
 	<!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
 	<script>
+	function onlinepay(){
+		 document.querySelector(
+        "#onlinePay")
+        .submit();
+}
 		$(".js-select2").each(function() {
 			$(this).select2({
 				minimumResultsForSearch : 20,
@@ -829,47 +848,7 @@ IMP.init("imp56447215");
 	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
 	<!--===============================================================================================-->
 	<script src="vendor/sweetalert/sweetalert.min.js"></script>
-	<script>
-		$('.js-addwish-b2, .js-addwish-detail').on('click', function(e) {
-			e.preventDefault();
-		});
-
-		$('.js-addwish-b2').each(
-				function() {
-					var nameProduct = $(this).parent().parent().find(
-							'.js-name-b2').html();
-					$(this).on('click', function() {
-						swal(nameProduct, "is added to wishlist !", "success");
-
-						$(this).addClass('js-addedwish-b2');
-						$(this).off('click');
-					});
-				});
-
-		$('.js-addwish-detail').each(
-				function() {
-					var nameProduct = $(this).parent().parent().parent().find(
-							'.js-name-detail').html();
-
-					$(this).on('click', function() {
-						swal(nameProduct, "is added to wishlist !", "success");
-
-						$(this).addClass('js-addedwish-detail');
-						$(this).off('click');
-					});
-				});
-
-		/*---------------------------------------------*/
-
-		$('.js-addcart-detail').each(
-				function() {
-					var nameProduct = $(this).parent().parent().parent()
-							.parent().find('.js-name-detail').html();
-					$(this).on('click', function() {
-						swal(nameProduct, "is added to cart !", "success");
-					});
-				});
-	</script>
+	
 	<!--===============================================================================================-->
 	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<script>
