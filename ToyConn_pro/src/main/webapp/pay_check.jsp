@@ -38,17 +38,20 @@
 
 	<div style="margin: auto; padding-top: 15%;">
 		<div class="row">
-			<div style="margin-left: 500px;">
-				<div class="" style="float: right;">
-					<div class="gallery-lb" style="width: 250px;">
-						<div class="item-slick3">
-							<div class="wrap-pic-w pos-relative">
-								<img src="images/crolling/animal11.jpg" alt="IMG-PRODUCT">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<div class="col-md-6 col-lg-7 p-b-30">
+                <div class="p-l-25 p-r-30 p-lr-0-lg">
+                    <div class="wrap-slick3 flex-sb flex-w">
+                        <div class="wrap-slick3-dots"></div>
+                        <div class="gallery-lb" style="width: 80%;">
+                            <div class="item-slick3" data-thumb="images/product-detail-01.jpg">
+                                <div class="wrap-pic-w pos-relative">
+                                    <img src="images/product-08.jpg" alt="IMG-PRODUCT">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 			<div class="col-md-6 col-lg-5 p-b-30">
 				<div class="p-r-50 p-t-5 p-lr-0-lg">
