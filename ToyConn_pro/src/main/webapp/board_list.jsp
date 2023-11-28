@@ -380,7 +380,7 @@ if (memberInfo != null) {
                 </div>
                 <%for(int i=board_list.size()-1; i>=0; i--){ %>
                 <div>
-                    <div class="num"><%=board_list.get(i).getBoard_num()%></div>
+                    <div class="num"><%=i+1%></div>
                     <div class="title"><a href="board_view.jsp?board_num=<%=board_list.get(i).getBoard_num()%>"><%=board_list.get(i).getTitle()%></a></div>
                     <%if(board_list.get(i).getAnonymous().equals("N")){ %>
                     <div class="writer"><%=board_list.get(i).getUser_id() %></div>
