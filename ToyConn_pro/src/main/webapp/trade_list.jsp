@@ -478,8 +478,8 @@
 														<th class="column-1">상품</th>
 														<th class="column-2">상품명</th>
 														<th class="column-3">가격</th>
-														<th class="column-4">사용자아이디</th>
 														<th class="column-5">반납여부</th>
+														
 													</tr>
 													<%for(int i=0; i<list.size(); i++){ 
 														
@@ -557,7 +557,7 @@
 														</td>
 														<td class="column-3"><%=lendPcList.get(i).getPrice()%></td>
 														<td class="column-4"><%=lendPcList.get(i).getUser_id()%></td>
-														<td class="column-5"><%=lendPcList.get(i).getToystate()%></td>
+														<td class="column-5"><%=lendPcList.get(i).getLend()%></td>
 													</tr>
 													<%}}}%>
 												</table>

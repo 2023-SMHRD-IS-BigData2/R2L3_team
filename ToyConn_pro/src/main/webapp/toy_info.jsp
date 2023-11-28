@@ -410,8 +410,11 @@
 						<!-- 가격 -->
 						<span class="mtext-106 cl2"> 1일 <%=toy.getRent_price()%>원
 						</span>
+						<br><br>
+						<p><b><%=toy.getP_status()%></b></p>
 						<!-- 상품 설명 -->
 						<p class="stext-102 cl3 p-t-23"><%=toy.getP_contenct()%></p>
+						
 						<br> <a href="#" class="js-show-modal1"> <img
 							src="images/kakaomap.jpg" alt="IMG-LOGO"
 							style="border-radius: 20%; width: 50px;"> 위치 확인
