@@ -1976,7 +1976,10 @@ input.num-product::-webkit-inner-spin-button {
   line-height: 1.6;
 }
 
-
+.paytable td {
+  padding-bottom: 20px;
+  width: 150px;
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ Block1 ]*/
