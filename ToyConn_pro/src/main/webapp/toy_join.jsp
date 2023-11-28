@@ -400,7 +400,7 @@
 					style="margin: auto;">
 					<form action="fileUploadService" name="newProduct" method="post"
 						class="form-horizontal" enctype="multipart/form-data">
-						<h4 class="mtext-105 cl2 txt-center p-b-30">물품 등록하기</h4>
+						<h4 class="mtext-105 cl2 txt-center p-b-30">장난감 등록하기</h4>
 						<div class="flex-w flex-r-m p-b-10 m-b-20">
 							<div class="size-203 flex-c-m respon6">이미지 등록</div>
 							<div class="size-204 respon6-next">
