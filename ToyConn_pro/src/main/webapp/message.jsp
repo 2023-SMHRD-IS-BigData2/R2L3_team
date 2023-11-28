@@ -338,7 +338,7 @@
 					</header>
 					<ul>
 					<%for(int i=0; i<list.size(); i++){%>
-						<li style="padding: 10px;"><!-- <img src="images/crolling/<%=ToyList.get(i).getImage_file()%>" alt=""> -->
+						<li style="padding: 10px;">
 							<div>
 							<%if(ToyList.get(i).getP_name().length()>14){ %>
 								<h2><a href="./message.jsp?p_num=<%=list.get(i).getP_num()%>" style="color: white;"><%=ToyList.get(i).getP_name().substring(0, 14)%>...</a></h2>
@@ -412,9 +412,7 @@
 							<div class="triangle"></div>
 							<div class="message"><%=chatList.get(i).getText_content()%></div>
 						</li>
-						
 						<%}}}%>
-
 					</ul>
 					<hr>
 					<form action="sendMessageService">
