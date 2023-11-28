@@ -152,10 +152,7 @@
 
                             <li style="margin: 30px;">
                                 <a href="trade_list.jsp" style="font-size: large;font-weight: 600;">거래 목록</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">내 장난감</a></li>
-                                    <li><a href="#">빌린 장난감</a></li>
-                                </ul>
+                                
                             </li>
                             <li style="margin: 30px;">
                                 <a href="board_list.jsp" style="font-size: large;font-weight: 600;">게시판</a>
@@ -282,10 +279,7 @@
 
 				<li style="margin: 30px;"><a href="trade_list.jsp"
 					style="font-size: large; font-weight: 600; color: black;">거래 목록</a>
-					<ul class="sub-menu">
-						<li><a href="#">내 장난감</a></li>
-						<li><a href="#">빌린 장난감</a></li>
-					</ul></li>
+				</li>
 
 				<li style="margin: 30px;"><a href="toy_join.jsp"
 					style="font-size: large; font-weight: 600; color: black;">게시판</a></li>
@@ -391,7 +385,7 @@
 					<div class="how-pos2 p-lr-15-md">
 						<!-- breadcrumb -->
 						<div class="container">
-							<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+							<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg" >
 								<a href="main.jsp" class="stext-109 cl8 hov-cl1 trans-04">
 									거래목록 <i class="fa fa-angle-right m-l-9 m-r-10"
 									aria-hidden="true"></i>
@@ -402,7 +396,7 @@
 
 						<!-- Shoping Cart -->
 						
-							<div class="container">
+							<div class="container" style="padding-top: 75px;">
 								<div class="row">
 									<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
 										<div class="m-l-25 m-r--38 m-lr-0-xl">
