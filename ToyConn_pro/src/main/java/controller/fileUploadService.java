@@ -42,7 +42,7 @@ public class fileUploadService extends HttpServlet {
 		String cate = multi.getParameter("cate");
 		String gender = "남여아완구";
 //				multi.getParameter("gender");
-		String qual = "중";
+		String qual = "상";
 //				multi.getParameter("qual");
 		String filename = multi.getFilesystemName("productImage");
 		String p_name = multi.getParameter("p_name");
