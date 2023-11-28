@@ -145,7 +145,7 @@
 						</span> <span class="stext-107 cl6">
 							<button
 								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
-								style="min-width: 100px; height: 40px;" onclick="moveMessage()">취소하기</button>
+								style="min-width: 100px; height: 40px;" onclick="moveMessage()">대화로 돌아가기</button>
 						</span>
 					</div>
 				</div>
