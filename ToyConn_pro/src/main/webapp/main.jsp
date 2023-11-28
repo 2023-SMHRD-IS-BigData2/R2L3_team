@@ -79,7 +79,7 @@
       user_id = memberInfo.getUser_id();
       session.setAttribute("id", user_id);
    } else {
-	   user_id = "test4";
+	   user_id = "baby";
    }
    address = new MemberInfoDAO().getAddress(user_id);
    session.setAttribute("address", address);
