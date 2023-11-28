@@ -100,35 +100,39 @@
 					<div class="left-top-bar">More kids, More joy</div>
 
 					<div class="right-top-bar flex-w h-full">
-			<% if (memberInfo != null) { %>
-				<%  if (nick.equals("admin")) { %>
-				  <a href="Member_admin.jsp"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원관리 </a>
-				  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick + " 관리자" %></a>
-                     <% } else { %>
-                  <!-- 로그인 되면 출력 -->
-                  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick %></a>
-             <% }} else { %>                
-                  <!-- 로그아웃 상태 -->
-                  <a href="#" id="kakaoLogin"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
-                <% } %>
+						<%
+						if (memberInfo != null) {
+						%>
+						<%
+						if (nick.equals("admin")) {
+						%>
+						<a href="Member_admin.jsp" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 회원관리 </a> <a href="#"
+							id="CorrectionMember" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 회원정보 수정 </a> <a href="#"
+							id="kakaoLogout" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"> 로그아웃 </a> <a
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;"><%=nick + " 관리자"%></a>
+						<%
+						} else {
+						%>
+						<!-- 로그인 되면 출력 -->
+						<a href="#" id="CorrectionMember"
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+							회원정보 수정 </a> <a href="#" id="kakaoLogout"
+							class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+							로그아웃 </a> <a class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"><%=nick%></a>
+						<%
+						}
+						} else {
+						%>
+						<!-- 로그아웃 상태 -->
+						<a href="#" id="kakaoLogin" class="flex-c-m trans-04 p-lr-25"
+							style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
+						<%
+						}
+						%>
 					</div>
 				</div>
 			</div>
@@ -187,8 +191,7 @@
 
 						<a href="message.jsp"
 							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
-				            <img src="images/icons/말풍선 .png" alt=""
-							style="height: 20px;">
+							<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
 						</a>
 					</div>
 				</nav>
@@ -220,8 +223,8 @@
 				</div>
 
 				<a href="message.jsp"
-					class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 "> 
-					<img src="images/icons/말풍선 .png" alt=""style="height: 20px;">
+					class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
+					<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
 				</a>
 			</div>
 
@@ -235,35 +238,39 @@
 
 					<li>
 						<div class="right-top-bar flex-w h-full">
-			<% if (memberInfo != null) { %>
-				<%  if (nick.equals("admin")) { %>
-				  <a href="Member_admin.jsp"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원관리 </a>
-				  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick + " 관리자" %></a>
-                     <% } else { %>
-                  <!-- 로그인 되면 출력 -->
-                  <a href="#" id="CorrectionMember"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"> 회원정보 수정 </a>
-                  <a href="#" id="kakaoLogout"	
-                     class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
-                     로그아웃 </a>
-                  <a class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%= nick %></a>
-             <% }} else { %>                
-                  <!-- 로그아웃 상태 -->
-                  <a href="#" id="kakaoLogin"
-                     class="flex-c-m trans-04 p-lr-25"
-                     style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
-                <% } %>
+							<%
+							if (memberInfo != null) {
+							%>
+							<%
+							if (nick.equals("admin")) {
+							%>
+							<a href="Member_admin.jsp" class="flex-c-m trans-04 p-lr-25"
+								style="font-size: small;"> 회원관리 </a> <a href="#"
+								id="CorrectionMember" class="flex-c-m trans-04 p-lr-25"
+								style="font-size: small;"> 회원정보 수정 </a> <a href="#"
+								id="kakaoLogout" class="flex-c-m trans-04 p-lr-25"
+								style="font-size: small;"> 로그아웃 </a> <a
+								class="flex-c-m trans-04 p-lr-25" style="font-size: small;"><%=nick + " 관리자"%></a>
+							<%
+							} else {
+							%>
+							<!-- 로그인 되면 출력 -->
+							<a href="#" id="CorrectionMember"
+								class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+								회원정보 수정 </a> <a href="#" id="kakaoLogout"
+								class="flex-c-m trans-04 p-lr-25" style="font-size: small;">
+								로그아웃 </a> <a class="flex-c-m trans-04 p-lr-25"
+								style="font-size: small;"><%=nick%></a>
+							<%
+							}
+							} else {
+							%>
+							<!-- 로그아웃 상태 -->
+							<a href="#" id="kakaoLogin" class="flex-c-m trans-04 p-lr-25"
+								style="font-size: small;"><%=memberInfo != null ? nick : "로그인"%></a>
+							<%
+							}
+							%>
 						</div>
 					</li>
 				</ul>
@@ -318,20 +325,20 @@
 			</div>
 	</header>
 
-	 <!-- 오른쪽 상단 Cart 공간 -->
-		<div class="wrap-header-cart js-panel-cart">
-			<div class="s-full js-hide-cart"></div>
-	
-			<div class="header-cart flex-col-l p-l-65 p-r-25">
-				<div class="header-cart-title flex-w flex-sb-m p-b-8">
-					<span class="mtext-103 cl2"> 알림 </span>
-					<!-- 닫기 버튼 -->
-					<div
-						class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-						<i class="zmdi zmdi-close"></i>
-					</div>
+	<!-- 오른쪽 상단 Cart 공간 -->
+	<div class="wrap-header-cart js-panel-cart">
+		<div class="s-full js-hide-cart"></div>
+
+		<div class="header-cart flex-col-l p-l-65 p-r-25">
+			<div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl2"> 알림 </span>
+				<!-- 닫기 버튼 -->
+				<div
+					class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+					<i class="zmdi zmdi-close"></i>
 				</div>
-	
+			</div>
+
 
 			<div class="header-cart-content flex-w js-pscroll">
 				<ul class="header-cart-wrapitem w-full">
@@ -346,24 +353,19 @@
 						<div class="header-cart-item-txt p-t-8">
 							<!-- 상품 이름 -->
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat
-							</a>
+								White Shirt Pleat </a>
 							<!-- 상품 개수 & 가격 -->
-							<span class="header-cart-item-info">
-								1 x $19.00
-							</span>
+							<span class="header-cart-item-info"> 1 x $19.00 </span>
 						</div>
 						<div class="w-full">
 							<!-- 이동 버튼 -->
-							<div class="header-cart-buttons flex-w w-full" style="margin-top: 10px;">
+							<div class="header-cart-buttons flex-w w-full"
+								style="margin-top: 10px;">
 								<a href="#"
-									class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10" style="min-width:100px; height: 30px;" >
-									채팅하기
-								</a>
-		
-								<a href="#" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10" style="min-width:100px; height: 30px;">
-									거래하기
-								</a>
+									class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10"
+									style="min-width: 100px; height: 30px;"> 채팅하기 </a> <a href="#"
+									class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10"
+									style="min-width: 100px; height: 30px;"> 거래하기 </a>
 							</div>
 						</div>
 					</li>
@@ -397,14 +399,47 @@
 	<!-- Product -->
 	<div class="bg0 m-t-23 p-b-140">
 		<div class="container">
+
+
 			<section class="bg0 p-t-104 p-b-116">
 				<div class="container">
-					<div class="flex-w flex-tr">
+					<div class="flex-w flex-sb-m p-b-52">
+						<div class="flex-w flex-l-m filter-tope-group m-tb-10">
+							<button
+								class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1"
+								data-filter="*">전체보기</button>
+
+							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
+								data-filter=".차\/소방차\/트럭">차/소방차/트럭</button>
+
+							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
+								data-filter=".인형">인형</button>
+
+							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
+								data-filter=".요리\/뷰티\/병원\/전화 놀이">요리/뷰티/병원/전화 놀이</button>
+
+							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
+								data-filter=".로봇">로봇</button>
+
+							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
+								data-filter=".레고\/모형">레고/모형</button>
+							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
+								data-filter=".드론\/비행기">드론/비행기</button>
+
+							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
+								data-filter=".동물모형">동물모형</button>
+
+							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
+								data-filter=".기타">기타</button>
+
+							<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
+								data-filter=".교육장난감">교육장난감</button>
+
+						</div>
+						<!-- <div class="flex-w flex-tr">
 						<div class="size-100  p-lr-70">
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-205 flex-c-m respon6">전체보기</div>
-
-
 								<form action="toy_list"
 									style="width: 300px; display: inline-block; display: flex;">
 									<div class="flex-w flex-r-m p-b-10" style="margin-left: 50px;">
@@ -468,8 +503,11 @@
 
 									</div>
 								</form>
-
 							</div>
+						</div>
+					</div> -->
+					</div>
+				</div>
 			</section>
 			<!--                        ----------------------------------------------------------------------------------------------------------->
 
@@ -479,9 +517,10 @@
 				<!-- 상품 1 -->
 				<%
 				for (int i = 0; i < list.size(); i++) {
-					if(list.get(i).getAddress().contains(result)&&!list.get(i).getUser_id().equals(id)){
+					if (list.get(i).getAddress().contains(result) && !list.get(i).getUser_id().equals(id)) {
 				%>
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+				<div
+					class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%=list.get(i).getCategory()%>">
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<!-- 상품 사진 -->
@@ -521,6 +560,7 @@
 			</div>
 		</div>
 	</div>
+
 
 	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
