@@ -410,8 +410,8 @@
 													<%for(int i=0; i<list.size(); i++){
 														for(int j=0; j<userLend.size(); j++){
 															if(list.get(i).getP_num()==userLend.get(j).getP_num()){
-																if(userLend.get(i).getLend().equals("대여중")){
-																	String lender_id = userLend.get(i).getLender_id();
+																if(userLend.get(j).getLend().equals("대여중")){
+																	String lender_id = userLend.get(j).getLender_id();
 																	String nck = new MemberInfoDAO().getNick(lender_id);
 																	%>
 													
@@ -431,8 +431,8 @@
 														
 														<td class="column-5" style="padding-left: 100px">
 															
-															<input type='hidden' name='p_num' value="<%=list.get(i).getP_num()%>">
-															<input type='hidden' name='PC_num' value="<%=userLend.get(i).getPc_num()%>">
+															<input type='hidden' name='p_num' value="<%=userLend.get(j).getP_num()%>">
+															<input type='hidden' name='PC_num' value="<%=userLend.get(j).getPc_num()%>">
 															<input type='submit' value='반납확인'></td>
 													</tr>
 													

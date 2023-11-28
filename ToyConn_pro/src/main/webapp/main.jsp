@@ -334,11 +334,9 @@
 						
 					
 					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
+					<!-- 	<div class="header-cart-item-img"> -->
 							<!-- 상품 이미지 -->
-							
-						</div>
-
+						<!--</div>-->
 						<div class="header-cart-item-txt p-t-8">
 							<!-- 상품 이름 -->
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">

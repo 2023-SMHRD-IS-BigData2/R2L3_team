@@ -16,7 +16,7 @@ public class takeService extends HttpServlet {
 		System.out.println("대여가능 update 페이지");
 		int p_num = Integer.parseInt(request.getParameter("p_num"));
 		int PC_num = Integer.parseInt(request.getParameter("PC_num"));
-		System.out.println(PC_num);
+		System.out.println(p_num);
 		int cnt = new ToyDAO().updateTakeState(p_num);
 		if(cnt>0) {
 			System.out.println("대여가능 성공");

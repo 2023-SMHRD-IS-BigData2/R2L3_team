@@ -7,6 +7,7 @@ public class pcUpdateDTO {
 	public pcUpdateDTO(int p_num, String lender_id, int pc_num) {
 		this.p_num = p_num;
 		this.lender_id = lender_id;
+		this.pc_num = pc_num;
 	}
 	public pcUpdateDTO() {
 

@@ -11,7 +11,7 @@
 		insert into paycheck values(pc_seq.nextval, #{user_id}, #{p_num}, #{lender_id}, #{p_name}, #{price}, #{pay_choice}, '확인요청', null)
 	</insert>
 	<select id="getPayCheck" resultType="model.payCheckDTO">
-		select * from paycheck where user_id=#{#user_id} and TOYSTATE='확인요청'
+		select * from paycheck where user_id=#{user_id} and TOYSTATE='확인요청'
 	</select>
 		<update id="updatePayCheck" parameterType="model.pcUpdateDTO">
 		update paycheck set TOYSTATE='확인완료', lend='대여중' WHERE P_NUM=#{p_num} and lender_id=#{lender_id} and pc_num=#{pc_num}
@@ -20,7 +20,7 @@
 		update product_info set p_status='대여중' where p_num=#{p_num}
 	</update>
 	<select id="getUserlend" resultType="model.payCheckDTO">
-		select * from paycheck where user_id=#{#user_id} and lend='대여중'
+		select * from paycheck where user_id=#{user_id} and lend='대여중'
 	</select>
 	<update id="updatePC" parameterType="int">
 		update paycheck set lend='대여가능' where pc_num=#{pc_num}
