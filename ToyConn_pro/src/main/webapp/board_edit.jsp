@@ -405,7 +405,7 @@
 						value="<%=vo.getBoard_num()%>">
 	            <div class="bt_wrap">
 	                <a class="on" onclick="edit()">수정</a>
-	                <a href="./board_view.jsp">취소</a>
+	                <a href="./board_view.jsp?board_num=<%=board_num%>">취소</a>
 	            </div>
 
 				</div>

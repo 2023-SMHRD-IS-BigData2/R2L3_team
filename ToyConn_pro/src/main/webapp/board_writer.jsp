@@ -380,7 +380,7 @@
                 </div>
                 <div class="info">
                     <dl>
-                        <dd>익명O<input type="radio" name="anonymous" value="Y"> 익명x<input type="radio" name="anonymous" value="N"></dd>
+                        <dd>익명O<div style="display: inline-block; margin-right: 10px;"><input type="radio" name="anonymous" value="Y" style="margin-left: 10px;"></div> 익명x<div style="display: inline-block;"><input type="radio" name="anonymous" value="N" style="margin-left: 10px;"></div></dd>
                     </dl>
                     
                 </div>
