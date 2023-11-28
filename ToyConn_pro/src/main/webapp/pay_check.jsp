@@ -57,46 +57,46 @@
 				<div class="p-r-50 p-t-5 p-lr-0-lg">
 					<table class="paytable">
 						<tr>
-							<td width ="150">
+							<td width ="150" style ="padding-bottom: 30px;">
 								<h4 class="mtext-105 cl2">상품명</h4>
 							</td>
-							<td>
+							<td style ="padding-bottom: 20px;">
 								<!-- 상품명 -->
-								<h4 class="mtext-105 cl2" style ="margin-top: 30px;"><%=toy.getP_name()%></h4>
+								<h4 class="mtext-105 cl2" ><%=toy.getP_name()%></h4>
 							</td>
 						</tr>
 						<tr style ="margin-top: 30px;">
-							<td>
-								<h4 class="cl2" style ="margin-top: 30px;">대여자</h4>
+							<td style ="padding-bottom: 20px;">
+								<h4 class="cl2" ">대여자</h4>
 							</td>
-							<td>
+							<td style ="padding-bottom: 20px;">
 								<!-- 대여자 이름 -->
-								<h4 class="mtext-105 cl2"><%=toy.getUser_id()%></h4>
+								<h4 class="mtext-105 cl2" ><%=toy.getUser_id()%></h4>
 							</td>
 						</tr>
-						<tr style ="margin-top: 30px;">
-							<td>
-								<h4 class="cl2">위치</h4>
+						<tr>
+							<td style ="padding-bottom: 20px;">
+								<h4 class="cl2" >위치</h4>
 							</td>
-							<td><a href="#" class="js-show-modal1"> <img
+							<td style ="padding-bottom: 20px;"><a href="#" class="js-show-modal1" > <img
 									src="images/kakaomap.jpg" alt="IMG-LOGO"
 									style="border-radius: 20%; width: 30px;"> 위치 확인
 							</a></td>
 						</tr>
-						<tr style ="margin-top: 30px;">
-							<td>
-								<h4 class="cl2">대여 날짜</h4>
+						<tr>
+							<td style ="padding-bottom: 20px;">
+								<h4 class="cl2" >대여 날짜</h4>
 							</td>
-							<td>
-								<h4 class="cl2"><%=result%>일
+							<td style ="padding-bottom: 20px;">
+								<h4 class="cl2" ><%=result%>일
 								</h4>
 							</td>
 						</tr>
-						<tr style ="margin-top: 30px;">
-							<td>
+						<tr>
+							<td style ="padding-bottom: 20px;">
 								<h4 class="cl2">대여 가격</h4>
 							</td>
-							<td>
+							<td style ="padding-bottom: 20px;">
 								<!-- 가격 --> <span class="mtext-106 cl2"><%=pay%>원</span>
 							</td>
 						</tr>
