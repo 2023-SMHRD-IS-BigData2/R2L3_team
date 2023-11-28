@@ -45,7 +45,7 @@
                         <div class="gallery-lb" style="width: 80%;">
                             <div class="item-slick3" data-thumb="images/product-detail-01.jpg">
                                 <div class="wrap-pic-w pos-relative">
-                                    <img src="images/product-08.jpg" alt="IMG-PRODUCT">
+                                    <img src="images/crolling/<%=toy.getImage_file()%>" alt="IMG-PRODUCT">
                                 </div>
                             </div>
                         </div>

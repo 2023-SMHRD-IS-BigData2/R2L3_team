@@ -378,6 +378,7 @@
 					</header>
 					<ul id="chat">
 						<%for(int i=0; i<chatList.size(); i++){ %>
+						<%if(!chatList.get(i).getRecipient().equals(id)){ %>
 						<%if(chatList.get(i).getRecipient().equals(id)){ %>
 						<li class="you">
 							<div class="entete">
@@ -400,7 +401,30 @@
 							<div class="message"><%=chatList.get(i).getText_content()%></div>
 						</li>
 						
-						<%}}%>
+						<%}}else{%>
+							<%if(chatList.get(i).getRecipient().equals(id)){ %>
+						<li class="you">
+							<div class="entete">
+								<span class="status green"></span>
+								<h2><%=chatList.get(i).getSender()%></h2>
+								<!-- 시간 -->
+								<h3><%=chatList.get(i).getChat_time()%></h3>
+							</div>
+							<div class="triangle"></div>
+							<div class="message"><%=chatList.get(i).getText_content()%></div>
+						</li>
+						<%}else{ %>
+						<li class="me">
+							<div class="entete">
+								<h3><%=chatList.get(i).getChat_time()%></h3>
+								<h2><%=member.getNick()%></h2>
+								<span class="status blue"></span>
+							</div>
+							<div class="triangle"></div>
+							<div class="message"><%=chatList.get(i).getText_content()%></div>
+						</li>
+						
+						<%}}}%>
 
 					</ul>
 					<hr>
