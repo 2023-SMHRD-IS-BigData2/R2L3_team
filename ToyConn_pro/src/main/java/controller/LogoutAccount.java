@@ -22,7 +22,7 @@ public class LogoutAccount extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.invalidate();
-		response.sendRedirect(url);
+		response.sendRedirect("./main.jsp");
 	}
 
 }

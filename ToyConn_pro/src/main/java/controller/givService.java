@@ -24,8 +24,8 @@ public class givService extends HttpServlet {
 		int p_num = Integer.parseInt(request.getParameter("p_num"));
 
 		String lender_id = request.getParameter("lender_id");
-
-		pcUpdateDTO vo = new pcUpdateDTO(p_num, lender_id);
+		int pc_num = Integer.parseInt(request.getParameter("pc_num"));
+		pcUpdateDTO vo = new pcUpdateDTO(p_num, lender_id, pc_num);
 		int cnt_1 = new payCheckDAO().updatePayCheck(vo);
 		if(cnt_1>0) {
 			System.out.println("paycheck 업데이트 성공");
