@@ -40,8 +40,10 @@ public class fileUploadService extends HttpServlet {
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
 		String cate = multi.getParameter("cate");
-		String gender = multi.getParameter("gender");
-		String qual = multi.getParameter("qual");
+		String gender = "남여아완구";
+//				multi.getParameter("gender");
+		String qual = "중";
+//				multi.getParameter("qual");
 		String filename = multi.getFilesystemName("productImage");
 		String p_name = multi.getParameter("p_name");
 		String p_content = multi.getParameter("p_content");
