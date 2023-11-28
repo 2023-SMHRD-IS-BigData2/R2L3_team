@@ -1132,7 +1132,7 @@ $.magnificPopup.registerModule('image', {
 		markup: '<div class="mfp-figure">'+
 					'<div class="mfp-close"></div>'+
 					'<figure>'+
-						'<div class="mfp-img"></div>'+
+						'<div class="mfp-img" style="width: 100%;"></div>'+
 						'<figcaption>'+
 							'<div class="mfp-bottom-bar">'+
 								'<div class="mfp-title"></div>'+
@@ -1182,7 +1182,7 @@ $.magnificPopup.registerModule('image', {
 				if(mfp.isLowIE) {
 					decr = parseInt(item.img.css('padding-top'), 10) + parseInt(item.img.css('padding-bottom'),10);
 				}
-				item.img.css('max-height', mfp.wH-decr);
+				/*item.img.css('max-height', mfp.wH-decr);*/
 			}
 		},
 		_onImageHasSize: function(item) {

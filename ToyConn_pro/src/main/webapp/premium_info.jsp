@@ -58,6 +58,14 @@
 	Kakao.init('884fc5c900adbd0a43cf5178eee68d38'); // 카카오 키
 	console.log(Kakao.isInitialized()); // SDK 초기화 (boolean)
 </script>
+<style type="text/css">
+body>div>div>div{
+width:60%;
+}
+figure>.mfp-img{
+width:60%;
+}
+</style>
 </head>
 
 <body class="animsition">
