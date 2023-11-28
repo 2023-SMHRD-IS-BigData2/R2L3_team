@@ -413,7 +413,7 @@
 						</div>
 
 						<div class="flex-w flex-r-m p-b-10 m-b-20">
-							<div class="size-203 flex-c-m respon6">카테고리1</div>
+							<div class="size-203 flex-c-m respon6">카테고리</div>
 
 							<div class="size-204 respon6-next">
 								<div class="rs1-select2 bor8 bg0">
@@ -433,38 +433,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="flex-w flex-r-m p-b-10 m-b-20">
-							<div class="size-203 flex-c-m respon6">카테고리2</div>
-
-							<div class="size-204 respon6-next">
-								<div class="rs1-select2 bor8 bg0">
-									<select class="js-select2" name="gender">
-										<option>성별</option>
-										<option>여아완구</option>
-										<option>남아완구</option>
-										<option>영유아완구</option>
-										<option>남여아완구</option>
-									</select>
-									<div class="dropDownSelect2"></div>
-								</div>
-							</div>
-						</div>
-						<div class="flex-w flex-r-m p-b-10 m-b-20">
-							<div class="size-203 flex-c-m respon6">카테고리3</div>
-
-							<div class="size-204 respon6-next">
-								<div class="rs1-select2 bor8 bg0">
-									<select class="js-select2" name="qual">
-										<option>품질 상태</option>
-										<option>상</option>
-										<option>중</option>
-										<option>하</option>
-
-									</select>
-									<div class="dropDownSelect2"></div>
-								</div>
-							</div>
-						</div>
+						
 
 
 
