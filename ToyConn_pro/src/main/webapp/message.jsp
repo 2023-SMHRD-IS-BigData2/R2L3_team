@@ -378,7 +378,7 @@
 					</header>
 					<ul id="chat">
 						<%for(int i=0; i<chatList.size(); i++){ %>
-						<%if(!chatList.get(i).getRecipient().equals(id)){ %>
+						<%if(!chatList.get(i).getRecipient().equals(chatList.get(i).getSender())){ %>
 						<%if(chatList.get(i).getRecipient().equals(id)){ %>
 						<li class="you">
 							<div class="entete">
@@ -402,7 +402,7 @@
 						</li>
 						
 						<%}}else{%>
-							<%if(chatList.get(i).getRecipient().equals(id)){ %>
+							<%if(!chatList.get(i).getRecipient().equals(id)){ %>
 						<li class="you">
 							<div class="entete">
 								<span class="status green"></span>
