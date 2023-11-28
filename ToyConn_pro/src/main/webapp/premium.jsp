@@ -302,7 +302,7 @@
 	
 			<div class="header-cart flex-col-l p-l-65 p-r-25">
 				<div class="header-cart-title flex-w flex-sb-m p-b-8">
-					<span class="mtext-103 cl2"> 알림 </span>
+					<span class="mtext-103 cl2"> 결제확인요청 </span>
 					<!-- 닫기 버튼 -->
 					<div
 						class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
