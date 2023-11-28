@@ -139,10 +139,7 @@
 
                             <li style="margin: 30px;">
                                 <a href="trade_list.jsp" style="font-size: large;font-weight: 600;">거래 목록</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">내 장난감</a></li>
-                                    <li><a href="#">빌린 장난감</a></li>
-                                </ul>
+                                
                             </li>
                             <li style="margin: 30px;">
                                 <a href="board_list.jsp" style="font-size: large;font-weight: 600;">게시판</a>
@@ -254,10 +251,7 @@
 
 				<li style="margin: 30px;"><a href="trade_list.jsp"
 					style="font-size: large; font-weight: 600; color: black;">거래 목록</a>
-					<ul class="sub-menu">
-						<li><a href="#">내 장난감</a></li>
-						<li><a href="#">빌린 장난감</a></li>
-					</ul></li>
+				</li>
 
 				<li style="margin: 30px;"><a href="toy_join.jsp"
 					style="font-size: large; font-weight: 600; color: black;">게시판</a></li>
@@ -487,7 +481,7 @@
                         <input type="hidden" name="p_num" value="<%=p_num%>">
                         <input type="submit"
                             class="btn btn-primary flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer"
-                            value="구매하기">
+                            value="결제하기">
                     </form>
                 </div>
             </div>

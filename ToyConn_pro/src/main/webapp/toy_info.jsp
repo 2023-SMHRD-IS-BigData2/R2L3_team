@@ -165,10 +165,7 @@
 
 							<li style="margin: 30px;"><a href="trade_list.jsp"
 								style="font-size: large; font-weight: 600;">거래 목록</a>
-								<ul class="sub-menu">
-									<li><a href="#">내 장난감</a></li>
-									<li><a href="#">빌린 장난감</a></li>
-								</ul></li>
+							</li>
 							<li style="margin: 30px;"><a href="board_list.jsp"
 								style="font-size: large; font-weight: 600;">게시판</a></li>
 
@@ -298,10 +295,7 @@
 
 				<li style="margin: 30px;"><a href="trade_list.jsp"
 					style="font-size: large; font-weight: 600; color: black;">거래 목록</a>
-					<ul class="sub-menu">
-						<li><a href="#">내 장난감</a></li>
-						<li><a href="#">빌린 장난감</a></li>
-					</ul></li>
+				</li>
 
 				<li style="margin: 30px;"><a href="toy_join.jsp"
 					style="font-size: large; font-weight: 600; color: black;">게시판</a></li>
@@ -416,8 +410,11 @@
 						<!-- 가격 -->
 						<span class="mtext-106 cl2"> 1일 <%=toy.getRent_price()%>원
 						</span>
+						<br><br>
+						<p><b><%=toy.getP_status()%></b></p>
 						<!-- 상품 설명 -->
 						<p class="stext-102 cl3 p-t-23"><%=toy.getP_contenct()%></p>
+						
 						<br> <a href="#" class="js-show-modal1"> <img
 							src="images/kakaomap.jpg" alt="IMG-LOGO"
 							style="border-radius: 20%; width: 50px;"> 위치 확인

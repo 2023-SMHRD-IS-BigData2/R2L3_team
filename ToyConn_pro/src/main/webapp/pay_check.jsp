@@ -59,47 +59,98 @@
 				<div class="p-r-50 p-t-5 p-lr-0-lg">
 					<table class="paytable">
 						<tr>
+<<<<<<< HEAD
 							<td width="150" style="padding-bottom: 30px;">
+=======
+							<td width ="150" style ="padding-bottom: 30px;">
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 								<h4 class="mtext-105 cl2">상품명</h4>
 							</td>
+<<<<<<< HEAD
 							<td style="padding-bottom: 20px;">
+=======
+							<td style ="padding-bottom: 20px;">
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 								<!-- 상품명 -->
+<<<<<<< HEAD
 								<h4 class="mtext-105 cl2"><%=toy.getP_name()%></h4>
+=======
+								<h4 class="mtext-105 cl2" ><%=toy.getP_name()%></h4>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 							</td>
 						</tr>
+<<<<<<< HEAD
 						<tr style="margin-top: 30px;">
 							<td style="padding-bottom: 20px;">
 								<h4 class="cl2"">대여자</h4>
+=======
+						<tr style ="margin-top: 30px;">
+							<td style ="padding-bottom: 20px;">
+								<h4 class="cl2" ">대여자</h4>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 							</td>
+<<<<<<< HEAD
 							<td style="padding-bottom: 20px;">
+=======
+							<td style ="padding-bottom: 20px;">
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 								<!-- 대여자 이름 -->
-								<h4 class="mtext-105 cl2"><%=toy.getUser_id()%></h4>
+								<h4 class="mtext-105 cl2" ><%=toy.getUser_id()%></h4>
 							</td>
 						</tr>
 						<tr>
+<<<<<<< HEAD
 							<td style="padding-bottom: 20px;">
 								<h4 class="cl2">위치</h4>
+=======
+							<td style ="padding-bottom: 20px;">
+								<h4 class="cl2" >위치</h4>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 							</td>
+<<<<<<< HEAD
 							<td style="padding-bottom: 20px;"><a href="#"
 								class="js-show-modal1"> <img src="images/kakaomap.jpg"
 									alt="IMG-LOGO" style="border-radius: 20%; width: 30px;">
 									위치 확인
+=======
+							<td style ="padding-bottom: 20px;"><a href="#" class="js-show-modal1" > <img
+									src="images/kakaomap.jpg" alt="IMG-LOGO"
+									style="border-radius: 20%; width: 30px;"> 위치 확인
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 							</a></td>
 						</tr>
 						<tr>
+<<<<<<< HEAD
 							<td style="padding-bottom: 20px;">
 								<h4 class="cl2">대여 날짜</h4>
+=======
+							<td style ="padding-bottom: 20px;">
+								<h4 class="cl2" >대여 날짜</h4>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 							</td>
+<<<<<<< HEAD
 							<td style="padding-bottom: 20px;">
 								<h4 class="cl2"><%=result%>일
+=======
+							<td style ="padding-bottom: 20px;">
+								<h4 class="cl2" ><%=result%>일
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 								</h4>
 							</td>
 						</tr>
 						<tr>
+<<<<<<< HEAD
 							<td style="padding-bottom: 20px;">
+=======
+							<td style ="padding-bottom: 20px;">
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 								<h4 class="cl2">대여 가격</h4>
 							</td>
+<<<<<<< HEAD
 							<td style="padding-bottom: 20px;">
+=======
+							<td style ="padding-bottom: 20px;">
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 								<!-- 가격 --> <span class="mtext-106 cl2"><%=pay%>원</span>
 							</td>
 						</tr>
@@ -148,8 +199,12 @@
 						</span> <span class="stext-107 cl6">
 							<button
 								class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
+<<<<<<< HEAD
 								style="min-width: 100px; height: 40px;" onclick="moveMessage()">대화로
 								돌아가기</button>
+=======
+								style="min-width: 100px; height: 40px;" onclick="moveMessage()">대화로 돌아가기</button>
+>>>>>>> branch 'main' of https://github.com/2023-SMHRD-IS-BigData2/R2L3_team.git
 						</span>
 					</div>
 				</div>

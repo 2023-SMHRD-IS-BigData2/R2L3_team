@@ -156,10 +156,7 @@ if (memberInfo != null) {
 
                             <li style="margin: 30px;">
                                 <a href="trade_list.jsp" style="font-size: large;font-weight: 600;">거래 목록</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">내 장난감</a></li>
-                                    <li><a href="#">빌린 장난감</a></li>
-                                </ul>
+                                
                             </li>
                             <li style="margin: 30px;">
                                 <a href="board_list.jsp" style="font-size: large;font-weight: 600;">게시판</a>
@@ -288,10 +285,7 @@ if (memberInfo != null) {
 
 				<li style="margin: 30px;"><a href="trade_list.jsp"
 					style="font-size: large; font-weight: 600; color: black;">거래 목록</a>
-					<ul class="sub-menu">
-						<li><a href="#">내 장난감</a></li>
-						<li><a href="#">빌린 장난감</a></li>
-					</ul></li>
+					</li>
 
 				<li style="margin: 30px;"><a href="toy_join.jsp"
 					style="font-size: large; font-weight: 600; color: black;">게시판</a></li>
@@ -386,7 +380,7 @@ if (memberInfo != null) {
                 </div>
                 <%for(int i=board_list.size()-1; i>=0; i--){ %>
                 <div>
-                    <div class="num"><%=board_list.get(i).getBoard_num()%></div>
+                    <div class="num"><%=i+1%></div>
                     <div class="title"><a href="board_view.jsp?board_num=<%=board_list.get(i).getBoard_num()%>"><%=board_list.get(i).getTitle()%></a></div>
                     <%if(board_list.get(i).getAnonymous().equals("N")){ %>
                     <div class="writer"><%=board_list.get(i).getUser_id() %></div>

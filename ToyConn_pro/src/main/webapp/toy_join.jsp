@@ -158,10 +158,7 @@
 
 							<li style="margin: 30px;"><a href="trade_list.jsp"
 								style="font-size: large; font-weight: 600;">거래 목록</a>
-								<ul class="sub-menu">
-									<li><a href="#">내 장난감</a></li>
-									<li><a href="#">빌린 장난감</a></li>
-								</ul></li>
+							</li>
 							<li style="margin: 30px;"><a href="board_list.jsp"
 								style="font-size: large; font-weight: 600;">게시판</a></li>
 
@@ -291,10 +288,7 @@
 
 				<li style="margin: 30px;"><a href="trade_list.jsp"
 					style="font-size: large; font-weight: 600; color: black;">거래 목록</a>
-					<ul class="sub-menu">
-						<li><a href="#">내 장난감</a></li>
-						<li><a href="#">빌린 장난감</a></li>
-					</ul></li>
+				</li>
 
 				<li style="margin: 30px;"><a href="toy_join.jsp"
 					style="font-size: large; font-weight: 600; color: black;">게시판</a></li>
@@ -400,7 +394,7 @@
 					style="margin: auto;">
 					<form action="fileUploadService" name="newProduct" method="post"
 						class="form-horizontal" enctype="multipart/form-data">
-						<h4 class="mtext-105 cl2 txt-center p-b-30">물품 등록하기</h4>
+						<h4 class="mtext-105 cl2 txt-center p-b-30">장난감 등록하기</h4>
 						<div class="flex-w flex-r-m p-b-10 m-b-20">
 							<div class="size-203 flex-c-m respon6">이미지 등록</div>
 							<div class="size-204 respon6-next">
@@ -413,7 +407,7 @@
 						</div>
 
 						<div class="flex-w flex-r-m p-b-10 m-b-20">
-							<div class="size-203 flex-c-m respon6">카테고리1</div>
+							<div class="size-203 flex-c-m respon6">카테고리</div>
 
 							<div class="size-204 respon6-next">
 								<div class="rs1-select2 bor8 bg0">
@@ -433,38 +427,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="flex-w flex-r-m p-b-10 m-b-20">
-							<div class="size-203 flex-c-m respon6">카테고리2</div>
-
-							<div class="size-204 respon6-next">
-								<div class="rs1-select2 bor8 bg0">
-									<select class="js-select2" name="gender">
-										<option>성별</option>
-										<option>여아완구</option>
-										<option>남아완구</option>
-										<option>영유아완구</option>
-										<option>남여아완구</option>
-									</select>
-									<div class="dropDownSelect2"></div>
-								</div>
-							</div>
-						</div>
-						<div class="flex-w flex-r-m p-b-10 m-b-20">
-							<div class="size-203 flex-c-m respon6">카테고리3</div>
-
-							<div class="size-204 respon6-next">
-								<div class="rs1-select2 bor8 bg0">
-									<select class="js-select2" name="qual">
-										<option>품질 상태</option>
-										<option>상</option>
-										<option>중</option>
-										<option>하</option>
-
-									</select>
-									<div class="dropDownSelect2"></div>
-								</div>
-							</div>
-						</div>
+						
 
 
 
