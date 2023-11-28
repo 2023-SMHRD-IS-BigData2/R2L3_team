@@ -5,7 +5,7 @@
   
   <mapper namespace ="database.ProductMapper">
   <insert id="registerProduct" parameterType = "model.setToyDTO">
-   	insert into PRODUCT_INFO values(toy_num.nextval,#{user_id},#{category},#{p_name},#{rent_price},#{p_quality},#{p_content},'대여가능','대여가능',#{gender},#{image_file})
+   	insert into PRODUCT_INFO values(num_product.nextval,#{user_id},#{category},#{p_name},#{rent_price},#{p_quality},#{p_content},'대여가능','대여가능',#{gender},#{image_file})
   </insert>
 	<insert id="setPayCheck" parameterType="model.payCheckDTO">
 		insert into paycheck values(pc_seq.nextval, #{user_id}, #{p_num}, #{lender_id}, #{p_name}, #{price}, #{pay_choice}, '확인요청', null)
