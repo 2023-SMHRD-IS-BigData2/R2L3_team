@@ -171,9 +171,7 @@
 
                <!-- Icon header -->
                <div class="wrap-icon-header flex-w flex-r-m">
-                  <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-                     <i class="zmdi zmdi-search"></i>
-                  </div>
+                  
 
                   
                   <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
@@ -202,9 +200,7 @@
 
          <!-- Icon header -->
          <div class="wrap-icon-header flex-w flex-r-m m-r-15">
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-               <i class="zmdi zmdi-search"></i>
-            </div>
+            
 
             <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
                      data-notify="<%=PcList.size()%>">
@@ -340,7 +336,7 @@
 					<li class="header-cart-item flex-w flex-t m-b-12">
 						<div class="header-cart-item-img">
 							<!-- 상품 이미지 -->
-							<img src="images/item-cart-01.jpg" alt="IMG">
+							
 						</div>
 
 						<div class="header-cart-item-txt p-t-8">
@@ -358,6 +354,7 @@
 							<div class="header-cart-buttons flex-w w-full" style="margin-top: 10px;">
 							<input type='hidden' name='p_num' value="<%=PcList.get(i).getP_num()%>">
 							<input type='hidden' name='lender_id' value="<%=PcList.get(i).getLender_id()%>">
+							<input type='hidden' name='pc_num' value="<%=PcList.get(i).getPc_num()%>">
 								<input type="submit" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10 ifClick" style="min-width:100px; height: 30px;" value="입금확인 및 대여확정">
 							
 							</div>

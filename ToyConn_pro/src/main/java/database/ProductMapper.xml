@@ -14,7 +14,7 @@
 		select * from paycheck where user_id=#{#user_id} and TOYSTATE='확인요청'
 	</select>
 		<update id="updatePayCheck" parameterType="model.pcUpdateDTO">
-		update paycheck set TOYSTATE='확인완료', lend='대여중' WHERE P_NUM=#{p_num} and lender_id=#{lender_id}
+		update paycheck set TOYSTATE='확인완료', lend='대여중' WHERE P_NUM=#{p_num} and lender_id=#{lender_id} and pc_num=#{pc_num}
 	</update>
 		<update id="updateGiveState" parameterType="int">
 		update product_info set p_status='대여중' where p_num=#{p_num}
