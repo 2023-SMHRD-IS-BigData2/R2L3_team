@@ -425,7 +425,7 @@
 														<td class="column-2">
 															<div class="how-itemcart1"><%=list.get(i).getP_name()%></div>
 														</td>
-														<td class="column-3"><%=userLend.get(j).getPrice()%></td>
+														<td class="column-3"><%=userLend.get(j).getPrice()%>원</td>
 														<td class="column-4"><%=nck%></td>
 														<td class="column-5"><%=list.get(i).getP_status()%></td>
 														
@@ -489,7 +489,7 @@
 														<td class="column-2">
 															<div class="how-itemcart1"><%=list.get(i).getP_name() %></div>
 														</td>
-														<td class="column-3"><%=list.get(i).getRent_price()%></td>
+														<td class="column-3"><%=list.get(i).getRent_price()%>원</td>
 														
 														<td class="column-5"><%=list.get(i).getP_status()%></td>
 													</tr>
@@ -551,7 +551,7 @@
 														<td class="column-2">
 															<div class="how-itemcart1"><%=lendPcList.get(i).getP_name() %></div>
 														</td>
-														<td class="column-3"><%=lendPcList.get(i).getPrice()%></td>
+														<td class="column-3"><%=lendPcList.get(i).getPrice()%>원</td>
 														<td class="column-4"><%=lendPcList.get(i).getUser_id()%></td>
 														<td class="column-5"><%=lendPcList.get(i).getLend()%></td>
 													</tr>
@@ -606,7 +606,7 @@
 														<td class="column-2">
 															<div class="how-itemcart1"><%=lendPcList.get(i).getP_name()%></div>
 														</td>
-														<td class="column-3"><%=lendPcList.get(i).getPrice()%></td>
+														<td class="column-3"><%=lendPcList.get(i).getPrice()%>원</td>
 														<td class="column-4"><%=lendPcList.get(i).getUser_id()%></td>
 														<%if(lendPcList.get(i).getLend()!=null){%>
 														<td class="column-5"><%=lendPcList.get(i).getLend()%></td>
