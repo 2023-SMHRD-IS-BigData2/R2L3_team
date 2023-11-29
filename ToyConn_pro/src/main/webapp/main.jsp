@@ -149,23 +149,49 @@
                   <ul class="main-menu">
                      <li style="margin: 30px;"><a href="main.jsp"
                         style="font-size: large; font-weight: 600;">메인</a></li>
-
+					
+					<%if(session.getAttribute("id")!=null){ %>
                      <li style="margin: 30px;"><a href="toy_list.jsp"
                         style="font-size: large; font-weight: 600;">동네 장난감</a></li>
-
+					<%}else{%>
+					<li style="margin: 30px;"><a
+                        style="font-size: large; font-weight: 600;" onclick="nologin()">동네 장난감</a></li>
+					<%}%>
+					
+					<%if(session.getAttribute("id")!=null){ %>
                      <li class="label1" style="margin: 40px;" data-label1="hot">
                         <a href="premium.jsp"
                         style="font-size: large; font-weight: 600;">프리미엄</a>
                      </li>
-
+                     <%}else{%>
+                     <li class="label1" style="margin: 40px;" data-label1="hot">
+                        <a
+                        style="font-size: large; font-weight: 600;" onclick="nologin()">프리미엄</a>
+                     </li>
+                     <%}%>
+                     <%if(session.getAttribute("id")!=null){ %>
                      <li style="margin: 30px;"><a href="trade_list.jsp"
                         style="font-size: large; font-weight: 600;">거래 목록</a>
                       </li>
+                      <%}else{%>
+                      <li style="margin: 30px;"><a
+                        style="font-size: large; font-weight: 600;" onclick="nologin()">거래 목록</a>
+                      </li>
+                      <%}%>
+                      <%if(session.getAttribute("id")!=null){ %>
                      <li style="margin: 30px;"><a href="board_list.jsp"
                         style="font-size: large; font-weight: 600;">게시판</a></li>
-
+                        <%}else{%>
+                     <li style="margin: 30px;"><a
+                        style="font-size: large; font-weight: 600;" onclick="nologin()">게시판</a></li>
+                        <%}%>
+                      <%if(session.getAttribute("id")!=null){ %>
                      <li><a href="toy_join.jsp"
                         style="font-size: large; font-weight: 600;">장난감 등록</a></li>
+                        <%}else{%>
+                        <li><a href="toy_join.jsp"
+                        style="font-size: large; font-weight: 600;">장난감 등록</a></li>
+                        <%}%>
                   </ul>
                </div>
 
@@ -493,6 +519,11 @@
 
    <!--===============================================================================================-->
    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+   <script>
+   function nologin(){
+	   alert("로그인을 해주세요")
+   }
+   </script>
    <!--===============================================================================================-->
    <script src="vendor/animsition/js/animsition.min.js"></script>
    <!--===============================================================================================-->
