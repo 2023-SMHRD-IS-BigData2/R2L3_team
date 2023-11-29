@@ -452,13 +452,8 @@ width:60%;
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
 									style="min-width: 100px; height: 40px;" onclick="kakaoPay()">온라인
 									결제</button>
-							</span> <span class="stext-107 cl6 p-lr-25" style="padding-right: 80px;">
-								<button
-									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail
-									btn-addwish-b2 dis-block pos-relative js-addwish-b2 js-name-b2"
-									style="min-width: 100px; height: 40px;" onclick="onlinepay()">결제
-									확인</button>
-							</span>
+							</span> 
+							
 						</div>
 						<br>
 					</div>
@@ -546,7 +541,9 @@ IMP.init("imp56447215");
 				buyer_postcode : "01181",
 			}, function(rsp) { // callback
 				if (rsp.status == "paid") {
-					alert("결제완료! 결제확인 버튼을 [꼭] 눌러주세요");
+					
+					document.querySelector("#onlinePay").submit();
+					alert("결제완료!");
 				}
 			});
 		}
@@ -559,9 +556,7 @@ IMP.init("imp56447215");
 	<!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
 	<script>
-		function onlinepay() {
-			document.querySelector("#onlinePay").submit();
-		}
+		
 		$(".js-select2").each(function() {
 			$(this).select2({
 				minimumResultsForSearch : 20,
