@@ -192,7 +192,7 @@ IMP.init("imp56447215");
             buyer_postcode : "01181",
          }, function(rsp) { // callback
             if (rsp.status == "paid") {
-               alert("결제완료");
+               alert("결제완료! 결제확인 버튼을 [꼭] 눌러주세요");
             }
          });
       }
