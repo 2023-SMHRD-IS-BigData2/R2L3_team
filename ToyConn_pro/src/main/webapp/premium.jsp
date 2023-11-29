@@ -292,7 +292,7 @@
         </div>
     </header>
 
-   <!-- 오른쪽 상단 Cart 공간 -->
+    <!-- 오른쪽 상단 Cart 공간 -->
 		<div class="wrap-header-cart js-panel-cart">
 			<div class="s-full js-hide-cart"></div>
 	

@@ -314,7 +314,7 @@ if (memberInfo != null) {
 	
 			<div class="header-cart flex-col-l p-l-65 p-r-25">
 				<div class="header-cart-title flex-w flex-sb-m p-b-8">
-					<span class="mtext-103 cl2"> 알림 </span>
+					<span class="mtext-103 cl2"> 결제확인 요청 </span>
 					<!-- 닫기 버튼 -->
 					<div
 						class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
@@ -322,42 +322,45 @@ if (memberInfo != null) {
 					</div>
 				</div>
 	
-
+				
 			<div class="header-cart-content flex-w js-pscroll">
+			<form action="givService">
 				<ul class="header-cart-wrapitem w-full">
-
+					<%for(int i=0; i<PcList.size(); i++){ %>
 					<!-- 상품 리스트 -->
+					
+						
+						
+					
 					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
+					<!-- 	<div class="header-cart-item-img"> -->
 							<!-- 상품 이미지 -->
-							<img src="images/item-cart-01.jpg" alt="IMG">
-						</div>
-
+						<!--</div>-->
 						<div class="header-cart-item-txt p-t-8">
 							<!-- 상품 이름 -->
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat
+								<%=PcList.get(i).getP_name()%>
 							</a>
 							<!-- 상품 개수 & 가격 -->
 							<span class="header-cart-item-info">
-								1 x $19.00
+								<%=PcList.get(i).getPrice()%>
 							</span>
 						</div>
 						<div class="w-full">
 							<!-- 이동 버튼 -->
 							<div class="header-cart-buttons flex-w w-full" style="margin-top: 10px;">
-								<a href="#"
-									class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10" style="min-width:100px; height: 30px;" >
-									채팅하기
-								</a>
-		
-								<a href="#" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10" style="min-width:100px; height: 30px;">
-									거래하기
-								</a>
+							<input type='hidden' name='p_num' value="<%=PcList.get(i).getP_num()%>">
+							<input type='hidden' name='lender_id' value="<%=PcList.get(i).getLender_id()%>">
+							<input type='hidden' name='pc_num' value="<%=PcList.get(i).getPc_num()%>">
+								<input type="submit" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10 ifClick" style="min-width:100px; height: 30px;" value="입금확인 및 대여확정">
+							
 							</div>
 						</div>
 					</li>
+					
+					<%}%>
 				</ul>
+				</form>
 			</div>
 		</div>
 	</div>
