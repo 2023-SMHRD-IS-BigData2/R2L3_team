@@ -427,14 +427,14 @@ width:60%;
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-203 flex-c-m respon6">대여시작 일시</div>
 								<div class="size-204 respon6-next rs1-select2 bor8 bg0">
-									<input type="datetime-local">
+									<input type="date" id="start_date">
 								</div>
 							</div>
 
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-203 flex-c-m respon6">대여끝날 일시</div>
 								<div class="size-204 respon6-next rs1-select2 bor8 bg0">
-									<input type="datetime-local">
+									<input type="date" id="end_date">
 								</div>
 							</div>
 						</div>
@@ -530,19 +530,19 @@ width:60%;
 	<script>
 var IMP = window.IMP;   // 생략 가능
 IMP.init("imp56447215"); 
-
   function kakaoPay() {
+	 var start = parseInt(document.querySelector("#start_date").value.split("-")[2])
+     var end = parseInt(document.querySelector("#end_date").value.split("-")[2])
     IMP.request_pay({
       pg: "kakaopay",
       pay_method: "card",
-      merchant_uid: "ORD2018013-324<%=toy.getP_num()%>323",   // 주문번호
+      merchant_uid: "ORD2018013-324<%=toy.getP_num()%>323",   
       name: "<%=toy.getP_name()%>",
-      amount: <%=toy.getRent_price()%>,                         // 숫자 타입
+      amount: <%=toy.getRent_price()%>*(end-start+1),                         // 숫자 타입
       buyer_email: "gildong@gmail.com",
       buyer_name: "<%=session.getAttribute("id")%>",
       buyer_tel: "010-4242-4262",
-      buyer_addr: "<%=session.getAttribute("address")%>
-		",
+      buyer_addr: "<%=session.getAttribute("address")%>",
 				buyer_postcode : "01181",
 			}, function(rsp) { // callback
 				if (rsp.status == "paid") {
@@ -569,6 +569,7 @@ IMP.init("imp56447215");
 			});
 		})
 	</script>
+	
 	<!--===============================================================================================-->
 	<script src="vendor/daterangepicker/moment.min.js"></script>
 	<script src="vendor/daterangepicker/daterangepicker.js"></script>
