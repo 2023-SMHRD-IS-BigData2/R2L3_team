@@ -206,11 +206,17 @@
                   <img src="images/icons/종종.png" alt="" style="height: 20px;">
 
                   </div>
-
+					<%if(session.getAttribute("id")!=null){ %>
                   <a href="message.jsp"
                      class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
                      <img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
                   </a>
+                  <%}else { %>
+                  <a href="#" onclick="nologin()"
+                     class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+                     <img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
+                  </a>
+                  <%} %>
                </div>
             </nav>
          </div>
