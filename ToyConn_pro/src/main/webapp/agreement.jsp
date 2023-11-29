@@ -149,5 +149,6 @@
 <li>시행일자: 2023년 11월 30일</li>
     </p>
 </div> 
+<a href="main.jsp" style="margin:auto; font-size: 20px;">메인화면으로 이동</a>
 </body>
 </html>
