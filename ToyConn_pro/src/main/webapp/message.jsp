@@ -379,7 +379,7 @@ String id = (String)session.getAttribute("id");
 	</div>
 	
 	<!-- ------------------------------------------------ -->
-	<div class="row" style="background-color: rgb(235, 251, 245);">
+	<div class="row">
 		<section id="container" style="background-color: rgb(255, 255, 255);">
 			<div>
 				<aside>
