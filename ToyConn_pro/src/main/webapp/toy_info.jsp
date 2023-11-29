@@ -474,13 +474,13 @@ width:60%;
 							style="border-radius: 20%; width: 50px;"> 위치 확인
 						</a> <br> <br>
 						<% if(user_id.equals("test4")){ %>
-						<button
+						<a href="#"
 							class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
-							style="min-width: 100px; height: 40px;" onclick="nologin()">채팅하기</button>
+							style="min-width: 100px; height: 40px;" onclick="nologin()">채팅하기</a>
 							<% }else { %>
-							<button
+							<a
 							class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
-							style="min-width: 100px; height: 40px;" onclick="moveChat()">채팅하기</button>
+							style="min-width: 100px; height: 40px;" onclick="moveChat()">채팅하기</a>
 							<%} %>
 						<form action="message.jsp" id="goChat">
 							<input type="hidden" name="p_num" value="<%=toy.getP_num()%>">
