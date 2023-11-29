@@ -137,12 +137,7 @@
                         class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
                         style="min-width: 100px; height: 40px;" onclick="kakaoPay()">온라인
                         결제</button>
-                  </span> <span class="stext-107 cl6" style="padding-right: 10px;">
-                     <button
-                        class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
-                        style="min-width: 100px; height: 40px;" onclick="onlinepay()">결제
-                        확인</button>
-                  </span> <span class="stext-107 cl6">
+                  </span><span class="stext-107 cl6">
                      <button
                         class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
                         style="min-width: 100px; height: 40px;" onclick="moveMessage()">대화로 돌아가기</button>
@@ -192,7 +187,8 @@ IMP.init("imp56447215");
             buyer_postcode : "01181",
          }, function(rsp) { // callback
             if (rsp.status == "paid") {
-               alert("결제완료");
+               alert("결제완료!");
+               document.querySelector("#onlinePay").submit();
             }
          });
       }

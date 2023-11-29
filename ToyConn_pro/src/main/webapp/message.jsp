@@ -86,7 +86,7 @@
 	List<chattingDTO> chatList = new chattingDAO().getChattingList(vo);
 %>
  <%
-	List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(user_id);
+	List<payCheckDTO> PcList = new payCheckDAO().getPayCheck(id);
 	%>
 
 	<!-- Header -->
