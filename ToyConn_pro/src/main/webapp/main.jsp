@@ -189,8 +189,8 @@
                      <li><a href="toy_join.jsp"
                         style="font-size: large; font-weight: 600;">장난감 등록</a></li>
                         <%}else{%>
-                        <li><a href="toy_join.jsp"
-                        style="font-size: large; font-weight: 600;">장난감 등록</a></li>
+                        <li><a
+                        style="font-size: large; font-weight: 600;" onclick="nologin()">장난감 등록</a></li>
                         <%}%>
                   </ul>
                </div>
