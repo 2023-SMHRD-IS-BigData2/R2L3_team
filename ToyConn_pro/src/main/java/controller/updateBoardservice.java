@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.boardDAO;
 import model.updateBoardDTO;
 
-/**
- * Servlet implementation class updateBoardservice
- */
+
 @WebServlet("/updateBoardservice")
 public class updateBoardservice extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

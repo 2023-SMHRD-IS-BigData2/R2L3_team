@@ -11,7 +11,6 @@ import model.pcUpdateDTO;
 public class payCheckDAO {
 	SqlSessionFactory sqlSessionFactory =  SqlSessionManager.getSqlSession();
 	
-	// Factory를 사용해서 세션 생성(DB연결, close(), sql 실행)
 	SqlSession sqlSession = sqlSessionFactory.openSession(true);
 	
 	public int setPayCheck(payCheckDTO vo){

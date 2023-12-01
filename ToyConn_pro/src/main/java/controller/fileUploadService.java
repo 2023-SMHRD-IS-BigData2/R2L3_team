@@ -18,18 +18,16 @@ import model.setToyDTO;
 @WebServlet("/fileUploadService")
 public class fileUploadService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 파일 업로드를 위한 변수 설정
-		//1. request 객체
-		//2. 파일을 저장할 경로(String)
+
 		String savepath = request.getServletContext().getRealPath("./images/crolling");
 		System.out.println("save path : "+savepath);
-		//3. 파일 최대 크기(int)
+
 		int maxSize = 1024*1024*10;
-		//4. 인코딩방식(String)
+
 		String encoding = "UTF-8";
-		//5. 파일이름 중복 제거
+
 		DefaultFileRenamePolicy rename =  new DefaultFileRenamePolicy();
-		// 파일 업로드 해주는 객체 >> MultipartRequest
+
 		
 		MultipartRequest multi=null;
 		try {
@@ -42,9 +40,7 @@ public class fileUploadService extends HttpServlet {
 		String cate = multi.getParameter("cate");
 
 		String gender = "남여아완구";
-//				multi.getParameter("gender");
 		String qual = "상";
-//				multi.getParameter("qual");
 
 		String filename = multi.getFilesystemName("productImage");
 		String p_name = multi.getParameter("p_name");

@@ -11,14 +11,12 @@ import javax.servlet.http.HttpSession;
 import model.boardDAO;
 import model.setBoardDTO;
 
-/**
- * Servlet implementation class setBoardService
- */
+
 @WebServlet("/setBoardService")
 public class setBoardService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String id = "test4"; //session.값으로 수정하기
+		String id = "test4";
 		String title = request.getParameter("title");
 		String text_content = request.getParameter("text_content");
 		String anonymous = request.getParameter("anonymous");

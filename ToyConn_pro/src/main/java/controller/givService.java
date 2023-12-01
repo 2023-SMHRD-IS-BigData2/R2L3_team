@@ -23,6 +23,7 @@ import model.pcUpdateDTO;
 public class givService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("대여중 update 페이지");
+		
 		int p_num = Integer.parseInt(request.getParameter("p_num"));
 		String lender_id = request.getParameter("lender_id");
 		int pc_num = Integer.parseInt(request.getParameter("pc_num"));
