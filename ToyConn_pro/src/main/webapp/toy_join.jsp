@@ -370,10 +370,6 @@
 	</div>
 
 
-
-
-
-
 	<div class="container">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
 			<a href="main.jsp" class="stext-109 cl8 hov-cl1 trans-04"> 메인 <i
@@ -423,9 +419,6 @@
 								</div>
 							</div>
 						</div>
-						
-
-
 
 						<div class="flex-w flex-r-m p-b-10 m-b-20">
 							<div class="size-203 flex-c-m respon6">상품명</div>
@@ -466,10 +459,6 @@
 	</section>
 
 
-
-
-
-
 	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
@@ -499,7 +488,6 @@
 
 			<div class="p-t-40">
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					Copyright &copy;
 					<script>
 						document.write(new Date().getFullYear());
@@ -508,8 +496,6 @@
 						aria-hidden="true"></i> by <a href="https://colorlib.com"
 						target="_blank">Colorlib</a> &amp; distributed by <a
 						href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
 				</p>
 			</div>
 		</div>

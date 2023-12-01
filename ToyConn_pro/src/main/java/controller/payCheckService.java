@@ -58,8 +58,6 @@ public class payCheckService extends HttpServlet {
 					b+=m.get(k);
 				}
 				b+=Integer.parseInt(end_date[2]);
-				System.out.println(a);
-				System.out.println(b);
 				result += b-a;
 			}
 		}else {
@@ -75,8 +73,6 @@ public class payCheckService extends HttpServlet {
 				b+=m.get(k);
 			}
 			b+=Integer.parseInt(end_date[2]);
-			System.out.println(a);
-			System.out.println(b);
 			result += b-a;
 		}
 		RequestDispatcher rd = request.getRequestDispatcher("./pay_check.jsp");

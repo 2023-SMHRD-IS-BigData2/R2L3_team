@@ -151,7 +151,7 @@ String id = (String)session.getAttribute("id");
 						alt="IMG-LOGO">
 					</a>
 
-<!-- Menu desktop -->
+					<!-- Menu desktop -->
                     <div class="menu-desktop">
                         <ul class="main-menu">
                             <li style="margin: 30px;">
@@ -186,7 +186,6 @@ String id = (String)session.getAttribute("id");
 						
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="<%=PcList.size()%>">
-						<!--<i class="zmdi zmdi-shopping-cart"></i>-->
 						<img src="images/icons/종종.png" alt="" style="height: 20px;">
 
 						</div>
@@ -203,30 +202,30 @@ String id = (String)session.getAttribute("id");
 
         <!-- Header Mobile -->
         <div class="wrap-header-mobile">
-            <!-- Logo moblie -->
-            <div class="logo-mobile">
-                <a href="main.jsp"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
-            </div>
-
-           <!-- Icon header -->
-			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				
-
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-							data-notify="<%=PcList.size()%>">
-						<!--<i class="zmdi zmdi-shopping-cart"></i>-->
-						<img src="images/icons/종종.png" alt="" style="height: 20px;">
-
-						</div>
-
-				<a href="message.jsp"
-							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11"
-							>
-							<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
-						</a>
+			<!-- Logo moblie -->
+			<div class="logo-mobile">
+				<a href="main.jsp"><img src="images/icons/logo-01.png"
+					alt="IMG-LOGO"></a>
 			</div>
 
-            <!-- Button show menu -->
+			<!-- Icon header -->
+			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
+
+
+				<div
+					class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+					data-notify="<%=PcList.size()%>">
+					<img src="images/icons/종종.png" alt="" style="height: 20px;">
+
+				</div>
+
+				<a href="message.jsp"
+					class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+					<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
+				</a>
+			</div>
+
+			<!-- Button show menu -->
             <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
@@ -531,11 +530,6 @@ String id = (String)session.getAttribute("id");
         </div>
     </section>
 
-
-
-
-
-
 	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
@@ -565,7 +559,6 @@ String id = (String)session.getAttribute("id");
 
 			<div class="p-t-40">
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					Copyright &copy;
 					<script>
 						document.write(new Date().getFullYear());
@@ -574,8 +567,6 @@ String id = (String)session.getAttribute("id");
 						aria-hidden="true"></i> by <a href="https://colorlib.com"
 						target="_blank">Colorlib</a> &amp; distributed by <a
 						href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
 				</p>
 			</div>
 		</div>

@@ -118,15 +118,12 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="wrap-menu-desktop">
 				<nav class="limiter-menu-desktop container">
-
 					<!-- Logo desktop -->
 					<a href="#" class="logo"> <img src="images/icons/logo-01.png"
 						alt="IMG-LOGO">
 					</a>
-
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
@@ -154,16 +151,11 @@
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-						
-
 						<div
 							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="<%=PcList.size()%>">
-							<!--<i class="zmdi zmdi-shopping-cart"></i>-->
 							<img src="images/icons/종종.png" alt="" style="height: 20px;">
-
 						</div>
-
 						<a href="message.jsp"
 							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
 							<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
@@ -188,7 +180,6 @@
 				<div
 					class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 					data-notify="<%=PcList.size()%>">
-					<!--<i class="zmdi zmdi-shopping-cart"></i>-->
 					<img src="images/icons/종종.png" alt="" style="height: 20px;">
 
 				</div>
@@ -426,8 +417,6 @@
 						aria-hidden="true"></i> by <a href="https://colorlib.com"
 						target="_blank">Colorlib</a> &amp; distributed by <a
 						href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
 				</p>
 			</div>
 		</div>

@@ -391,7 +391,8 @@ width:60%;
 			<div class="row">
 				<div class="col-md-6 col-lg-7 p-b-30">
 					<div class="p-l-25 p-r-30 p-lr-0-lg">
-						<div class="wrap-slick3 flex-sb flex-w" style="float: right; width: 80%;">
+						<div class="wrap-slick3 flex-sb flex-w"
+							style="float: right; width: 80%;">
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 							<div class="gallery-lb" style="width: 100%;">
 								<div class="item-slick3">
@@ -452,17 +453,13 @@ width:60%;
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
 									style="min-width: 100px; height: 40px;" onclick="kakaoPay()">온라인
 									결제</button>
-							</span> 
-							
+							</span>
+
 						</div>
 						<br>
 					</div>
 				</div>
 			</div>
-
-
-		</div>
-		</div>
 		</div>
 	</section>
 
@@ -494,7 +491,6 @@ width:60%;
 
 			<div class="p-t-40">
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					Copyright &copy;
 					<script>
 						document.write(new Date().getFullYear());
@@ -503,13 +499,10 @@ width:60%;
 						aria-hidden="true"></i> by <a href="https://colorlib.com"
 						target="_blank">Colorlib</a> &amp; distributed by <a
 						href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
 				</p>
 			</div>
 		</div>
 	</footer>
-
 
 	<!-- Back to top -->
 	<div class="btn-back-to-top" id="myBtn">
