@@ -23,6 +23,12 @@
       </ul>
   <li>주선우 : Back_end</li>
   <li>박세호 : Front_end</li>
+	<ul>
+		<li>전체 템플릿 설계</li>
+		<li>프리미엄,거래목록 창 구현</li>
+		<li>게시판 물품등록 창 구현</li>
+		<li>이용약관 동네장난감 창 구현</li>
+	</ul>
   <li>노은평 : PM, Front_end</li>
 	<ul>
             <li>프로젝트 매니저</li>
