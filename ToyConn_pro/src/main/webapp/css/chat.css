@@ -221,8 +221,7 @@ main header h3 {
 
 main footer {
     height: 30px;
-    /* padding: 10px 10px 10px 10px; */
-    /* background-color:#bbb ; */
+   
 }
 
 main footer textarea {
@@ -230,7 +229,6 @@ main footer textarea {
     border: none;
     display: block;
     width: 85%;
-    /* height: 60px; */
     border-radius: 3px;
     padding: 20px;
     font-size: 13px;
@@ -242,7 +240,6 @@ main footer textarea::placeholder {
 }
 
 main footer img {
-    /* height: 30px; */
     cursor: pointer;
 }
 
@@ -253,6 +250,5 @@ main footer a {
     color: #6fbced;
     vertical-align: top;
     margin-left: 333px;
-    /* margin-top: 5px; */
     display: inline-block;
 }
