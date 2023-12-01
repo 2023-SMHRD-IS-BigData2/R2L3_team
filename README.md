@@ -46,7 +46,7 @@
 </ul>
 
 <h3>3. ERD 설계</h3>
-![](https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/blob/main/ToyConn_pro/src/main/webapp/images/erd.png)
+<img src = "https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/blob/main/ToyConn_pro/src/main/webapp/images/erd.png">
 
 <h3> 4. 서비스 흐름도</h3>
 ![image](https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145408166/a479a9a4-e9f9-45b8-8cee-0ca711df9e01)
