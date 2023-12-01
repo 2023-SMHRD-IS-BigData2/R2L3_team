@@ -45,5 +45,7 @@
   <li>JavaScript</li>
 </ul>
 
+<h3>3. ERD 설계</h3>
+![image](https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145406781/57790ec8-50a0-4e0e-92d5-f5812cc6bcf0)
 
 
