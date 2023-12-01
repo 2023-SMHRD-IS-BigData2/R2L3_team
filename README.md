@@ -70,6 +70,9 @@
 <h3>5. 주요 기능</h3>
 <hr>
 ToyConn 서비스의 핵심 기능은 로그인 이후 해당 유저 동네에 위치한 장난감 표시 기능, 장난감 위치 확인 후 채팅, 그리고 결제 기능입니다.
+
+<details>
+	<summary><b>주요 기능 더보기</b></summary>
 <h4>
     로그인기능
 </h4>
@@ -181,7 +184,7 @@ ToyConn 서비스의 핵심 기능은 로그인 이후 해당 유저 동네에 �
 	<li>'온라인 버튼'클릭 시 import api를 사용하여 카카오 pay로 결제 진행</li>
 </ul>
 <img src="https://github.com/jangjunhyu/-/assets/120622212/a3b7d0e4-a24f-47bc-a1d9-0decf64d292b">
-
+</details>
 <h3> 6. 핵심 트러블 슈팅 </h3>
 <hr>
 <h4> 5-1 실시간 채팅 관련 문제</h4>
