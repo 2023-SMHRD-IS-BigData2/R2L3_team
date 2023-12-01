@@ -278,7 +278,7 @@
 		$('.js-modal1').removeClass('show-modal1');
 	});
 
-	$('#kakaoLogin').on('click', function() {
+	$('#kakaoLogin').on('click', function() { // 카카오톡 로그인 기능
 		console.log("kakaoLogin");
 		
 		let url = window.location.href;
@@ -313,7 +313,7 @@
 		})
 	});
 
-	$('#kakaoLogout').on('click', function() {
+	$('#kakaoLogout').on('click', function() {  // 카카오톡 로그아웃 기능
 		console.log("kakaoLogout");
 		
 		let url = window.location.href;
@@ -341,7 +341,7 @@
 		}
 	});
 	
-	$('#CorrectionMember').on('click', function() {
+	$('#CorrectionMember').on('click', function() { // 회원수정 페이지
 		console.log("CorrectionMember");
 		$(location).attr("href", "CorrectionMember.jsp");
 	});

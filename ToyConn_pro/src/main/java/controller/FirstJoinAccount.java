@@ -20,7 +20,7 @@ public class FirstJoinAccount extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("FirstJoinAccount");
+		System.out.println("FirstJoinAccount"); // 회원가입 컨트롤러
 
 		request.setCharacterEncoding("UTF-8");
 
@@ -51,7 +51,7 @@ public class FirstJoinAccount extends HttpServlet {
 			System.out.println("FirstJoinAccount fail");
 		}
 
-		response.sendRedirect("main.jsp");
+		response.sendRedirect("main.jsp"); // 완료 후 main.jsp로 이동
 	}
 
 }
