@@ -46,6 +46,6 @@
 </ul>
 
 <h3>3. ERD 설계</h3>
-![image](https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145406781/57790ec8-50a0-4e0e-92d5-f5812cc6bcf0)
+![image]([https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145406781/57790ec8-50a0-4e0e-92d5-f5812cc6bcf0](https://github-production-user-asset-6210df.s3.amazonaws.com/145406781/287182672-57790ec8-50a0-4e0e-92d5-f5812cc6bcf0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231201%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231201T065110Z&X-Amz-Expires=300&X-Amz-Signature=a8b7ca303e38138ad28306d94852c7f0f9f541984a586b1564aa3a8ace781c8b&X-Amz-SignedHeaders=host&actor_id=145408166&key_id=0&repo_id=721448942)https://github-production-user-asset-6210df.s3.amazonaws.com/145406781/287182672-57790ec8-50a0-4e0e-92d5-f5812cc6bcf0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231201%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231201T065110Z&X-Amz-Expires=300&X-Amz-Signature=a8b7ca303e38138ad28306d94852c7f0f9f541984a586b1564aa3a8ace781c8b&X-Amz-SignedHeaders=host&actor_id=145408166&key_id=0&repo_id=721448942).
 
 
