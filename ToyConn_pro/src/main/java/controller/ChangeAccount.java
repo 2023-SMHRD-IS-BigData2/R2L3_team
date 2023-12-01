@@ -18,7 +18,7 @@ public class ChangeAccount extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("ChangeAccount");
+		System.out.println("ChangeAccount"); // 회원수정 컨트롤러
 		
 		request.setCharacterEncoding("UTF-8");
 		
@@ -47,7 +47,7 @@ public class ChangeAccount extends HttpServlet {
 			System.out.println("update error");
 		}
 		
-		response.sendRedirect("main.jsp");
+		response.sendRedirect("main.jsp"); // 회원수정 작업 후 main.jsp로 이동함
 	}
 
 }

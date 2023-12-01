@@ -18,7 +18,7 @@ public class FirstLoginCheck extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("FirstLoginCheck");
+		System.out.println("FirstLoginCheck"); // 첫번째 로그인 체크 컨트롤러
 
 		request.setCharacterEncoding("UTF-8");
 
@@ -36,14 +36,14 @@ public class FirstLoginCheck extends HttpServlet {
 			System.out.println("In");
 			HttpSession session = request.getSession();
 			session.setAttribute("memberInfo", row);
-			response.sendRedirect(url);
+			response.sendRedirect(url); // 아이디가 존재하면 로그인을 시도한 페이지로 이동
 
 		} else {
 			System.out.println("Not in");
 			HttpSession session = request.getSession();
 			session.setAttribute("user_id", user_id);
 			session.setAttribute("nick", nick);
-			response.sendRedirect("JoinMember.jsp");
+			response.sendRedirect("JoinMember.jsp"); // 없으면 회원가입 페이지로 이동
 		}
 
 	}

@@ -15,14 +15,14 @@ public class LogoutAccount extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8"); // 로그아웃 컨트롤러
 		
 		String url = request.getParameter("url");
 		System.out.println(url);
 		
 		HttpSession session = request.getSession();
 		session.invalidate();
-		response.sendRedirect("./main.jsp");
+		response.sendRedirect("./main.jsp"); // 세션을 전부삭제후, main.jsp로 이동함
 	}
 
 }
