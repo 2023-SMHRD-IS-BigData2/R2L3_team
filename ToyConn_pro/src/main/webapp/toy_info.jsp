@@ -440,7 +440,8 @@ width:60%;
 			<div class="row">
 				<div class="col-md-6 col-lg-7 p-b-30">
 					<div class="p-l-25 p-r-30 p-lr-0-lg">
-						<div class="wrap-slick3 flex-sb flex-w" style="float: right; width: 80%;">
+						<div class="wrap-slick3 flex-sb flex-w"
+							style="float: right; width: 80%;">
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 							<div class="gallery-lb" style="width: 100%;">
 								<div class="item-slick3">
@@ -463,40 +464,41 @@ width:60%;
 						<h4 class="mtext-105 cl2 js-name-detail p-b-14"><%=toy.getP_name()%></h4>
 						<!-- 가격 -->
 						<span class="mtext-106 cl2"> 1일 <%=toy.getRent_price()%>원
-						</span>
-						<br><br>
-						<p><b><%=toy.getP_status()%></b></p>
+						</span> <br>
+						<br>
+						<p>
+							<b><%=toy.getP_status()%></b>
+						</p>
 						<!-- 상품 설명 -->
 						<p class="stext-102 cl3 p-t-23"><%=toy.getP_contenct()%></p>
-						
+
 						<br> <a href="#" class="js-show-modal1"> <img
 							src="images/kakaomap.jpg" alt="IMG-LOGO"
 							style="border-radius: 20%; width: 50px;"> 위치 확인
 						</a> <br> <br>
-						<% if(user_id.equals("test4")){ %>
+						<%
+						if (user_id.equals("test4")) {
+						%>
 						<a href="#"
 							class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
 							style="min-width: 100px; height: 40px;" onclick="nologin()">채팅하기</a>
-							<% }else { %>
-							<a
+						<%
+						} else {
+						%>
+						<a
 							class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
 							style="min-width: 100px; height: 40px;" onclick="moveChat()">채팅하기</a>
-							<%} %>
+						<%
+						}
+						%>
 						<form action="message.jsp" id="goChat">
 							<input type="hidden" name="p_num" value="<%=toy.getP_num()%>">
 						</form>
 					</div>
 				</div>
 			</div>
-			
+		</div>
 	</section>
-	<!-- -------------------------------------------------------------------------------------------- -->
-
-	<!-- ------------------------------------------------------------------------------------------ -->
-
-
-
-
 
 
 	<!-- Footer -->
@@ -508,9 +510,6 @@ width:60%;
 						<h4 class="stext-301 cl0 p-b-30">이용약관</h4>
 					</a>
 				</div>
-
-				
-
 				<div class="col-sm-6 col-lg-3 p-b-50" style="margin-left: 150px;">
 					<a href="#">
 						<h4 class="stext-301 cl0 p-b-30">신고</h4>
@@ -530,7 +529,6 @@ width:60%;
 
 			<div class="p-t-40">
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					Copyright &copy;
 					<script>
 						document.write(new Date().getFullYear());
@@ -539,8 +537,6 @@ width:60%;
 						aria-hidden="true"></i> by <a href="https://colorlib.com"
 						target="_blank">Colorlib</a> &amp; distributed by <a
 						href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
 				</p>
 			</div>
 		</div>

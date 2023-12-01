@@ -172,17 +172,12 @@
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
-						
-
-
 						<div
 							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="<%=PcList.size()%>">
 							<!--<i class="zmdi zmdi-shopping-cart"></i>-->
 							<img src="images/icons/종종.png" alt="" style="height: 20px;">
-
 						</div>
-
 						<a href="message.jsp"
 							class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
 							<img src="images/icons/말풍선 .png" alt="" style="height: 20px;">
@@ -200,17 +195,13 @@
 					alt="IMG-LOGO"></a>
 			</div>
 
-
 			<!-- Icon header -->
 			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				
-
 				<div
 					class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 					data-notify="<%=PcList.size()%>">
 					<!--<i class="zmdi zmdi-shopping-cart"></i>-->
 					<img src="images/icons/종종.png" alt="" style="height: 20px;">
-
 				</div>
 
 				<a href="message.jsp"
@@ -219,14 +210,12 @@
 				</a>
 			</div>
 
-
 			<!-- Menu Mobile -->
 			<div class="menu-mobile">
 				<ul class="topbar-mobile">
 					<li>
 						<div class="left-top-bar">More kids, More joy</div>
 					</li>
-
 					<li>
 						<div class="right-top-bar flex-w h-full">
 							<%
@@ -313,58 +302,61 @@
 			</div>
 	</header>
 
-	 <!-- 오른쪽 상단 Cart 공간 -->
-		<div class="wrap-header-cart js-panel-cart">
-			<div class="s-full js-hide-cart"></div>
-	
-			<div class="header-cart flex-col-l p-l-65 p-r-25">
-				<div class="header-cart-title flex-w flex-sb-m p-b-8">
-					<span class="mtext-103 cl2"> 결제확인 요청 </span>
-					<!-- 닫기 버튼 -->
-					<div
-						class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-						<i class="zmdi zmdi-close"></i>
-					</div>
+	<!-- 오른쪽 상단 Cart 공간 -->
+	<div class="wrap-header-cart js-panel-cart">
+		<div class="s-full js-hide-cart"></div>
+
+		<div class="header-cart flex-col-l p-l-65 p-r-25">
+			<div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl2"> 결제확인 요청 </span>
+				<!-- 닫기 버튼 -->
+				<div
+					class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+					<i class="zmdi zmdi-close"></i>
 				</div>
-	
-				
+			</div>
+
+
 			<div class="header-cart-content flex-w js-pscroll">
-			<form action="givService">
-				<ul class="header-cart-wrapitem w-full">
-					<%for(int i=0; i<PcList.size(); i++){ %>
-					<!-- 상품 리스트 -->
-					
-						
-						
-					
-					<li class="header-cart-item flex-w flex-t m-b-12">
-					<!-- 	<div class="header-cart-item-img"> -->
-							<!-- 상품 이미지 -->
-						<!--</div>-->
-						<div class="header-cart-item-txt p-t-8">
-							<!-- 상품 이름 -->
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								<%=PcList.get(i).getP_name()%>
-							</a>
-							<!-- 상품 개수 & 가격 -->
-							<span class="header-cart-item-info">
-								<%=PcList.get(i).getPrice()%>
-							</span>
-						</div>
-						<div class="w-full">
-							<!-- 이동 버튼 -->
-							<div class="header-cart-buttons flex-w w-full" style="margin-top: 10px;">
-							<input type='hidden' name='p_num' value="<%=PcList.get(i).getP_num()%>">
-							<input type='hidden' name='lender_id' value="<%=PcList.get(i).getLender_id()%>">
-							<input type='hidden' name='pc_num' value="<%=PcList.get(i).getPc_num()%>">
-								<input type="submit" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10 ifClick" style="min-width:100px; height: 30px;" value="입금확인 및 대여확정">
-							
+				<form action="givService">
+					<ul class="header-cart-wrapitem w-full">
+						<%
+						for (int i = 0; i < PcList.size(); i++) {
+						%>
+						<!-- 상품 리스트 -->
+
+						<li class="header-cart-item flex-w flex-t m-b-12">
+							<!-- 	<div class="header-cart-item-img"> --> <!-- 상품 이미지 --> <!--</div>-->
+							<div class="header-cart-item-txt p-t-8">
+								<!-- 상품 이름 -->
+								<a href="#"
+									class="header-cart-item-name m-b-18 hov-cl1 trans-04"> <%=PcList.get(i).getP_name()%>
+								</a>
+								<!-- 상품 개수 & 가격 -->
+								<span class="header-cart-item-info"> <%=PcList.get(i).getPrice()%>
+								</span>
 							</div>
-						</div>
-					</li>
-					
-					<%}%>
-				</ul>
+							<div class="w-full">
+								<!-- 이동 버튼 -->
+								<div class="header-cart-buttons flex-w w-full"
+									style="margin-top: 10px;">
+									<input type='hidden' name='p_num'
+										value="<%=PcList.get(i).getP_num()%>"> <input
+										type='hidden' name='lender_id'
+										value="<%=PcList.get(i).getLender_id()%>"> <input
+										type='hidden' name='pc_num'
+										value="<%=PcList.get(i).getPc_num()%>"> <input
+										type="submit"
+										class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10 ifClick"
+										style="min-width: 100px; height: 30px;" value="입금확인 및 대여확정">
+
+								</div>
+							</div>
+						</li>
+						<%
+						}
+						%>
+					</ul>
 				</form>
 			</div>
 		</div>
@@ -395,8 +387,6 @@
 	<!-- Product -->
 	<div class="bg0 m-t-23 p-b-140">
 		<div class="container">
-
-
 			<section class="bg0 p-t-104 p-b-116">
 				<div class="container">
 					<div class="flex-w flex-sb-m p-b-52">
@@ -432,80 +422,9 @@
 								data-filter=".교육장난감">교육장난감</button>
 
 						</div>
-						<!-- <div class="flex-w flex-tr">
-						<div class="size-100  p-lr-70">
-							<div class="flex-w flex-r-m p-b-10">
-								<div class="size-205 flex-c-m respon6">전체보기</div>
-								<form action="toy_list"
-									style="width: 300px; display: inline-block; display: flex;">
-									<div class="flex-w flex-r-m p-b-10" style="margin-left: 50px;">
-										<div class="size-210 flex-c-m respon6"></div>
-
-										<div class="size-205 respon6-next" style="margin-left: 30px;">
-											<div class="rs1-select2 bor8 bg0">
-												<select class="js-select2" name="catego">
-													<option value="all">전체 카테고리</option>
-													<option value="car">차/소방차/트럭</option>
-													<option value="robot">로봇</option>
-													<option value="doll">인형</option>
-													<option value="lego">레고/모형</option>
-													<option value="dron">드론/비행기</option>
-													<option value="animal">동물모형</option>
-													<option value="cook">요리/뷰티/병원/전화</option>
-													<option value="adu">교육장난감</option>
-													<option value="etc">기타</option>
-												</select>
-												<div class="dropDownSelect2"></div>
-											</div>
-										</div>
-									</div>
-									<div class="flex-w flex-r-m p-b-10" style="margin-left: 30px;">
-										<div class="size-210 flex-c-m respon6"></div>
-
-										<div class="size-205 respon6-next" style="margin-left: 30px;">
-											<div class="rs1-select2 bor8 bg0">
-												<select class="js-select2" name="gender">
-													<option value="all">전체 성별</option>
-													<option value="girl">여아완구</option>
-													<option value="boy">남아완구</option>
-													<option value="baby">영유아완구</option>
-													<option value="girlboy">남여아완구</option>
-												</select>
-												<div class="dropDownSelect2"></div>
-											</div>
-										</div>
-									</div>
-									<div class="flex-w flex-r-m p-b-10" style="margin-left: 30px;">
-										<div class="size-210 flex-c-m respon6"></div>
-
-										<div class="size-205 respon6-next" style="margin-left: 30px;">
-											<div class="rs1-select2 bor8 bg0">
-												<select class="js-select2" name="qual">
-													<option value="all">전체 품질</option>
-													<option value="top">상</option>
-													<option value="middle">중</option>
-													<option value="bottom">하</option>
-
-												</select>
-												<div class="dropDownSelect2"></div>
-											</div>
-										</div>
-									</div>
-									<div class="size-203 flex-c-m respon6"
-										style="margin-left: 50px;">
-
-										<input type="submit" class="btn btn-primary" value="검색"
-											style="width: 117px; height: 47px;">
-
-									</div>
-								</form>
-							</div>
-						</div>
-					</div> -->
 					</div>
 				</div>
 			</section>
-			<!--                        ----------------------------------------------------------------------------------------------------------->
 
 
 			<!-- 상품 목록 -->
@@ -523,7 +442,6 @@
 							<img src="images/crolling/<%=list.get(i).getImage_file()%>"
 								alt="IMG-PRODUCT">
 						</div>
-
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<!-- 상품명 -->
@@ -534,7 +452,6 @@
 								<span class="stext-105 cl3"> <%=list.get(i).getRent_price()%>원
 								</span>
 							</div>
-
 							<!-- 하트 아이콘 -->
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#"
@@ -548,11 +465,7 @@
 						</div>
 					</div>
 				</div>
-				<%
-				}
-				}
-				%>
-
+				<%}}%>
 			</div>
 		</div>
 	</div>
@@ -586,7 +499,6 @@
 
 			<div class="p-t-40">
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					Copyright &copy;
 					<script>
 						document.write(new Date().getFullYear());
@@ -595,8 +507,6 @@
 						aria-hidden="true"></i> by <a href="https://colorlib.com"
 						target="_blank">Colorlib</a> &amp; distributed by <a
 						href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
 				</p>
 			</div>
 		</div>
