@@ -377,7 +377,7 @@ String id = (String)session.getAttribute("id");
 		</div>
 	</div>
 	
-	<!-- ------------------------------------------------ -->
+	<!-- 대화 창 -->
 	<div class="row">
 		<section id="container" style="background-color: rgb(255, 255, 255);">
 			<div>
@@ -394,15 +394,12 @@ String id = (String)session.getAttribute("id");
 								<%}else{ %>
 									<h2><a href="./message.jsp?p_num=<%=list.get(i).getP_num()%>" style="color: white;"><%=ToyList.get(i).getP_name().substring(0, ToyList.get(i).getP_name().length())%></a></h2>
 								<%} %>
-								
 								<h3><%=list.get(i).getText_content()%></h3>
-								
 							</div>
 						</li>
 						<%}%>
 					</ul>
 				</aside>
-
 				<main>
 					<header>
 						<div>
@@ -463,32 +460,34 @@ String id = (String)session.getAttribute("id");
 						</li>
 						<%}}}%>
 					</ul>
+					
 					<hr>
 					<form action="sendMessageService">
-					<input type="hidden" name="recipient" value="<%=toy.getUser_id()%>">
-					<input type="hidden" name="p_num" value="<%=toy.getP_num()%>">
-					<footer>
-                        <div class="flex-w flex-r-m p-b-10 m-b-20">
-                            <div class="size-204 respon6-next" style="padding-left: 10px;">
-                                <div class="rs1-select2 bor8 bg0">
-                                    <textarea rows="1" name="textContent" class="form-control" style="border: 0;"
-                                        placeholder="택스트를 입력하시오"></textarea>
-                                </div>
-                            </div>
-                            <div class="size-203 flex-c-m respon6">
-                                <input type="submit" value="전송" style="min-width: 70px; height:40px;">
-                            </div>
-                        </div>
-                    </footer>
+						<input type="hidden" name="recipient" value="<%=toy.getUser_id()%>">
+						<input type="hidden" name="p_num" value="<%=toy.getP_num()%>">
+						<footer>
+	                        <div class="flex-w flex-r-m p-b-10 m-b-20">
+	                            <div class="size-204 respon6-next" style="padding-left: 10px;">
+	                                <div class="rs1-select2 bor8 bg0">
+	                                    <textarea rows="1" name="textContent" class="form-control" style="border: 0;"
+	                                        placeholder="택스트를 입력하시오"></textarea>
+	                                </div>
+	                            </div>
+	                            <div class="size-203 flex-c-m respon6">
+	                                <input type="submit" value="전송" style="min-width: 70px; height:40px;">
+	                            </div>
+	                        </div>
+	                    </footer>
 					</form>
 				</main>
+				
 				<hr>
 			</div>
 		</section>
 	</div>
 
 
-	<!-- -------------------------------------------------- -->
+	<!-- 대여 기간 정하기 -->
 	<section class="bg0 p-b-116">
         <div class="container">
             <div class="flex-w flex-tr">
