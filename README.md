@@ -18,3 +18,25 @@
   <li>노은평 : Front_end, PM</li>
   <li>화이티 : DB, Crowling</li>
 </ul>
+
+<h3>2. 사용 기술</h3>
+<hr>
+<b>Back_end</b>
+<ul>
+  <li>Java</li>
+  <li>Python</li>
+  <li>Maven</li>
+  <li>Jsp</li>
+  <li>Servlet</li>
+  <li>Tomcat</li>
+</ul>
+
+<b>Front_end</b>
+<ul>
+  <li>Html</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ul>
+
+
+
