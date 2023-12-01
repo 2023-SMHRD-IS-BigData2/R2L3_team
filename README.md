@@ -53,7 +53,12 @@
 <hr>
 <img src="https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145408166/a479a9a4-e9f9-45b8-8cee-0ca711df9e01">
 <details>
-<img src="https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145408166/53e04760-ffea-444d-b127-0adcfbd87611">
+<h3>전체 서비스 흐름도</h3>
+        <img src="https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145408166/53e04760-ffea-444d-b127-0adcfbd87611" 
+        style="width: 40%;" alt="IMG">
+        <h3>로그인 서비스 흐름도</h3>
+        <img src="https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145408166/609fc2c1-d6ad-44e5-9adb-55cd3889e8db" 
+        style="width: 40%;" alt="IMG">
 </details>
 <h3> 5. 핵심 트러블 슈팅 </h3>
 <h4> 5-1 실시간 채팅 관련 문제</h4>
