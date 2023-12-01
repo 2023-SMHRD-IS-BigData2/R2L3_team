@@ -13,6 +13,14 @@
     핵심 프로젝트
   </li>
   <li>장준휴(팀장) : Back_end</li>
+        <ul>
+        <li>동네 장난감 출력 기능</li>
+        <li>장난감 위치 확인 기능</li>
+        <li>유저별 대여 상태 기능</li>
+        <li>유저별 대여상태 기능</li>
+        <li>결제 기능</li>
+        <li>프로젝트 총괄</li>
+      </ul>
   <li>주선우 : Back_end</li>
   <li>박세호 : Front_end</li>
   <li>노은평 : PM, Front_end</li>
