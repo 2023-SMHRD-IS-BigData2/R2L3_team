@@ -15,7 +15,7 @@
   <li>장준휴(팀장) : Back_end</li>
   <li>주선우 : Back_end</li>
   <li>박세호 : Front_end</li>
-  <li>노은평 : Front_end, PM</li>
+  <li>노은평 : PM, Front_end</li>
   <li>화이티 : DB, Crowling</li>
 </ul>
 
