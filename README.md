@@ -24,7 +24,12 @@
   <li>주선우 : Back_end</li>
   <li>박세호 : Front_end</li>
   <li>노은평 : PM, Front_end</li>
-  <li>화이티 : DB, Crowling</li>
+  <li>화이티 : DB, Crawling</li>
+   <ul>
+        <li>쿨롤링: 중고사이트 장난감정보 데이터 (상품명, 상품값, 상품이미지, 상품표현)수집</li> 
+        <li>데이터배이스: 데이블 생선하고 데이터 관리 </li>
+        
+      </ul>
 </ul>
 
 <h3>2. 사용 기술</h3>
