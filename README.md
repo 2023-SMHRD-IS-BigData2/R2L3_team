@@ -52,7 +52,7 @@
 <h3> 4. 서비스 흐름도</h3>
 <hr>
 <img src="https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145408166/a479a9a4-e9f9-45b8-8cee-0ca711df9e01">
-<div markdown="1">
-![서비스흐름도](https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145408166/d08e8b9f-3361-4872-9c60-2db0ccb7d994)
-</div>
+<details>
+<img src="https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145408166/d08e8b9f-3361-4872-9c60-2db0ccb7d994">
+</details>
 
