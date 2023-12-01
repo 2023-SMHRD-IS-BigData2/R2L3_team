@@ -46,7 +46,7 @@
 </ul>
 
 <h3>3. ERD 설계</h3>
-
+![](https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/issues/1#issue-2020235167).
 
 <h3> 4. 서비스 흐름도</h3>
 ![](https://ibb.co/j3mvBjt).
