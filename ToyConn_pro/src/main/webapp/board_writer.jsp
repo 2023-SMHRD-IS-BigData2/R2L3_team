@@ -171,7 +171,7 @@
 						
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="<%=PcList.size()%>">
-						<!--<i class="zmdi zmdi-shopping-cart"></i>-->
+						
 						<img src="images/icons/종종.png" alt="" style="height: 20px;">
 
 						</div>
@@ -199,7 +199,7 @@
 
 				<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="<%=PcList.size()%>">
-						<!--<i class="zmdi zmdi-shopping-cart"></i>-->
+						
 						<img src="images/icons/종종.png" alt="" style="height: 20px;">
 
 						</div>
@@ -329,7 +329,7 @@
 						
 					
 					<li class="header-cart-item flex-w flex-t m-b-12">
-					<!-- 	<div class="header-cart-item-img"> -->
+					
 							<!-- 상품 이미지 -->
 						<!--</div>-->
 						<div class="header-cart-item-txt p-t-8">
@@ -423,8 +423,7 @@
 
 			<div class="p-t-40">
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;
+				    Copyright &copy;
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
@@ -432,9 +431,7 @@
 						aria-hidden="true"></i> by <a href="https://colorlib.com"
 						target="_blank">Colorlib</a> &amp; distributed by <a
 						href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
-				</p>
+					</p>
 			</div>
 		</div>
 	</footer>
@@ -485,9 +482,9 @@
     <!--===============================================================================================-->
     <script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
     <script>
-        $('.gallery-lb').each(function () { // the containers for all your galleries
+        $('.gallery-lb').each(function () { 
             $(this).magnificPopup({
-                delegate: 'a', // the selector for gallery item
+                delegate: 'a', 
                 type: 'image',
                 gallery: {
                     enabled: true

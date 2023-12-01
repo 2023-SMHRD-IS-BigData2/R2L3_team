@@ -332,9 +332,9 @@
 						
 					
 					<li class="header-cart-item flex-w flex-t m-b-12">
-					<!-- 	<div class="header-cart-item-img"> -->
+					
 							<!-- 상품 이미지 -->
-						<!--</div>-->
+						
 						<div class="header-cart-item-txt p-t-8">
 							<!-- 상품 이름 -->
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
@@ -426,7 +426,7 @@
 
 			<div class="p-t-40">
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					
 					Copyright &copy;
 					<script>
 						document.write(new Date().getFullYear());
@@ -435,7 +435,7 @@
 						aria-hidden="true"></i> by <a href="https://colorlib.com"
 						target="_blank">Colorlib</a> &amp; distributed by <a
 						href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				
 
 				</p>
 			</div>
@@ -481,9 +481,9 @@
     <!--===============================================================================================-->
     <script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
     <script>
-        $('.gallery-lb').each(function () { // the containers for all your galleries
+        $('.gallery-lb').each(function () { 
             $(this).magnificPopup({
-                delegate: 'a', // the selector for gallery item
+                delegate: 'a', 
                 type: 'image',
                 gallery: {
                     enabled: true
