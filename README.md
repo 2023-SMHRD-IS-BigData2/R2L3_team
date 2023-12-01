@@ -30,7 +30,6 @@
   <li>Servlet</li>
   <li>Tomcat</li>
 </ul>
-
 <b>Front_end</b>
 <ul>
   <li>Html</li>
