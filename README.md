@@ -73,5 +73,5 @@
    <li>그래서 대안 코드로 저희는 사용자의 발신 메세지 정보를 전송 버튼을 누를때마다 db에 저장하게 하였고 send Redirect 방식을 통해 새로고침 하여 사용자가 바로바로 전송이 된 화면을 구현하게 하였습니다.</li>
 </ul>
 <strong>대안코드</strong>
-[프로젝트 상세 설명](https://github.com/Park-sehoh/potopolio.io/blob/87bbd83d7c4aae0a463f2c4fea86ee730cbca036/index.html#L29) 참고
+[대안코드 상세 설명](https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/blob/c51616abb5952f4c6d03e55d0cf5f1e3e2ffeca0/ToyConn_pro/src/main/webapp/message.jsp#L380) 참고
 
