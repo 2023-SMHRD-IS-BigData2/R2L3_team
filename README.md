@@ -3,6 +3,10 @@
 주제 : 동네기반 중고 장난감 대여 서비스<br>
 리버스 엔지니어링 : 전자 상거래(당근마켓)<br>
 
+<h3>메인화면</h3>
+<hr>
+<img src="https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/120622212/b1155d5c-6633-4e83-a2ef-4e81e51fb7c7">
+
 <h3>1. 제작 기간 & 참여 인원</h3>
 <hr>
 <ul>
