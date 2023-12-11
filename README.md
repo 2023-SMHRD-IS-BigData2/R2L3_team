@@ -226,3 +226,12 @@ ToyConn 서비스의 핵심 기능은 로그인 이후 해당 유저 동네에 �
 <strong>대안코드</strong>
 <a href="https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/blob/c51616abb5952f4c6d03e55d0cf5f1e3e2ffeca0/ToyConn_pro/src/main/webapp/message.jsp#L380">대안코드 상세 설명</a> 참고
 
+<h3>시연 영상</h3>
+<hr/>
+<iframe></iframe>
+<div style="position:relative;width:fit-content;height:fit-content;">
+            <a style="position:absolute;top:20px;right:1rem;opacity:0.8;" href="https://clipchamp.com/watch/ngwUNvSVx3u?utm_source=embed&utm_medium=embed&utm_campaign=watch">
+                <img loading="lazy" style="height:22px;" src="https://clipchamp.com/e.svg" alt="Made with Clipchamp" />
+            </a>
+            <iframe allow="autoplay;" allowfullscreen style="border:none" src="https://clipchamp.com/watch/ngwUNvSVx3u/embed" width="640" height="360"></iframe>
+        </div>
