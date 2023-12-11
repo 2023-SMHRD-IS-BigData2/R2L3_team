@@ -228,6 +228,10 @@ ToyConn 서비스의 핵심 기능은 로그인 이후 해당 유저 동네에 �
 
 <h3>시연 영상</h3>
 <hr/>
+https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/issues/3#issue-2035100283
+
+<hr/>
+
             <a style="position:absolute;top:20px;right:1rem;opacity:0.8;" href="https://clipchamp.com/watch/ngwUNvSVx3u?utm_source=embed&utm_medium=embed&utm_campaign=watch">
                 <img loading="lazy" style="height:22px;" src="https://clipchamp.com/e.svg" alt="Made with Clipchamp" />
             </a>
