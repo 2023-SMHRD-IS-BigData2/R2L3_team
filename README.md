@@ -231,7 +231,7 @@ ToyConn 서비스의 핵심 기능은 로그인 이후 해당 유저 동네에 �
 <img src="https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145408166/1d6617d9-9b81-480a-a3bd-44f3ea9f19de"/>
 <video autoplay controls loop muted poster="aaa" preload="bbb">
   <source src="[xxx](https://github.com/2023-SMHRD-IS-BigData2/R2L3_team/assets/145408166/1d6617d9-9b81-480a-a3bd-44f3ea9f19de)" type="yyy">
-  zzz
+
 </video>
 
 <hr/>
